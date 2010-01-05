@@ -9,3 +9,12 @@ Then /^I see a current event selection with the following:$/ do |table|
     @registration.events.should include(row.first)
   end
 end
+Then /^I see "([^\"]*)" in the list of fields$/ do |name|
+  @registration.field_names.should include(name)
+end
+When /^I set "([^\"]*)" to "([^\"]*)"$/ do |field, value|
+  @registration.send "#{field}=", value
+end
+Then /^"([^\"]*)" should be set to "([^\"]*)"$/ do |field, value|
+  @registration.form[field].should == value
+end

@@ -9,11 +9,14 @@ Scenario: Registering a volunteer
   When I request the onsite registration portal
   Then I see a current event selection with the following:
     | Austin Flash Flooding |
-  Then I see "First Name" in the list of required fields
+  And I see "name" in the list of fields
 
-  When I set event to "Austin Flash Flooding"
+  And I set "name" to "Bob"
+  Then "name" should be set to "Bob"  
 
-  When I set first_name to "Bob"
+  When I set "event" to "Austin Flash Flooding"
+  Then "event" should be set to "Austin Flash Flooding"
+
   And I submit the form
   Then "Bob" is registered
 
