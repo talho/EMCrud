@@ -1,0 +1,1925 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: ValidateSubmittedVolunteer -->
+<!-- Generated: Thu Dec 17 10:26:18 CST 2009 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ Validate Volunteer Registration</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=418c4c92e59c6661e4cd173921066f57&amp;service=asset&amp;path=%2Fstyles%2FvalidateSubmittedVolunteer.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span><span id="For_3">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_3"></link>
+    </span><span id="For_4">
+    	<link media="screen" href="/app?digest=d41d8cd98f00b204e9800998ecf8427e&amp;service=asset&amp;path=%2Fstyles%2FdynFormEdit.css" type="text/css" rel="stylesheet" id="Any_1_4"></link>
+    </span><span id="For_5">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_5"></link>
+    </span><span id="For_6">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_6"></link>
+    </span><span id="For_7">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_7"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+dojo.require("dojo.event");
+function doNothing() { return false; }
+		
+
+function onclick_previousButton() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('previousButton'), "color", "lightgrey");
+	dojo.byId('previousButton').onclick = doNothing;
+}
+function onclick_cancelButton() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('cancelButton'), "color", "lightgrey");
+	dojo.byId('cancelButton').onclick = doNothing;
+}
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=ValidateSubmittedVolunteer&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+<script src="scripts/magicdate.js" type="text/javascript"></script>
+<style type="text/css">@import url("styles/default.css");</style>
+<style type="text/css">@import url("styles/dynFormEditView.css");</style>
+<style type="text/css">@import url("styles/home.css");</style>
+<style type="text/css">@import url("styles/login.css");</style>
+<style type="text/css">@import url("styles/calendar-blue.css");</style>
+
+<form method="post" action="/app" id="dynamicform">
+<div style="display:none;" id="dynamicformhidden"><input type="hidden" name="formids" value="userId,formId,ts1_0,ts6_0,ts1_2,ts6_2,ts1_4,ts6_4,ts1_6,ts6_6,ts14_0,ts23_0,ts32_0,ts38_0,ts46_0,ts54_0,delegateHasErrorsIf_0,PersonalSummaryCompact_0,If_37,For_10,If_0_6,If_0_8,overrideCheckbox,overrideLevel,overrideReason,If_39,If_1_6,If_2_26,If_41,If_0_10,If_43,If_0_12,If_45,If_0_14,If_47,If_1_8,If_2_28,If_49,If_0_16,If_51,If_0_18,If_53,If_0_20,If_55,If_1_10,If_2_30,If_57,If_0_22,If_59,If_0_24,If_61,If_0_26,If_63,If_0_28,If_1_12,If_2_32,If_65,If_0_30,If_67,If_0_32,If_69,If_0_34,If_71,If_1_14,If_2_34,If_73,If_0_36,If_75,If_0_38,If_77,If_79,If_0_40,If_1_16,If_2_36,If_81,If_0_42,If_83,If_0_44,If_85,If_0_46,If_87,If_1_18,If_2_38,If_89,If_0_48,If_91,If_0_50,If_93,If_0_52,If_95,If_1_20,If_2_40,If_97,If_0_54,If_99,If_0_56,If_101,If_0_58,If_103,If_1_22,If_2_42,If_105,If_0_60,If_107,If_0_62,If_109,If_0_64,If_111,If_1_24,If_2_44,If_113,If_0_66,If_115,If_0_68,If_117,If_0_70,If_119,If_1_26,If_2_46,If_121,If_0_72,If_123,If_0_74,If_125,If_0_76,If_127,If_1_28,If_2_48,If_129,If_0_78,If_131,If_0_80,If_133,If_0_82,If_135,If_1_30,If_2_50,If_137,If_0_84,If_139,If_0_86,If_141,If_0_88,If_143,If_1_32,If_2_52,If_145,If_0_90,If_147,If_0_92,If_149,If_0_94,If_151,If_1_34,If_2_54,If_153,If_0_96,If_155,If_0_98,If_157,If_0_100,If_159,If_1_36,Volunteer Background_1,If_161,If_0_102,If_163,If_0_104,If_165,If_0_106,If_167,If_0_108,If_169,If_0_110,If_171,If_0_112,If_173,If_0_114,If_175,If_0_116,If_177,If_0_118,If_0_120,previousButton,If_1_38,If_2_56,cancelButton" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVQy07DMBCMKiEhvsNHH+JQoD22gopIgCrKHZl4k1r4EdlupPJN/Br/wNpxFLh4dmfHO7v7/VNcfBXF4mpxST24QTZAStrzLkJjdW8NmJBiE7g04DD24L20JkY9Ppu+V7LhAamd4zr+3FonkvRwBKUQBSjoeIi1jTmP73uJ6KB14I+1CejOVd0it7OOrJOCkRVF6vqWPigPpFpRLoSMTlw9AhdvvPPJTsSeUuPcT9J8TvHe2UGOgwg5yDi0sp3FtG7R/SYCG6EiFaLBG8Rto1sS3EsHTcg9UXaXR6/GdIUwS9JCyK7/s2xqmD+xLGMsY+Q1HvcZzCmHL3zYcjcnfxR1AO3JNCx6Lqk/fcyVak33+Q5YrJaTkMX40DjZxw1fweBh0uEYFWfDtWxa6zQpfwHHEnx/EwIAAA==" />
+<input type="hidden" name="component" value="dynamicform" />
+<input type="hidden" name="page" value="ValidateSubmittedVolunteer" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="userId" id="userId" value="S8a81c8f0229e69e7012411408e2e1ce7" />
+<input type="hidden" name="formId" id="formId" value="S8a81c8f0229e69e701241146635e1dd9" />
+<input type="hidden" name="ts1_0" value="F" />
+<input type="hidden" name="ts6_0" value="T" />
+<input type="hidden" name="ts1_2" value="F" />
+<input type="hidden" name="ts6_2" value="T" />
+<input type="hidden" name="ts1_4" value="F" />
+<input type="hidden" name="ts6_4" value="T" />
+<input type="hidden" name="ts1_6" value="F" />
+<input type="hidden" name="ts6_6" value="T" />
+<input type="hidden" name="ts14_0" value="T" />
+<input type="hidden" name="ts23_0" value="F" />
+<input type="hidden" name="ts32_0" value="T" />
+<input type="hidden" name="ts38_0" value="F" />
+<input type="hidden" name="ts46_0" value="F" />
+<input type="hidden" name="ts54_0" value="T" />
+<input type="hidden" name="delegateHasErrorsIf_0" value="F" />
+<input type="hidden" name="If_37" value="T" />
+<input type="hidden" name="For_10" value="VHIBRN8:Phone:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAAgOGE4MWM4ZjAyMjllNjllNzAxMjQxMTQ2NjMyZjFkZDg=" />
+<input type="hidden" name="If_0_6" value="F" />
+<input type="hidden" name="For_10" value="VHIBRN8:Phone:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAAgOGE4MWM4ZjAyMjllNjllNzAxMjQxMTZkZDI3MzIyYWQ=" />
+<input type="hidden" name="If_0_8" value="F" />
+<input type="hidden" name="If_39" value="F" />
+<input type="hidden" name="If_1_6" value="F" />
+<input type="hidden" name="If_2_26" value="F" />
+<input type="hidden" name="If_41" value="T" />
+<input type="hidden" name="If_0_10" value="T" />
+<input type="hidden" name="If_43" value="T" />
+<input type="hidden" name="If_0_12" value="T" />
+<input type="hidden" name="If_45" value="T" />
+<input type="hidden" name="If_0_14" value="T" />
+<input type="hidden" name="If_47" value="F" />
+<input type="hidden" name="If_1_8" value="F" />
+<input type="hidden" name="If_2_28" value="F" />
+<input type="hidden" name="If_49" value="T" />
+<input type="hidden" name="If_0_16" value="T" />
+<input type="hidden" name="If_51" value="T" />
+<input type="hidden" name="If_0_18" value="T" />
+<input type="hidden" name="If_53" value="T" />
+<input type="hidden" name="If_0_20" value="T" />
+<input type="hidden" name="If_55" value="F" />
+<input type="hidden" name="If_1_10" value="F" />
+<input type="hidden" name="If_2_30" value="F" />
+<input type="hidden" name="If_57" value="T" />
+<input type="hidden" name="If_0_22" value="T" />
+<input type="hidden" name="If_59" value="T" />
+<input type="hidden" name="If_0_24" value="T" />
+<input type="hidden" name="If_61" value="T" />
+<input type="hidden" name="If_0_26" value="T" />
+<input type="hidden" name="If_63" value="T" />
+<input type="hidden" name="If_0_28" value="T" />
+<input type="hidden" name="If_1_12" value="F" />
+<input type="hidden" name="If_2_32" value="F" />
+<input type="hidden" name="If_65" value="T" />
+<input type="hidden" name="If_0_30" value="T" />
+<input type="hidden" name="If_67" value="T" />
+<input type="hidden" name="If_0_32" value="T" />
+<input type="hidden" name="If_69" value="T" />
+<input type="hidden" name="If_0_34" value="T" />
+<input type="hidden" name="If_71" value="F" />
+<input type="hidden" name="If_1_14" value="F" />
+<input type="hidden" name="If_2_34" value="F" />
+<input type="hidden" name="If_73" value="T" />
+<input type="hidden" name="If_0_36" value="T" />
+<input type="hidden" name="If_75" value="T" />
+<input type="hidden" name="If_0_38" value="T" />
+<input type="hidden" name="If_77" value="F" />
+<input type="hidden" name="If_79" value="T" />
+<input type="hidden" name="If_0_40" value="T" />
+<input type="hidden" name="If_1_16" value="F" />
+<input type="hidden" name="If_2_36" value="F" />
+<input type="hidden" name="If_81" value="T" />
+<input type="hidden" name="If_0_42" value="T" />
+<input type="hidden" name="If_83" value="T" />
+<input type="hidden" name="If_0_44" value="T" />
+<input type="hidden" name="If_85" value="T" />
+<input type="hidden" name="If_0_46" value="T" />
+<input type="hidden" name="If_87" value="F" />
+<input type="hidden" name="If_1_18" value="F" />
+<input type="hidden" name="If_2_38" value="F" />
+<input type="hidden" name="If_89" value="T" />
+<input type="hidden" name="If_0_48" value="T" />
+<input type="hidden" name="If_91" value="T" />
+<input type="hidden" name="If_0_50" value="T" />
+<input type="hidden" name="If_93" value="T" />
+<input type="hidden" name="If_0_52" value="T" />
+<input type="hidden" name="If_95" value="F" />
+<input type="hidden" name="If_1_20" value="F" />
+<input type="hidden" name="If_2_40" value="F" />
+<input type="hidden" name="If_97" value="T" />
+<input type="hidden" name="If_0_54" value="T" />
+<input type="hidden" name="If_99" value="T" />
+<input type="hidden" name="If_0_56" value="T" />
+<input type="hidden" name="If_101" value="T" />
+<input type="hidden" name="If_0_58" value="T" />
+<input type="hidden" name="If_103" value="F" />
+<input type="hidden" name="If_1_22" value="F" />
+<input type="hidden" name="If_2_42" value="F" />
+<input type="hidden" name="If_105" value="T" />
+<input type="hidden" name="If_0_60" value="T" />
+<input type="hidden" name="If_107" value="T" />
+<input type="hidden" name="If_0_62" value="T" />
+<input type="hidden" name="If_109" value="T" />
+<input type="hidden" name="If_0_64" value="T" />
+<input type="hidden" name="If_111" value="F" />
+<input type="hidden" name="If_1_24" value="F" />
+<input type="hidden" name="If_2_44" value="F" />
+<input type="hidden" name="If_113" value="T" />
+<input type="hidden" name="If_0_66" value="T" />
+<input type="hidden" name="If_115" value="T" />
+<input type="hidden" name="If_0_68" value="T" />
+<input type="hidden" name="If_117" value="T" />
+<input type="hidden" name="If_0_70" value="T" />
+<input type="hidden" name="If_119" value="F" />
+<input type="hidden" name="If_1_26" value="F" />
+<input type="hidden" name="If_2_46" value="F" />
+<input type="hidden" name="If_121" value="T" />
+<input type="hidden" name="If_0_72" value="T" />
+<input type="hidden" name="If_123" value="T" />
+<input type="hidden" name="If_0_74" value="T" />
+<input type="hidden" name="If_125" value="T" />
+<input type="hidden" name="If_0_76" value="T" />
+<input type="hidden" name="If_127" value="F" />
+<input type="hidden" name="If_1_28" value="F" />
+<input type="hidden" name="If_2_48" value="F" />
+<input type="hidden" name="If_129" value="T" />
+<input type="hidden" name="If_0_78" value="T" />
+<input type="hidden" name="If_131" value="T" />
+<input type="hidden" name="If_0_80" value="T" />
+<input type="hidden" name="If_133" value="T" />
+<input type="hidden" name="If_0_82" value="T" />
+<input type="hidden" name="If_135" value="F" />
+<input type="hidden" name="If_1_30" value="F" />
+<input type="hidden" name="If_2_50" value="F" />
+<input type="hidden" name="If_137" value="T" />
+<input type="hidden" name="If_0_84" value="T" />
+<input type="hidden" name="If_139" value="T" />
+<input type="hidden" name="If_0_86" value="T" />
+<input type="hidden" name="If_141" value="T" />
+<input type="hidden" name="If_0_88" value="T" />
+<input type="hidden" name="If_143" value="F" />
+<input type="hidden" name="If_1_32" value="F" />
+<input type="hidden" name="If_2_52" value="F" />
+<input type="hidden" name="If_145" value="T" />
+<input type="hidden" name="If_0_90" value="T" />
+<input type="hidden" name="If_147" value="T" />
+<input type="hidden" name="If_0_92" value="T" />
+<input type="hidden" name="If_149" value="T" />
+<input type="hidden" name="If_0_94" value="T" />
+<input type="hidden" name="If_151" value="F" />
+<input type="hidden" name="If_1_34" value="F" />
+<input type="hidden" name="If_2_54" value="F" />
+<input type="hidden" name="If_153" value="T" />
+<input type="hidden" name="If_0_96" value="T" />
+<input type="hidden" name="If_155" value="T" />
+<input type="hidden" name="If_0_98" value="T" />
+<input type="hidden" name="If_157" value="T" />
+<input type="hidden" name="If_0_100" value="T" />
+<input type="hidden" name="If_159" value="F" />
+<input type="hidden" name="If_1_36" value="T" />
+<input type="hidden" name="Volunteer Background_1" value="T" />
+<input type="hidden" name="If_161" value="T" />
+<input type="hidden" name="If_0_102" value="T" />
+<input type="hidden" name="If_163" value="T" />
+<input type="hidden" name="If_0_104" value="T" />
+<input type="hidden" name="If_165" value="T" />
+<input type="hidden" name="If_0_106" value="T" />
+<input type="hidden" name="If_167" value="T" />
+<input type="hidden" name="If_0_108" value="T" />
+<input type="hidden" name="If_169" value="T" />
+<input type="hidden" name="If_0_110" value="T" />
+<input type="hidden" name="If_171" value="T" />
+<input type="hidden" name="If_0_112" value="T" />
+<input type="hidden" name="If_173" value="T" />
+<input type="hidden" name="If_0_114" value="T" />
+<input type="hidden" name="If_175" value="T" />
+<input type="hidden" name="If_0_116" value="T" />
+<input type="hidden" name="If_177" value="T" />
+<input type="hidden" name="If_0_118" value="T" />
+<input type="hidden" name="If_0_120" value="T" />
+<input type="hidden" name="If_1_38" value="F" />
+<input type="hidden" name="If_2_56" value="T" />
+</div>
+   	
+   	
+   	<div id="nameBadge">
+   		John Opitz (02/12/1958)
+   	</div>
+    <div id="legend">
+        Annotations that may appear in front of field labels:
+        <ul>
+            <li>[E] - A field that has been explicitly edited by the volunteer or an administrator, or changed by the system since the last time the volunteer was in a validated state.</li>
+            <li>[V] - A field that has been verified and overwritten from a trusted board data source.</li>
+        </ul>
+    </div>
+    <ul class="postnav">
+	
+		
+        
+            <li>
+                <a id="changePage" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=0">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7">Personal Information</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+		
+        
+            <li>
+                <a id="changePage_0" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=1">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7_0">Credentials and Licenses</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+		
+        
+            <li>
+                <a id="changePage_1" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=2">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7_1">Background Information</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+		
+        
+            <li>
+                <a id="changePage_2" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=3">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7_2">Acknowledgement</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+	<li>
+		
+			<a class="on" href="javascript:void(0)">
+                <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                <span>Summary</span>
+                <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+            </a>
+		
+		
+	</li>
+</ul>
+
+   
+    <span id="ts32_0">
+        <div id="noPrint" class="mailLink">
+            <a id="ts34" href="/app?component=%24TrimmedSummary.ts34&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">
+                Email Volunteer
+            </a>
+        </div>
+    	
+    </span>
+   
+   <span id="ts54_0">
+	<div class="summaryHeader">
+		Validate Submitted Volunteer
+	    <br/><br/>
+    </div>
+	
+    <div class="summaryInfo">
+	<div class="summaryInfoHeader">
+			<div class="summaryHeader">
+		<span class="    " id="Any_3">John Opitz</span>
+	</div>
+	    <span class="summaryQuestionText " id="Any_0_0">Address 1</span>
+	    <div class="summaryAnswer">
+			6961 Yorkston Street
+	    </div>
+	<br/>
+	    <span class="summaryQuestionText " id="Any_1_8">Address 2</span>
+	    <div class="summaryAnswer">
+			
+	    </div>
+	<br/>
+	    <span class="summaryQuestionText " id="Any_2_0">City</span>
+	    <div class="summaryAnswer">
+			Watauga
+	    </div>
+	<br/>
+	    <span class="summaryQuestionText " id="Any_4">State</span>
+	    <div class="summaryAnswer">
+			Texas
+	    </div>
+	<br/>
+	    <span class="summaryQuestionText " id="Any_5">Zip</span>
+	    <div class="summaryAnswer">
+			76148
+	    </div>
+	<br/>
+	    <span class="summaryQuestionText " id="Any_6">County</span>
+	    <div class="summaryAnswer">
+			<span id="If_37">
+				Tarrant County
+			</span>
+	    </div>
+	<br/>
+
+	<div id="CONTACTMULTI">
+		<span id="For_10">
+			<br/>
+		    <span class="summaryQuestionText " id="Any_7">Contact</span>
+		    <div class="summaryAnswer">
+			    Mobile Phone
+		    </div>
+			<br/>
+			<span class="summaryQuestionText " id="Any_8">Phone</span>
+	    	<div class="summaryAnswer">
+				817-602-3765
+		    </div>
+
+			
+		    <br/>		
+		</span><span id="For_11">
+			<br/>
+		    <span class="summaryQuestionText " id="Any_9">Contact</span>
+		    <div class="summaryAnswer">
+			    Home Phone
+		    </div>
+			<br/>
+			<span class="summaryQuestionText " id="Any_10">Phone</span>
+	    	<div class="summaryAnswer">
+				817-607-3265
+		    </div>
+
+			
+		    <br/>		
+		</span>
+	</div>
+	<br/>
+	<br/>
+	
+	    <span class="summaryQuestionText">
+	        Credential Level
+	    </span>
+	    <div class="summaryAnswer">
+	        NONE
+	    </div>
+	    <br/>
+	    <span class="summaryQuestionText">
+	        Profession
+	    </span>
+	    <div class="summaryAnswer">
+	        Lay and Non-Healthcare Volunteer
+	    </div>
+	    
+        <br/>
+		<br/>
+        <span class="summaryQuestionText">Override Credential Level:&nbsp;</span>
+        <div class="summaryAnswer">
+			<input type="checkbox" name="overrideCheckbox" id="overrideCheckbox" maxlength="1" />
+		</div>
+		<br/>
+		<br/>
+        <span class="summaryQuestionText">New Credential Level:&nbsp;</span>
+        <div class="summaryAnswer">
+			<input type="text" name="overrideLevel" value="" id="overrideLevel" maxlength="1" />
+		</div>
+		<br/>
+		<br/>
+        <span class="summaryQuestionText">Reason For New Credential Level:&nbsp;</span>
+        <div class="summaryAnswer">
+			<input type="text" name="overrideReason" value="" id="overrideReason" maxlength="255" />
+		</div>
+        <br/>
+        <br/>
+	
+    </div>
+	<div class="summaryImage">
+	    
+	    <span>
+            No photo submitted
+        </span>
+        <br/>
+        <div class="sourcesHeader">Trusted Data Sources:</div>
+        <span id="For_13">
+            <div class="sourceDescription">
+            	<span title="Geocode volunteer address" id="Any_11">Geocode&nbsp;volunteer...</span>
+ 
+            </div>
+        </span>
+        <br/>
+	</div>
+	</div>
+    <br />
+	
+
+
+
+
+
+
+
+
+
+
+<span id="columns">
+	<div class="columns_2" id="Any_2_1">
+		
+	</div>
+</span><span id="columns_0">
+	<div class="columns_2" id="Any_2_2">
+		<span id="elements_0">
+			
+	<div id="DISASTERMULTI">
+        <span id="For_15"></span>
+		<span id="For_17">
+			
+	
+	<fieldset>
+        
+		<span id="For_18">
+			
+	<div id="If_41">
+		<div id="If_0_10">
+			<br/>
+			<span class="summaryQuestionText " id="Any_12">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Fundamentals of Disaster Assessment 
+		</div>
+	</div>
+
+		</span><span id="For_19">
+			
+	<div id="If_43">
+		<div id="If_0_12">
+			<br/>
+			<span class="summaryQuestionText " id="Any_13">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			ARC
+		</div>
+	</div>
+
+		</span><span id="For_20">
+			
+	<div id="If_45">
+		<div id="If_0_14">
+			<br/>
+			<span class="summaryQuestionText " id="Any_14">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			11/08/2008
+		</div>
+	</div>
+
+		</span><span id="For_21">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_23">
+			
+	
+	<fieldset>
+        
+		<span id="For_24">
+			
+	<div id="If_49">
+		<div id="If_0_16">
+			<br/>
+			<span class="summaryQuestionText " id="Any_15">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			CERT-Community Emergency Response Team
+		</div>
+	</div>
+
+		</span><span id="For_25">
+			
+	<div id="If_51">
+		<div id="If_0_18">
+			<br/>
+			<span class="summaryQuestionText " id="Any_16">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Watauga Police/Fire Dept.
+		</div>
+	</div>
+
+		</span><span id="For_26">
+			
+	<div id="If_53">
+		<div id="If_0_20">
+			<br/>
+			<span class="summaryQuestionText " id="Any_17">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			11/10/2007
+		</div>
+	</div>
+
+		</span><span id="For_27">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_29">
+			
+	
+	<fieldset>
+        
+		<span id="For_30">
+			
+	<div id="If_57">
+		<div id="If_0_22">
+			<br/>
+			<span class="summaryQuestionText " id="Any_18">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Healthcare Provider
+		</div>
+	</div>
+
+		</span><span id="For_31">
+			
+	<div id="If_59">
+		<div id="If_0_24">
+			<br/>
+			<span class="summaryQuestionText " id="Any_19">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			American Heart Assoc.- Colleyville Fire Dept.
+		</div>
+	</div>
+
+		</span><span id="For_32">
+			
+	<div id="If_61">
+		<div id="If_0_26">
+			<br/>
+			<span class="summaryQuestionText " id="Any_20">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/18/2008
+		</div>
+	</div>
+
+		</span><span id="For_33">
+			
+	<div id="If_63">
+		<div id="If_0_28">
+			<br/>
+			<span class="summaryQuestionText " id="Any_21">
+				Class certification expiration Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/28/2010
+		</div>
+	</div>
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_35">
+			
+	
+	<fieldset>
+        
+		<span id="For_36">
+			
+	<div id="If_65">
+		<div id="If_0_30">
+			<br/>
+			<span class="summaryQuestionText " id="Any_22">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			WMD-PER-304 - Medical Effects of Primary Blast Injuries 
+		</div>
+	</div>
+
+		</span><span id="For_37">
+			
+	<div id="If_67">
+		<div id="If_0_32">
+			<br/>
+			<span class="summaryQuestionText " id="Any_23">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			TEEX
+		</div>
+	</div>
+
+		</span><span id="For_38">
+			
+	<div id="If_69">
+		<div id="If_0_34">
+			<br/>
+			<span class="summaryQuestionText " id="Any_24">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			01/08/2009
+		</div>
+	</div>
+
+		</span><span id="For_39">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_41">
+			
+	
+	<fieldset>
+        
+		<span id="For_42">
+			
+	<div id="If_73">
+		<div id="If_0_36">
+			<br/>
+			<span class="summaryQuestionText " id="Any_25">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Core Disaster Life Support 
+		</div>
+	</div>
+
+		</span><span id="For_43">
+			
+	<div id="If_75">
+		<div id="If_0_38">
+			<br/>
+			<span class="summaryQuestionText " id="Any_26">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			AMA
+		</div>
+	</div>
+
+		</span><span id="For_44">
+			
+	
+
+		</span><span id="For_45">
+			
+	<div id="If_79">
+		<div id="If_0_40">
+			<br/>
+			<span class="summaryQuestionText " id="Any_27">
+				Class certification expiration Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			12/31/2012
+		</div>
+	</div>
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_47">
+			
+	
+	<fieldset>
+        
+		<span id="For_48">
+			
+	<div id="If_81">
+		<div id="If_0_42">
+			<br/>
+			<span class="summaryQuestionText " id="Any_28">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Disaster Triage Exercises
+		</div>
+	</div>
+
+		</span><span id="For_49">
+			
+	<div id="If_83">
+		<div id="If_0_44">
+			<br/>
+			<span class="summaryQuestionText " id="Any_29">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Pacific Emergency Management
+		</div>
+	</div>
+
+		</span><span id="For_50">
+			
+	<div id="If_85">
+		<div id="If_0_46">
+			<br/>
+			<span class="summaryQuestionText " id="Any_30">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			07/22/2008
+		</div>
+	</div>
+
+		</span><span id="For_51">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_53">
+			
+	
+	<fieldset>
+        
+		<span id="For_54">
+			
+	<div id="If_89">
+		<div id="If_0_48">
+			<br/>
+			<span class="summaryQuestionText " id="Any_31">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Disaster Triage for Mass Casualty Incidents
+		</div>
+	</div>
+
+		</span><span id="For_55">
+			
+	<div id="If_91">
+		<div id="If_0_50">
+			<br/>
+			<span class="summaryQuestionText " id="Any_32">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Pacific Emergency Management
+		</div>
+	</div>
+
+		</span><span id="For_56">
+			
+	<div id="If_93">
+		<div id="If_0_52">
+			<br/>
+			<span class="summaryQuestionText " id="Any_33">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			07/22/2008
+		</div>
+	</div>
+
+		</span><span id="For_57">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_59">
+			
+	
+	<fieldset>
+        
+		<span id="For_60">
+			
+	<div id="If_97">
+		<div id="If_0_54">
+			<br/>
+			<span class="summaryQuestionText " id="Any_34">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			AWR-111-W - Basic EMS Concepts for WMD Incidents
+		</div>
+	</div>
+
+		</span><span id="For_61">
+			
+	<div id="If_99">
+		<div id="If_0_56">
+			<br/>
+			<span class="summaryQuestionText " id="Any_35">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			TEEX
+		</div>
+	</div>
+
+		</span><span id="For_62">
+			
+	<div id="If_101">
+		<div id="If_0_58">
+			<br/>
+			<span class="summaryQuestionText " id="Any_36">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/03/2008
+		</div>
+	</div>
+
+		</span><span id="For_63">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_65">
+			
+	
+	<fieldset>
+        
+		<span id="For_66">
+			
+	<div id="If_105">
+		<div id="If_0_60">
+			<br/>
+			<span class="summaryQuestionText " id="Any_37">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			AWR-110-W - WMD/Terrorism Awareness for Emergency Responders
+		</div>
+	</div>
+
+		</span><span id="For_67">
+			
+	<div id="If_107">
+		<div id="If_0_62">
+			<br/>
+			<span class="summaryQuestionText " id="Any_38">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			TEEX
+		</div>
+	</div>
+
+		</span><span id="For_68">
+			
+	<div id="If_109">
+		<div id="If_0_64">
+			<br/>
+			<span class="summaryQuestionText " id="Any_39">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			01/30/2008
+		</div>
+	</div>
+
+		</span><span id="For_69">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_71">
+			
+	
+	<fieldset>
+        
+		<span id="For_72">
+			
+	<div id="If_113">
+		<div id="If_0_66">
+			<br/>
+			<span class="summaryQuestionText " id="Any_40">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Technical Rescue Awareness
+		</div>
+	</div>
+
+		</span><span id="For_73">
+			
+	<div id="If_115">
+		<div id="If_0_68">
+			<br/>
+			<span class="summaryQuestionText " id="Any_41">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Washington State H.S. Institute
+		</div>
+	</div>
+
+		</span><span id="For_74">
+			
+	<div id="If_117">
+		<div id="If_0_70">
+			<br/>
+			<span class="summaryQuestionText " id="Any_42">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			01/26/2008
+		</div>
+	</div>
+
+		</span><span id="For_75">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_77">
+			
+	
+	<fieldset>
+        
+		<span id="For_78">
+			
+	<div id="If_121">
+		<div id="If_0_72">
+			<br/>
+			<span class="summaryQuestionText " id="Any_43">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Personal Protective Equipment (PPE)
+		</div>
+	</div>
+
+		</span><span id="For_79">
+			
+	<div id="If_123">
+		<div id="If_0_74">
+			<br/>
+			<span class="summaryQuestionText " id="Any_44">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Washington State H.S. Institute
+		</div>
+	</div>
+
+		</span><span id="For_80">
+			
+	<div id="If_125">
+		<div id="If_0_76">
+			<br/>
+			<span class="summaryQuestionText " id="Any_45">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			01/28/2008
+		</div>
+	</div>
+
+		</span><span id="For_81">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_83">
+			
+	
+	<fieldset>
+        
+		<span id="For_84">
+			
+	<div id="If_129">
+		<div id="If_0_78">
+			<br/>
+			<span class="summaryQuestionText " id="Any_46">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Mass Decontamination 
+		</div>
+	</div>
+
+		</span><span id="For_85">
+			
+	<div id="If_131">
+		<div id="If_0_80">
+			<br/>
+			<span class="summaryQuestionText " id="Any_47">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Washington State H.S. Institute
+		</div>
+	</div>
+
+		</span><span id="For_86">
+			
+	<div id="If_133">
+		<div id="If_0_82">
+			<br/>
+			<span class="summaryQuestionText " id="Any_48">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			01/31/2008
+		</div>
+	</div>
+
+		</span><span id="For_87">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_89">
+			
+	
+	<fieldset>
+        
+		<span id="For_90">
+			
+	<div id="If_137">
+		<div id="If_0_84">
+			<br/>
+			<span class="summaryQuestionText " id="Any_49">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Introduction to Anti-Terrorism
+		</div>
+	</div>
+
+		</span><span id="For_91">
+			
+	<div id="If_139">
+		<div id="If_0_86">
+			<br/>
+			<span class="summaryQuestionText " id="Any_50">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			National Terrorism Prepareness Institute
+		</div>
+	</div>
+
+		</span><span id="For_92">
+			
+	<div id="If_141">
+		<div id="If_0_88">
+			<br/>
+			<span class="summaryQuestionText " id="Any_51">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/06/2008
+		</div>
+	</div>
+
+		</span><span id="For_93">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_95">
+			
+	
+	<fieldset>
+        
+		<span id="For_96">
+			
+	<div id="If_145">
+		<div id="If_0_90">
+			<br/>
+			<span class="summaryQuestionText " id="Any_52">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			An Introduction to Hazardous Materials Response 
+		</div>
+	</div>
+
+		</span><span id="For_97">
+			
+	<div id="If_147">
+		<div id="If_0_92">
+			<br/>
+			<span class="summaryQuestionText " id="Any_53">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Washington State H.S. Institute
+		</div>
+	</div>
+
+		</span><span id="For_98">
+			
+	<div id="If_149">
+		<div id="If_0_94">
+			<br/>
+			<span class="summaryQuestionText " id="Any_54">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/06/2008
+		</div>
+	</div>
+
+		</span><span id="For_99">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span><span id="For_101">
+			
+	
+	<fieldset>
+        
+		<span id="For_102">
+			
+	<div id="If_153">
+		<div id="If_0_96">
+			<br/>
+			<span class="summaryQuestionText " id="Any_55">
+				Training Title
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Traffic Stops 
+		</div>
+	</div>
+
+		</span><span id="For_103">
+			
+	<div id="If_155">
+		<div id="If_0_98">
+			<br/>
+			<span class="summaryQuestionText " id="Any_56">
+				Institution Name
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			National Terrorism Prepareness Institute
+		</div>
+	</div>
+
+		</span><span id="For_104">
+			
+	<div id="If_157">
+		<div id="If_0_100">
+			<br/>
+			<span class="summaryQuestionText " id="Any_57">
+				Completion Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			02/07/2008
+		</div>
+	</div>
+
+		</span><span id="For_105">
+			
+	
+
+		</span>
+    </fieldset>
+
+		</span>
+        <br/>
+    </div>
+
+		</span><span id="elements_1">
+			
+	<span id="If_1_36">
+		<br/>
+	</span>
+	<fieldset id="Volunteer Background">
+        <legend id="Volunteer Background_1" class="summaryLegend">
+            Volunteer Background
+        </legend>
+		<span id="For_108">
+			
+	<div id="If_161">
+		<div id="If_0_102">
+			<br/>
+			<span class="summaryQuestionText " id="Any_58">
+				Would you be available for situational or 'Just In Time' training?
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Yes
+		</div>
+	</div>
+
+		</span>
+    </fieldset>
+
+		</span><span id="elements_2">
+			
+	<div id="If_163">
+		<div id="If_0_104">
+			<br/>
+			<span class="summaryQuestionText " id="Any_59">
+				I hereby give my consent to the State to use my information, as deemed necessary, for it's volunteer efforts
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Yes
+		</div>
+	</div>
+
+		</span><span id="elements_3">
+			
+	<div id="If_165">
+		<div id="If_0_106">
+			<br/>
+			<span class="summaryQuestionText " id="Any_60">
+				I hereby acknowledge that all statements made in this application are true
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Yes
+		</div>
+	</div>
+
+		</span><span id="elements_4">
+			
+	<div id="If_167">
+		<div id="If_0_108">
+			<br/>
+			<span class="summaryQuestionText " id="Any_61">
+				I hereby give the State consent to perform reference and background checks
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Yes
+		</div>
+	</div>
+
+		</span><span id="elements_5">
+			
+	<div id="If_169">
+		<div id="If_0_110">
+			<br/>
+			<span class="summaryQuestionText " id="Any_62">
+				Consent/Pledge Date
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			10/01/2009
+		</div>
+	</div>
+
+		</span><span id="elements_6">
+			
+	<div id="If_171">
+		<div id="If_0_112">
+			<br/>
+			<span class="summaryQuestionText " id="Any_63">
+				Deployment Preference
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			No Preference
+		</div>
+	</div>
+
+		</span><span id="elements_7">
+			
+	<div id="If_173">
+		<div id="If_0_114">
+			<br/>
+			<span class="summaryQuestionText " id="Any_64">
+				Travel Distance Preference
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			up to 50
+		</div>
+	</div>
+
+		</span><span id="elements_8">
+			
+	<div id="If_175">
+		<div id="If_0_116">
+			<br/>
+			<span class="summaryQuestionText " id="Any_65">
+				Deployment Duration Preference
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			up to 10
+		</div>
+	</div>
+
+		</span><span id="elements_9">
+			
+	<div id="If_177">
+		<div id="If_0_118">
+			<br/>
+			<span class="summaryQuestionText " id="Any_66">
+				In the event of a declared national emergency, would you consider volunteering to work under the auspices of The Federal Government?   If you check "Yes", in the event of a national emergency, the information you provide will be made available to The Federal Government upon its request
+			</span>
+		</div>
+		<div class="summaryAnswer">
+			Yes
+		</div>
+	</div>
+
+		</span>
+	</div>
+</span>
+
+</span>
+
+<br/>
+<br/>
+<div class="submitButtons">
+    <span id="If_0_120">
+        <input type="submit" name="previousButton" id="previousButton" value="Previous" />
+		
+    </span>
+  
+  <span>
+  	<span id="If_2_56">
+		<input type="submit" name="cancelButton" id="cancelButton" value="Submit" />
+		  
+  	</span>
+  </span>
+</div>
+
+  <br/>
+    <script type="text/javascript" src="scripts/validateSubmittedVolunteer.js"></script>
+</form>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("dynamicform");
+if (dojo.byId('previousButton')) {
+	dojo.event.connectOnce("before", dojo.byId('previousButton'), "onclick", onclick_previousButton);
+}
+if (dojo.byId('cancelButton')) {
+	dojo.event.connectOnce("before", dojo.byId('cancelButton'), "onclick", onclick_cancelButton);
+}});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 125 ms -->
+
+
+

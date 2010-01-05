@@ -1,0 +1,1308 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: ValidateSubmittedVolunteer -->
+<!-- Generated: Thu Dec 17 10:23:49 CST 2009 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ Validate Volunteer Registration</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=418c4c92e59c6661e4cd173921066f57&amp;service=asset&amp;path=%2Fstyles%2FvalidateSubmittedVolunteer.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span><span id="For_3">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_3"></link>
+    </span><span id="For_4">
+    	<link media="screen" href="/app?digest=d41d8cd98f00b204e9800998ecf8427e&amp;service=asset&amp;path=%2Fstyles%2FdynFormEdit.css" type="text/css" rel="stylesheet" id="Any_1_4"></link>
+    </span><span id="For_5">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_5"></link>
+    </span><span id="For_6">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_6"></link>
+    </span><span id="For_7">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_7"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript" src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePicker.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+var calendar_dob;
+dojo.require("dojo.event");
+function doNothing() { return false; }
+		
+
+function onclick_nextButton() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('nextButton'), "color", "lightgrey");
+	dojo.byId('nextButton').onclick = doNothing;
+}
+dojo.require("tapestry.event");
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=ValidateSubmittedVolunteer&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+<script src="scripts/magicdate.js" type="text/javascript"></script>
+<style type="text/css">@import url("styles/default.css");</style>
+<style type="text/css">@import url("styles/dynFormEditView.css");</style>
+<style type="text/css">@import url("styles/home.css");</style>
+<style type="text/css">@import url("styles/login.css");</style>
+<style type="text/css">@import url("styles/calendar-blue.css");</style>
+
+<form method="post" action="/app" id="dynamicform">
+<div style="display:none;" id="dynamicformhidden"><input type="hidden" name="formids" value="userId,formId,ts1_0,ts6_0,ts1_2,ts6_2,ts1_4,ts6_4,ts1_6,ts6_6,ts14_0,ts23_0,ts24_0,ts24_1,If_37,name,middle,last,suffix,If_0_6,If_1_6,dob,If_2_26,langCount,language,If_39,If_41,If_43,street1,street2,city,state,zip,county,For_12,phoneType,phone,extension,If_45,phoneType_0,phone_0,extension_0,If_47,If_7_1,If_8_1,employerName,employerAddress1,employerAddress2,employerCity,employerState,employerZip,employerCounty,employerPhone,employerExtension,employmentSetting,militaryService,physicalIssues,ts32_0,ts46_0,pages_0,dfev14_0,dfev6_0,dvef203_0,dvef204_0,dvef205_0,stateEmployee,dvef203_2,dvef204_2,dvef205_2,nameIsSame,ts54_0,If_0_8,If_1_8,nextButton" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVQy07DMBCMKiEhvsNHH+JQoD22gopIgCrKHZl4k1r4EdlupPJN/Br/wNpxFLh4dmfHO7v7/VNcfBXF4mpxST24QTZAStrzLkJjdW8NmJBiE7g04DD24L20JkY9Ppu+V7LhAamd4zr+3FonkvRwBKUQBSjoeIi1jTmP73uJ6KB14I+1CejOVd0it7OOrJOCkRVF6vqWPigPpFpRLoSMTlw9AhdvvPPJTsSeUuPcT9J8TvHe2UGOgwg5yDi0sp3FtG7R/SYCG6EiFaLBG8Rto1sS3EsHTcg9UXaXR6/GdIUwS9JCyK7/s2xqmD+xLGMsY+Q1HvcZzCmHL3zYcjcnfxR1AO3JNCx6Lqk/fcyVak33+Q5YrJaTkMX40DjZxw1fweBh0uEYFWfDtWxa6zQpfwHHEnx/EwIAAA==" />
+<input type="hidden" name="component" value="dynamicform" />
+<input type="hidden" name="page" value="ValidateSubmittedVolunteer" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="userId" id="userId" value="S8a81c8f0229e69e7012411408e2e1ce7" />
+<input type="hidden" name="formId" id="formId" value="S8a81c8f0229e69e701241146635e1dd9" />
+<input type="hidden" name="ts1_0" value="T" />
+<input type="hidden" name="ts6_0" value="F" />
+<input type="hidden" name="ts1_2" value="F" />
+<input type="hidden" name="ts6_2" value="T" />
+<input type="hidden" name="ts1_4" value="F" />
+<input type="hidden" name="ts6_4" value="T" />
+<input type="hidden" name="ts1_6" value="F" />
+<input type="hidden" name="ts6_6" value="T" />
+<input type="hidden" name="ts14_0" value="F" />
+<input type="hidden" name="ts23_0" value="T" />
+<input type="hidden" name="If_37" value="F" />
+<input type="hidden" name="If_0_6" value="F" />
+<input type="hidden" name="If_1_6" value="F" />
+<input type="hidden" name="If_2_26" value="F" />
+<input type="hidden" name="langCount" id="langCount" value="1" />
+<input type="hidden" name="If_39" value="F" />
+<input type="hidden" name="If_41" value="F" />
+<input type="hidden" name="If_43" value="F" />
+<input type="hidden" name="For_12" value="VHIBRN8:Phone:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAAgOGE4MWM4ZjAyMjllNjllNzAxMjQxMTQ2NjMyZjFkZDg=" />
+<input type="hidden" name="If_45" value="F" />
+<input type="hidden" name="For_12" value="VHIBRN8:Phone:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAAgOGE4MWM4ZjAyMjllNjllNzAxMjQxMTZkZDI3MzIyYWQ=" />
+<input type="hidden" name="If_47" value="F" />
+<input type="hidden" name="If_7_1" value="F" />
+<input type="hidden" name="If_8_1" value="F" />
+<input type="hidden" name="ts32_0" value="F" />
+<input type="hidden" name="ts46_0" value="T" />
+<input type="hidden" name="pages_0" value="PS001" />
+<input type="hidden" name="dfev14_0" value="PS" />
+<input type="hidden" name="dfev6_0" value="PS001" />
+<input type="hidden" name="dvef203_0" value="T" />
+<input type="hidden" name="dvef204_0" value="T" />
+<input type="hidden" name="dvef205_0" value="F" />
+<input type="hidden" name="dfev6_0" value="PS002" />
+<input type="hidden" name="dvef203_2" value="T" />
+<input type="hidden" name="dvef204_2" value="T" />
+<input type="hidden" name="dvef205_2" value="F" />
+<input type="hidden" name="ts54_0" value="F" />
+<input type="hidden" name="If_0_8" value="F" />
+<input type="hidden" name="If_1_8" value="T" />
+</div>
+   	
+   	
+   	<div id="nameBadge">
+   		John Opitz (02/12/1958)
+   	</div>
+    <div id="legend">
+        Annotations that may appear in front of field labels:
+        <ul>
+            <li>[E] - A field that has been explicitly edited by the volunteer or an administrator, or changed by the system since the last time the volunteer was in a validated state.</li>
+            <li>[V] - A field that has been verified and overwritten from a trusted board data source.</li>
+        </ul>
+    </div>
+    <ul class="postnav">
+	
+		
+			<li><a class="on" href="javascript:void(0)">
+                <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                <span id="ts4">Personal Information</span>
+                <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+            </a></li>
+        
+        
+	
+		
+        
+            <li>
+                <a id="changePage" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=1">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7">Credentials and Licenses</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+		
+        
+            <li>
+                <a id="changePage_0" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=2">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7_0">Background Information</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+		
+        
+            <li>
+                <a id="changePage_1" href="/app?component=%24TrimmedSummary.changePage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=3">
+                    <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                    <span id="ts7_1">Acknowledgement</span>
+                    <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+                </a>
+			</li>
+		
+	
+	<li>
+		
+		
+			<a id="showSummaryPage" href="/app?component=%24TrimmedSummary.showSummaryPage&amp;page=ValidateSubmittedVolunteer&amp;service=direct&amp;session=T&amp;sp=4">
+                <div class="rc"><div class="r1"><!-- --></div><div class="r2"><!-- --></div><div class="r3"><!-- --></div><div class="r4"><!-- --></div></div>
+                <span>Summary</span>
+                <div class="rc"><div class="r4"><!-- --></div><div class="r3"><!-- --></div><div class="r2"><!-- --></div><div class="r1"><!-- --></div></div>
+            </a>
+		
+	</li>
+</ul>
+
+   <span id="ts23_0">
+        <br/>
+<div class="page">
+<div class="onecolumn">
+<fieldset>
+	
+	<br/>
+    <span class="newRequiredLabel">* <label class="" for="name">First Name</label>:</span>
+    <input type="text" name="name" disabled="disabled" value="John" id="name" maxlength="32" />
+	<br/>
+    <span class="newNormalLabel"><label class="" for="middle">Middle Name</label>:</span>
+    <input type="text" name="middle" disabled="disabled" value="" id="middle" maxlength="32" />
+	<br/>
+    <span class="newRequiredLabel">* <label class="" for="last">Last Name</label>:</span>
+    <input type="text" name="last" disabled="disabled" value="Opitz" id="last" maxlength="32" />
+	<br/>
+    <span class="newNormalLabel"><label class="" for="suffix">Suffix</label>:</span>
+    <input type="text" name="suffix" disabled="disabled" value="" id="suffix" maxlength="32" />
+
+	
+</fieldset>
+    
+	
+	<br/>
+    <span class="newRequiredLabel">* <label class="" for="dob">Birth Date</label>:</span>
+    <input type="text" name="dob" value="02/12/1958" title="MM/dd/yyyy" disabled="disabled" id="dob" maxlength="16" class="date" onblur="return magicDate(this)" />&nbsp;<img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" />
+	
+	<br/>
+	<div id="LANGUAGEMULTI">
+		
+		
+		<div id="For_9">
+		    <span class="newRequiredLabel">* <label class="" for="language">Language Spoken</label>:</span>
+		    <select name="language" disabled="disabled" id="language" labelClass="">
+<option value="" disabled="true"></option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABMQ==" selected="selected">English</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABNQ==">American Sign Language</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMjM=">Cantonese</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzQ=">Farsi</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzY=">French</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzg=">German</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACNTY=">Korean</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACNjU=">Mandarin</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACOTE=">Spanish</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAADMTA2">Vietnamese</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAADMTEz">Other</option>
+</select>
+	        
+			<br/>
+
+	        
+	        
+	    </div>
+	    <br/>
+		
+	</div>
+	<br/>
+    <span class="newRequiredLabel">* <label class="" for="street1">Address 1</label>:</span>
+    <input type="text" name="street1" disabled="disabled" value="6961 Yorkston Street" id="street1" maxlength="64" />
+	<br/>
+    <span class="newNormalLabel"><label class="" for="street2">Address 2</label>:</span>
+    <input type="text" name="street2" disabled="disabled" value="" id="street2" maxlength="64" />
+	<br/>
+    <span class="newRequiredLabel">* <label class="" for="city">City</label>:</span>
+    <input type="text" name="city" disabled="disabled" value="Watauga" id="city" maxlength="64" />
+	<br/>
+	<span class="newRequiredLabel">* <label class="" for="state">State</label>:</span>
+    <select name="state" disabled="disabled" id="state">
+<option value=""></option>
+<option value="Alaska">Alaska</option>
+<option value="Alabama">Alabama</option>
+<option value="Arkansas">Arkansas</option>
+<option value="Arizona">Arizona</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Iowa">Iowa</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Maryland">Maryland</option>
+<option value="Maine">Maine</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Missouri">Missouri</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Montana">Montana</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Nebraska">Nebraska</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="Nevada">Nevada</option>
+<option value="New York">New York</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas" selected="selected">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Virginia">Virginia</option>
+<option value="Vermont">Vermont</option>
+<option value="Washington">Washington</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+	<span class="newRequiredLabel">* <label class="" for="zip">Zip</label>:</span>
+	<input type="text" name="zip" disabled="disabled" value="76148" id="zip" maxlength="10" />
+	<br/>
+	<span class="newNormalLabel"><label class="" for="county">County</label>:</span>
+    <select name="county" disabled="disabled" id="county">
+<option value=""></option>
+<option value="2616">Anderson County</option>
+<option value="2715">Andrews County</option>
+<option value="2573">Angelina County</option>
+<option value="2581">Aransas County</option>
+<option value="2681">Archer County</option>
+<option value="2738">Armstrong County</option>
+<option value="2548">Atascosa County</option>
+<option value="2699">Austin County</option>
+<option value="2760">Bailey County</option>
+<option value="2710">Bandera County</option>
+<option value="2734">Bastrop County</option>
+<option value="2635">Baylor County</option>
+<option value="2654">Bee County</option>
+<option value="2554">Bell County</option>
+<option value="2522">Bexar County</option>
+<option value="2638">Blanco County</option>
+<option value="2757">Borden County</option>
+<option value="2561">Bosque County</option>
+<option value="2705">Bowie County</option>
+<option value="2721">Brazoria County</option>
+<option value="2519">Brazos County</option>
+<option value="2526">Brewster County</option>
+<option value="2580">Briscoe County</option>
+<option value="2537">Brooks County</option>
+<option value="2594">Brown County</option>
+<option value="2611">Burleson County</option>
+<option value="2708">Burnet County</option>
+<option value="2740">Caldwell County</option>
+<option value="2595">Calhoun County</option>
+<option value="2691">Callahan County</option>
+<option value="2558">Cameron County</option>
+<option value="2664">Camp County</option>
+<option value="2631">Carson County</option>
+<option value="2660">Cass County</option>
+<option value="2752">Castro County</option>
+<option value="2618">Chambers County</option>
+<option value="2549">Cherokee County</option>
+<option value="2755">Childress County</option>
+<option value="2601">Clay County</option>
+<option value="2574">Cochran County</option>
+<option value="2733">Coke County</option>
+<option value="2628">Coleman County</option>
+<option value="2684">Collin County</option>
+<option value="2743">Collingsworth County</option>
+<option value="2542">Colorado County</option>
+<option value="2696">Comal County</option>
+<option value="2603">Comanche County</option>
+<option value="2659">Concho County</option>
+<option value="2668">Cooke County</option>
+<option value="2569">Coryell County</option>
+<option value="2718">Cottle County</option>
+<option value="2529">Crane County</option>
+<option value="2745">Crockett County</option>
+<option value="2648">Crosby County</option>
+<option value="2597">Culberson County</option>
+<option value="2771">Dallam County</option>
+<option value="2523">Dallas County</option>
+<option value="2545">Dawson County</option>
+<option value="2656">DeWitt County</option>
+<option value="2751">Deaf Smith County</option>
+<option value="2670">Delta County</option>
+<option value="2566">Denton County</option>
+<option value="2520">Dickens County</option>
+<option value="2732">Dimmit County</option>
+<option value="2687">Donley County</option>
+<option value="2568">Duval County</option>
+<option value="2678">Eastland County</option>
+<option value="2623">Ector County</option>
+<option value="2633">Edwards County</option>
+<option value="2644">El Paso County</option>
+<option value="2652">Ellis County</option>
+<option value="2605">Erath County</option>
+<option value="2576">Falls County</option>
+<option value="2679">Fannin County</option>
+<option value="2637">Fayette County</option>
+<option value="2551">Fisher County</option>
+<option value="2556">Floyd County</option>
+<option value="2701">Foard County</option>
+<option value="2669">Fort Bend County</option>
+<option value="2579">Franklin County</option>
+<option value="2736">Freestone County</option>
+<option value="2541">Frio County</option>
+<option value="2695">Gaines County</option>
+<option value="2697">Galveston County</option>
+<option value="2563">Garza County</option>
+<option value="2528">Gillespie County</option>
+<option value="2739">Glasscock County</option>
+<option value="2642">Goliad County</option>
+<option value="2688">Gonzales County</option>
+<option value="2727">Gray County</option>
+<option value="2624">Grayson County</option>
+<option value="2599">Gregg County</option>
+<option value="2555">Grimes County</option>
+<option value="2606">Guadalupe County</option>
+<option value="2673">Hale County</option>
+<option value="2675">Hall County</option>
+<option value="2731">Hamilton County</option>
+<option value="2645">Hansford County</option>
+<option value="2646">Hardeman County</option>
+<option value="2694">Hardin County</option>
+<option value="2608">Harris County</option>
+<option value="2707">Harrison County</option>
+<option value="2716">Hartley County</option>
+<option value="2676">Haskell County</option>
+<option value="2622">Hays County</option>
+<option value="2582">Hemphill County</option>
+<option value="2627">Henderson County</option>
+<option value="2553">Hidalgo County</option>
+<option value="2557">Hill County</option>
+<option value="2709">Hockley County</option>
+<option value="2619">Hood County</option>
+<option value="2575">Hopkins County</option>
+<option value="2533">Houston County</option>
+<option value="2634">Howard County</option>
+<option value="2593">Hudspeth County</option>
+<option value="2552">Hunt County</option>
+<option value="2661">Hutchinson County</option>
+<option value="2570">Irion County</option>
+<option value="2584">Jack County</option>
+<option value="2649">Jackson County</option>
+<option value="2756">Jasper County</option>
+<option value="2666">Jeff Davis County</option>
+<option value="2518">Jefferson County</option>
+<option value="2737">Jim Hogg County</option>
+<option value="2536">Jim Wells County</option>
+<option value="2647">Johnson County</option>
+<option value="2602">Jones County</option>
+<option value="2672">Karnes County</option>
+<option value="2766">Kaufman County</option>
+<option value="2677">Kendall County</option>
+<option value="2725">Kenedy County</option>
+<option value="2583">Kent County</option>
+<option value="2532">Kerr County</option>
+<option value="2685">Kimble County</option>
+<option value="2744">King County</option>
+<option value="2747">Kinney County</option>
+<option value="2700">Kleberg County</option>
+<option value="2764">Knox County</option>
+<option value="2620">La Salle County</option>
+<option value="2692">Lamar County</option>
+<option value="2749">Lamb County</option>
+<option value="2600">Lampasas County</option>
+<option value="2571">Lavaca County</option>
+<option value="2742">Lee County</option>
+<option value="2690">Leon County</option>
+<option value="2758">Liberty County</option>
+<option value="2667">Limestone County</option>
+<option value="2629">Lipscomb County</option>
+<option value="2539">Live Oak County</option>
+<option value="2641">Llano County</option>
+<option value="2763">Loving County</option>
+<option value="2712">Lubbock County</option>
+<option value="2726">Lynn County</option>
+<option value="2655">Madison County</option>
+<option value="2577">Marion County</option>
+<option value="2746">Martin County</option>
+<option value="2693">Mason County</option>
+<option value="2650">Matagorda County</option>
+<option value="2658">Maverick County</option>
+<option value="2562">McCulloch County</option>
+<option value="2723">McLennan County</option>
+<option value="2621">McMullen County</option>
+<option value="2538">Medina County</option>
+<option value="2590">Menard County</option>
+<option value="2762">Midland County</option>
+<option value="2613">Milam County</option>
+<option value="2717">Mills County</option>
+<option value="2630">Mitchell County</option>
+<option value="2754">Montague County</option>
+<option value="2770">Montgomery County</option>
+<option value="2680">Moore County</option>
+<option value="2544">Morris County</option>
+<option value="2596">Motley County</option>
+<option value="2607">Nacogdoches County</option>
+<option value="2615">Navarro County</option>
+<option value="2682">Newton County</option>
+<option value="2547">Nolan County</option>
+<option value="2604">Nueces County</option>
+<option value="2704">Ochiltree County</option>
+<option value="2626">Oldham County</option>
+<option value="2643">Orange County</option>
+<option value="2625">Palo Pinto County</option>
+<option value="2530">Panola County</option>
+<option value="2535">Parker County</option>
+<option value="2589">Parmer County</option>
+<option value="2550">Pecos County</option>
+<option value="2671">Polk County</option>
+<option value="2527">Potter County</option>
+<option value="2632">Presidio County</option>
+<option value="2711">Rains County</option>
+<option value="2719">Randall County</option>
+<option value="2534">Reagan County</option>
+<option value="2587">Real County</option>
+<option value="2683">Red River County</option>
+<option value="2636">Reeves County</option>
+<option value="2686">Refugio County</option>
+<option value="2768">Roberts County</option>
+<option value="2674">Robertson County</option>
+<option value="2585">Rockwall County</option>
+<option value="2546">Runnels County</option>
+<option value="2689">Rusk County</option>
+<option value="2657">Sabine County</option>
+<option value="2703">San Augustine County</option>
+<option value="2706">San Jacinto County</option>
+<option value="2722">San Patricio County</option>
+<option value="2521">San Saba County</option>
+<option value="2640">Schleicher County</option>
+<option value="2612">Scurry County</option>
+<option value="2729">Shackelford County</option>
+<option value="2592">Shelby County</option>
+<option value="2653">Sherman County</option>
+<option value="2713">Smith County</option>
+<option value="2728">Somervell County</option>
+<option value="2610">Starr County</option>
+<option value="2714">Stephens County</option>
+<option value="2572">Sterling County</option>
+<option value="2525">Stonewall County</option>
+<option value="2698">Sutton County</option>
+<option value="2759">Swisher County</option>
+<option value="2617" selected="selected">Tarrant County</option>
+<option value="2724">Taylor County</option>
+<option value="2531">Terrell County</option>
+<option value="2586">Terry County</option>
+<option value="2591">Throckmorton County</option>
+<option value="2750">Titus County</option>
+<option value="2753">Tom Green County</option>
+<option value="2564">Travis County</option>
+<option value="2720">Trinity County</option>
+<option value="2588">Tyler County</option>
+<option value="2662">Upshur County</option>
+<option value="2560">Upton County</option>
+<option value="2665">Uvalde County</option>
+<option value="2702">Val Verde County</option>
+<option value="2769">Van Zandt County</option>
+<option value="2578">Victoria County</option>
+<option value="2741">Walker County</option>
+<option value="2639">Waller County</option>
+<option value="2651">Ward County</option>
+<option value="2543">Washington County</option>
+<option value="2614">Webb County</option>
+<option value="2735">Wharton County</option>
+<option value="2540">Wheeler County</option>
+<option value="2748">Wichita County</option>
+<option value="2598">Wilbarger County</option>
+<option value="2559">Willacy County</option>
+<option value="2609">Williamson County</option>
+<option value="2565">Wilson County</option>
+<option value="2767">Winkler County</option>
+<option value="2524">Wise County</option>
+<option value="2730">Wood County</option>
+<option value="2663">Yoakum County</option>
+<option value="2761">Young County</option>
+<option value="2765">Zapata County</option>
+<option value="2567">Zavala County</option>
+</select>
+	<br/>
+	<div id="CONTACTMULTI">
+        <span id="For_12">
+			<fieldset id="Contact Information">
+		        <legend id="Contact Information">
+		            Contact Information
+		        </legend>
+				<br/>
+				<span class="newRequiredLabel">* <label class="" for="phoneType">Contact</label>:</span>
+			    <select name="phoneType" disabled="disabled" id="phoneType">
+<option value=""></option>
+<option value="Home Phone">Home Phone</option>
+<option value="Work Phone">Work Phone</option>
+<option value="Mobile Phone" selected="selected">Mobile Phone</option>
+<option value="Fax">Fax</option>
+<option value="Alpha/Text Pager">Alpha/Text Pager</option>
+<option value="Voice Pager">Voice Pager</option>
+</select>
+                <br/>
+                <span class="newRequiredLabel">* <label class="" for="phone">Phone nnn-nnn-nnnn</label>:</span>
+                <input type="text" name="phone" disabled="disabled" value="817-602-3765" id="phone" maxlength="12" />
+                <br/>
+                <span class="newNormalLabel"><label class="" for="extension">Extension</label>:</span>
+                <input type="text" name="extension" disabled="disabled" value="" id="extension" maxlength="8" />
+                
+            </fieldset>
+		    <br/>		
+		</span><span id="For_13">
+			<fieldset id="Contact Information">
+		        <legend id="Contact Information">
+		            Contact Information
+		        </legend>
+				<br/>
+				<span class="newRequiredLabel">* <label class="" for="phoneType_0">Contact</label>:</span>
+			    <select name="phoneType_0" disabled="disabled" id="phoneType_0">
+<option value=""></option>
+<option value="Home Phone" selected="selected">Home Phone</option>
+<option value="Work Phone">Work Phone</option>
+<option value="Mobile Phone">Mobile Phone</option>
+<option value="Fax">Fax</option>
+<option value="Alpha/Text Pager">Alpha/Text Pager</option>
+<option value="Voice Pager">Voice Pager</option>
+</select>
+                <br/>
+                <span class="newRequiredLabel">* <label class="" for="phone_0">Phone nnn-nnn-nnnn</label>:</span>
+                <input type="text" name="phone_0" disabled="disabled" value="817-607-3265" id="phone_0" maxlength="12" />
+                <br/>
+                <span class="newNormalLabel"><label class="" for="extension_0">Extension</label>:</span>
+                <input type="text" name="extension_0" disabled="disabled" value="" id="extension_0" maxlength="8" />
+                
+            </fieldset>
+		    <br/>		
+		</span>
+		
+        <br/>
+        <br/>
+        <br/>
+    </div>
+	
+    <br/>
+	
+
+    <br/>
+	<fieldset id="Employer Information">
+        <legend id="Employer Information">
+            Employer Information
+        </legend>
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerName">Employer name</label>:</span>
+		<input type="text" name="employerName" disabled="disabled" value="" id="employerName" maxlength="128" />
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerAddress1">Employer address 1</label>:</span>
+		<input type="text" name="employerAddress1" disabled="disabled" value="" id="employerAddress1" maxlength="64" />
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerAddress2">Employer address 2</label>:</span>
+		<input type="text" name="employerAddress2" disabled="disabled" value="" id="employerAddress2" maxlength="64" />
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerCity">Employer city</label>:</span>
+		<input type="text" name="employerCity" disabled="disabled" value="" id="employerCity" maxlength="64" />
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerState">Employer State</label>:</span>
+	    <select name="employerState" disabled="disabled" id="employerState">
+<option value=""></option>
+<option value="Alaska">Alaska</option>
+<option value="Alabama">Alabama</option>
+<option value="Arkansas">Arkansas</option>
+<option value="Arizona">Arizona</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Iowa">Iowa</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Maryland">Maryland</option>
+<option value="Maine">Maine</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Missouri">Missouri</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Montana">Montana</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Nebraska">Nebraska</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="Nevada">Nevada</option>
+<option value="New York">New York</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Virginia">Virginia</option>
+<option value="Vermont">Vermont</option>
+<option value="Washington">Washington</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerZip">Employer zip</label>:</span>
+		<input type="text" name="employerZip" disabled="disabled" value="" id="employerZip" maxlength="10" />
+	    <br/>
+		<span class="newNormalLabel"><label class="" for="employerCounty">Employer county</label>:</span>
+		<select name="employerCounty" disabled="disabled" id="employerCounty">
+<option value=""></option>
+</select>
+        <br/>
+        <span class="newNormalLabel"><label class="" for="employerPhone">Employer phone nnn-nnn-nnnn</label>:</span>
+        <input type="text" name="employerPhone" disabled="disabled" value="" id="employerPhone" maxlength="12" />
+        <br/>
+        <span class="newNormalLabel"><label class="" for="employerExtension">Employer extension</label>:</span>
+        <input type="text" name="employerExtension" disabled="disabled" value="" id="employerExtension" maxlength="8" />
+    </fieldset>
+
+	<br/>
+	<br/>
+    <span class="newNormalLabel"><label class="" for="employmentSetting">Employment setting</label>:</span>
+    <input type="text" name="employmentSetting" disabled="disabled" value="" id="employmentSetting" maxlength="64" />
+	<br/>
+    <span class="newNormalLabel"><label class="" for="militaryService">Military service</label>:</span>
+    <input type="text" name="militaryService" disabled="disabled" value="n/a" id="militaryService" maxlength="64" />
+	<br/>
+    <span class="newNormalLabel"><label class="" for="physicalIssues">Note any physical issues</label>:</span>
+    <input type="text" name="physicalIssues" disabled="disabled" value="none" id="physicalIssues" maxlength="64" />
+</div>
+</div>
+
+   </span>
+    
+   <span id="ts46_0">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="pages_0">
+		
+	<div class="page" id="dfev13">
+		<span id="dfev14_0">
+			
+	<div class="onecolumn" id="dfev5">
+		<span id="dfev6_0">
+			
+	<br id="dvef203_0"></br>
+    <span id="dvef204_0">
+        
+        <span>
+            <span class="newNormalLabel"><label id="stateEmployeelabel" class="" for="stateEmployee">Are you a State Employee</label>:</span>
+        </span>
+	</span>
+    <select name="stateEmployee" disabled="disabled" id="stateEmployee" onChange="">
+<option value=""></option>
+<option value="y">Yes</option>
+<option value="n" selected="selected">No</option>
+</select>
+
+		</span><span id="dfev6_1">
+			
+	<br id="dvef203_2"></br>
+    <span id="dvef204_2">
+        
+        <span>
+            <span class="newNormalLabel"><label id="nameIsSamelabel" class="" for="nameIsSame">Is your name the same on all credentials or licenses</label>:</span>
+        </span>
+	</span>
+    <select name="nameIsSame" disabled="disabled" id="nameIsSame" onChange="">
+<option value=""></option>
+<option value="y" selected="selected">Yes</option>
+<option value="n">No</option>
+</select>
+
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+</span>
+
+  	</span>
+   
+
+<br/>
+<br/>
+<div class="submitButtons">
+    
+  <span id="If_1_8">
+	  <input type="submit" name="nextButton" id="nextButton" value="Next" />
+	  
+  </span>
+  
+</div>
+
+  <br/>
+    <script type="text/javascript" src="scripts/validateSubmittedVolunteer.js"></script>
+</form>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("dynamicform");
+calendar_dob = new Calendar(-375040800000);
+	
+calendar_dob.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_dob.onchange = function() {
+  var field = tapestry.byId("dynamicform").dob;
+  var value = calendar_dob.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+if (dojo.byId('nextButton')) {
+	dojo.event.connectOnce("before", dojo.byId('nextButton'), "onclick", onclick_nextButton);
+}
+
+tapestry.cleanConnect("state", "onchange", "formEvent155099947");
+                tapestry.formEvent155099947=function(e){
+                    var content={beventname:"onchange", bcomponentidpath:"ValidateSubmittedVolunteer/$TrimmedSummary.ts24.state", bcomponentid:"state"};
+                    tapestry.event.buildEventProperties(e, content, arguments);
+                    if (!content["beventtarget.id"]){
+                    	content["beventtarget.id"]="state";
+                    }
+                    
+                   var validateState=tapestry.form.forms["dynamicform"].validateForm;
+                   var validateForm=false;
+                   tapestry.form.setFormValidating("dynamicform", validateForm);
+                   
+                    
+                    tapestry.form.submitAsync("dynamicform", content);
+                    
+                    
+                    
+                    tapestry.form.setFormValidating("dynamicform", validateState);
+                    
+                };
+                tapestry.connect("state", "onchange", "formEvent155099947");
+tapestry.cleanConnect("employerState", "onchange", "formEvent1197911529");
+                tapestry.formEvent1197911529=function(e){
+                    var content={beventname:"onchange", bcomponentidpath:"ValidateSubmittedVolunteer/$TrimmedSummary.ts24.employerState", bcomponentid:"employerState"};
+                    tapestry.event.buildEventProperties(e, content, arguments);
+                    if (!content["beventtarget.id"]){
+                    	content["beventtarget.id"]="employerState";
+                    }
+                    
+                   var validateState=tapestry.form.forms["dynamicform"].validateForm;
+                   var validateForm=false;
+                   tapestry.form.setFormValidating("dynamicform", validateForm);
+                   
+                    
+                    tapestry.form.submitAsync("dynamicform", content);
+                    
+                    
+                    
+                    tapestry.form.setFormValidating("dynamicform", validateState);
+                    
+                };
+                tapestry.connect("employerState", "onchange", "formEvent1197911529");});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 214 ms -->
+
+
+

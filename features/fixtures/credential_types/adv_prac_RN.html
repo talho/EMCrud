@@ -1,0 +1,2031 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: EditWalkOnRegistration -->
+<!-- Generated: Thu Dec 17 10:09:42 CST 2009 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ On Scene Registration</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=5698527129f5b927ef4e64b0afc64a6c&amp;service=asset&amp;path=%2Fstyles%2FwalkOnRegistration.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=d41d8cd98f00b204e9800998ecf8427e&amp;service=asset&amp;path=%2Fstyles%2FdynFormEdit.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span><span id="For_3">
+    	<link media="screen" href="/app?digest=41e38532faf10d288dd6e58196660692&amp;service=asset&amp;path=%2Fstyles%2FsummaryForm.css" type="text/css" rel="stylesheet" id="Any_1_3"></link>
+    </span><span id="For_4">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_4"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript" src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePicker.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+var calendar_dob;
+var calendar_validateInspectorGeneralDate;
+var calendar_trainingCompletionDate;
+var calendar_trainingExpirationDate;
+var calendar_validateNIMSDate;
+var calendar_ackDate;
+var calendar_assignmentDate;
+dojo.require("tapestry.event");
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=EditWalkOnRegistration&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=EditWalkOnRegistration&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=EditWalkOnRegistration&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=EditWalkOnRegistration&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+
+<script src="scripts/magicdate.js" type="text/javascript"></script>
+<style type="text/css">@import url( "styles/default.css" );</style>
+<style type="text/css">@import url( "styles/home.css" );</style>
+<style type="text/css">@import url( "styles/login.css" );</style>
+<style type="text/css">@import url( "styles/calendar-blue.css" );</style>
+<style type="text/css">@import url( "styles/dynFormEditView.css" );</style>
+
+<script type="text/javascript">
+   	function hidePage(anchor, index)
+   	{
+        var divToToggle = dojo.byId('page'+index);
+        if ( divToToggle.style.display  == 'none') {
+            divToToggle.style.display = 'block';
+            anchor.innerHTML = anchor.innerHTML.replace(/\+/, '-');
+        }
+        else
+        {
+	        divToToggle.style.display = 'none';
+            anchor.innerHTML = anchor.innerHTML.replace(/\-/, '+');
+	    }
+	    dojo.byId('pageExpansion'+index).value="S"+divToToggle.style.display;
+       }
+</script>
+
+
+<form method="post" action="/app" id="dynamicform">
+<div style="display:none;" id="dynamicformhidden"><input type="hidden" name="formids" value="delegateHasErrorsIf_0,event,For_7,If_37,pageExpansion0,If_0_6,personalInfoComponent_0,personalInfoComponent_1,email,passwordChallenge,challengeResponse,If_39,name,middle,last,suffix,If_0_8,If_1_6,dob,If_2_26,langCount,language,If_41,If_43,If_45,addAnotherLanguage,street1,street2,city,state,zip,county,For_11,phoneType,phone,extension,If_47,LinkSubmit,If_7_1,employerName,employerAddress1,employerAddress2,employerCity,employerState,employerZip,employerCounty,employerPhone,employerExtension,employmentSetting,militaryService,physicalIssues,pages_0,dfev14_0,dfev6_0,dvef203_0,dvef204_0,dvef205_0,stateEmployee,dvef203_2,dvef204_2,dvef205_2,nameIsSame,If_49,pageExpansion1,If_0_10,pages_3,dfev14_3,dfev6_4,dvef203_4,dvef204_4,dvef205_4,profession,dfev21_0,Inspector General Status_1,dfev28_0,dvef277_0,dvef278_0,validateInspectorGenerallabel_0,radioField,dfev55_0,dfev57_0,dfev58_0,dfev59_0,validateInspectorGeneralDate,dfev88_0,If_51,pageExpansion2,If_0_12,pages_6,dfev14_6,dfev6_8,dvef277_2,dvef278_2,dvef279_0,radioField_0,availableJitTraininglabel_1,dfev21_2,Emergency-Preparedness Training_1,dfev28_4,dfev37_0,dfev38_0,dfev21_4,dfev25_0,dfev28_6,dfev123_0,dfev124_0,dvef125_0,trainingTitle,dfev123_2,dfev124_2,dvef125_2,trainingInstitution,dfev55_2,dfev57_2,dfev58_2,dfev59_2,trainingCompletionDate,dfev88_2,dfev55_4,dfev57_4,dfev58_4,dfev59_4,trainingExpirationDate,dfev88_4,DISASTERMULTI_0,dfev21_6,NIMS Training_1,dfev28_12,dvef277_4,dvef278_4,validateNIMSlabel_0,radioField_1,dfev55_6,dfev57_6,dfev58_6,dfev59_6,validateNIMSDate,dfev88_6,dvef244_0,dvef245_0,dvef246_0,validMultiSelect,dfev192_0,dvef193_0,dvef194_0,specialSkills,If_53,pageExpansion3,If_0_14,pages_9,dfev14_9,dfev6_14,dvef277_6,dvef278_6,dvef279_2,radioField_2,ackConsentlabel_1,dvef277_8,dvef278_8,dvef279_4,radioField_3,ackTruelabel_1,dvef277_10,dvef278_10,dvef279_6,radioField_4,ackBackgroundlabel_1,dfev55_8,dfev57_8,dfev58_8,dfev59_8,ackDate,dfev88_8,dvef203_6,dvef204_6,dvef205_6,ackDeployPref,dvef203_8,dvef204_8,dvef205_8,ackTravPref,dvef203_10,dvef204_10,dvef205_10,ackDeployDurationPref,dvef244_2,dvef245_2,dvef246_2,validMultiSelect_0,dfev123_4,dfev124_4,dvef125_4,otherAffiliations,dvef277_12,dvef278_12,dvef279_8,radioField_5,interestingAffiliationslabel_1,dvef277_14,dvef278_14,dvef279_10,radioField_6,ackNationalEmergencylabel_1,If_1_8,pageExpansion4,assignmentDate,assignmentHour,assignmentMinute,eventTeam,newEventTeam,assignmentAssignment,newAssignmentAssignment,assignmentLocation,newAssignmentLocation,assignmentDuration,submitButton,cancelButton" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVQy07DMBCsKiEhvsNHH+JQSntsBRWRAFWUe2XiTWrhR2S7kco38Wv8A2vHUeDi2Z0d7+zu98/s6ms2m9/Mr6kH18saSEE73kaore6sARNSbAKXBhzGHryX1sSow2fTdUrWPCC1c1zHn1vrRJIeTqAUogAFLQ+xtjGX4T0WiA4aB/5UmYDuXFUNcjvryDIpGLmjSN0u6aPyQMoV5ULI6MTVE3Dxzluf7ETsKTXO/SzN5xjvne3lMIiQvYxDK9taTKsG3WPvbHEsSYlo8AZx2+iWBA/SQR1yT5Td59HLIV0hTJK0ELLr/ywbG+ZPLMsYyxh5jcd9AXPO4Svvt9xNyR9FFUB7Mg6Lngvqzx9TpVzTfb4DFsvFKGQxPtROdnHDNzB4mHQ4RsXFcC3rxjpNil8+vk9pEwIAAA==" />
+<input type="hidden" name="component" value="dynamicform" />
+<input type="hidden" name="page" value="EditWalkOnRegistration" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="updateParts" value="dynamicform" />
+<input type="hidden" name="reservedids" value="updateParts" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="delegateHasErrorsIf_0" value="F" />
+<input type="hidden" name="For_7" value="PS001" />
+<input type="hidden" name="If_37" value="F" />
+<input type="hidden" name="pageExpansion0" id="pageExpansion0" value="Sblock" />
+<input type="hidden" name="If_0_6" value="T" />
+<input type="hidden" name="If_39" value="F" />
+<input type="hidden" name="If_0_8" value="F" />
+<input type="hidden" name="If_1_6" value="F" />
+<input type="hidden" name="If_2_26" value="F" />
+<input type="hidden" name="langCount" id="langCount" value="1" />
+<input type="hidden" name="If_41" value="F" />
+<input type="hidden" name="If_43" value="F" />
+<input type="hidden" name="If_45" value="T" />
+<input type="hidden" name="For_11" value="VZH4sIAAAAAAAAAFvzloG1uIhBNTk/Vy81N7koNSU1ryQzMUevPDVJLzG5JDM/Ty8sM7U8ICM/L3X+0TdfV8SwH2JiYKgoYpCF6CmuLC5JzdVLzi9K1cvNT0nN0QOrdba9uPVvzvZoJgZWTwbW/KKU1CIfBs7UipLUvGKgoSUMQj5ZiWWJ+jmJeen6wSVFmXnp1j4MHDn5yYkgSwsZ6hiYfBjY8kpzk1KLoDyWksqCVDAbaL02LuudEotTXdPSUoGOL0v1T8oCMrbdPZPrIfd2MxPIFA6gxtz8PM+UEgY5HyBbH2aIPsgQfU9wCKRlphYB3cOdCjUos6SyhEENVTmSnL4rgm0NdJwSPsdB3DSPd/KWpzM97ZkYGH0YuDLhtoL8x1JRAAQMDAyMIBoAU/sQN6QBAAA=" />
+<input type="hidden" name="If_47" value="T" />
+<input type="hidden" name="If_7_1" value="F" />
+<input type="hidden" name="pages_0" value="PS001" />
+<input type="hidden" name="dfev14_0" value="PS" />
+<input type="hidden" name="dfev6_0" value="PS001" />
+<input type="hidden" name="dvef203_0" value="T" />
+<input type="hidden" name="dvef204_0" value="T" />
+<input type="hidden" name="dvef205_0" value="F" />
+<input type="hidden" name="dfev6_0" value="PS002" />
+<input type="hidden" name="dvef203_2" value="T" />
+<input type="hidden" name="dvef204_2" value="T" />
+<input type="hidden" name="dvef205_2" value="F" />
+<input type="hidden" name="For_7" value="PS002" />
+<input type="hidden" name="If_49" value="T" />
+<input type="hidden" name="pageExpansion1" id="pageExpansion1" value="Snone" />
+<input type="hidden" name="If_0_10" value="F" />
+<input type="hidden" name="pages_3" value="PS002" />
+<input type="hidden" name="dfev14_3" value="PS" />
+<input type="hidden" name="dfev6_4" value="PS001" />
+<input type="hidden" name="dvef203_4" value="T" />
+<input type="hidden" name="dvef204_4" value="T" />
+<input type="hidden" name="dvef205_4" value="F" />
+<input type="hidden" name="dfev6_4" value="PS011" />
+<input type="hidden" name="dfev21_0" value="T" />
+<input type="hidden" name="Inspector General Status_1" value="T" />
+<input type="hidden" name="dfev28_0" value="PS000" />
+<input type="hidden" name="dvef277_0" value="T" />
+<input type="hidden" name="dvef278_0" value="F" />
+<input type="hidden" name="validateInspectorGenerallabel_0" value="F" />
+<input type="hidden" name="dfev28_0" value="PS000.5" />
+<input type="hidden" name="dfev55_0" value="F" />
+<input type="hidden" name="dfev57_0" value="T" />
+<input type="hidden" name="dfev58_0" value="T" />
+<input type="hidden" name="dfev59_0" value="F" />
+<input type="hidden" name="dfev88_0" value="F" />
+<input type="hidden" name="For_7" value="PS003" />
+<input type="hidden" name="If_51" value="T" />
+<input type="hidden" name="pageExpansion2" id="pageExpansion2" value="Snone" />
+<input type="hidden" name="If_0_12" value="F" />
+<input type="hidden" name="pages_6" value="PS003" />
+<input type="hidden" name="dfev14_6" value="PS" />
+<input type="hidden" name="dfev6_8" value="PS001" />
+<input type="hidden" name="dvef277_2" value="T" />
+<input type="hidden" name="dvef278_2" value="T" />
+<input type="hidden" name="dvef279_0" value="F" />
+<input type="hidden" name="availableJitTraininglabel_1" value="F" />
+<input type="hidden" name="dfev6_8" value="PS002" />
+<input type="hidden" name="dfev21_2" value="T" />
+<input type="hidden" name="Emergency-Preparedness Training_1" value="T" />
+<input type="hidden" name="dfev6_8" value="PS003" />
+<input type="hidden" name="dfev37_0" value="PS003" />
+<input type="hidden" name="dfev38_0" value="PS001" />
+<input type="hidden" name="dfev21_4" value="F" />
+<input type="hidden" name="dfev25_0" value="F" />
+<input type="hidden" name="dfev28_6" value="PS002" />
+<input type="hidden" name="dfev123_0" value="T" />
+<input type="hidden" name="dfev124_0" value="T" />
+<input type="hidden" name="dvef125_0" value="F" />
+<input type="hidden" name="dfev28_6" value="PS003" />
+<input type="hidden" name="dfev123_2" value="T" />
+<input type="hidden" name="dfev124_2" value="T" />
+<input type="hidden" name="dvef125_2" value="F" />
+<input type="hidden" name="dfev28_6" value="PS004" />
+<input type="hidden" name="dfev55_2" value="T" />
+<input type="hidden" name="dfev57_2" value="T" />
+<input type="hidden" name="dfev58_2" value="T" />
+<input type="hidden" name="dfev59_2" value="F" />
+<input type="hidden" name="dfev88_2" value="F" />
+<input type="hidden" name="dfev28_6" value="PS005" />
+<input type="hidden" name="dfev55_4" value="T" />
+<input type="hidden" name="dfev57_4" value="T" />
+<input type="hidden" name="dfev58_4" value="T" />
+<input type="hidden" name="dfev59_4" value="F" />
+<input type="hidden" name="dfev88_4" value="F" />
+<input type="hidden" name="dfev6_8" value="PS011" />
+<input type="hidden" name="dfev21_6" value="T" />
+<input type="hidden" name="NIMS Training_1" value="T" />
+<input type="hidden" name="dfev28_12" value="PS000" />
+<input type="hidden" name="dvef277_4" value="T" />
+<input type="hidden" name="dvef278_4" value="F" />
+<input type="hidden" name="validateNIMSlabel_0" value="F" />
+<input type="hidden" name="dfev28_12" value="PS001" />
+<input type="hidden" name="dfev55_6" value="F" />
+<input type="hidden" name="dfev57_6" value="T" />
+<input type="hidden" name="dfev58_6" value="T" />
+<input type="hidden" name="dfev59_6" value="F" />
+<input type="hidden" name="dfev88_6" value="F" />
+<input type="hidden" name="dfev28_12" value="PS011" />
+<input type="hidden" name="dvef244_0" value="T" />
+<input type="hidden" name="dvef245_0" value="T" />
+<input type="hidden" name="dvef246_0" value="F" />
+<input type="hidden" name="dfev28_12" value="PS012" />
+<input type="hidden" name="dfev192_0" value="T" />
+<input type="hidden" name="dvef193_0" value="T" />
+<input type="hidden" name="dvef194_0" value="F" />
+<input type="hidden" name="For_7" value="PS004" />
+<input type="hidden" name="If_53" value="T" />
+<input type="hidden" name="pageExpansion3" id="pageExpansion3" value="Snone" />
+<input type="hidden" name="If_0_14" value="F" />
+<input type="hidden" name="pages_9" value="PS004" />
+<input type="hidden" name="dfev14_9" value="PS" />
+<input type="hidden" name="dfev6_14" value="PS001" />
+<input type="hidden" name="dvef277_6" value="T" />
+<input type="hidden" name="dvef278_6" value="T" />
+<input type="hidden" name="dvef279_2" value="F" />
+<input type="hidden" name="ackConsentlabel_1" value="F" />
+<input type="hidden" name="dfev6_14" value="PS002" />
+<input type="hidden" name="dvef277_8" value="T" />
+<input type="hidden" name="dvef278_8" value="T" />
+<input type="hidden" name="dvef279_4" value="F" />
+<input type="hidden" name="ackTruelabel_1" value="F" />
+<input type="hidden" name="dfev6_14" value="PS003" />
+<input type="hidden" name="dvef277_10" value="T" />
+<input type="hidden" name="dvef278_10" value="T" />
+<input type="hidden" name="dvef279_6" value="F" />
+<input type="hidden" name="ackBackgroundlabel_1" value="F" />
+<input type="hidden" name="dfev6_14" value="PS004" />
+<input type="hidden" name="dfev55_8" value="T" />
+<input type="hidden" name="dfev57_8" value="T" />
+<input type="hidden" name="dfev58_8" value="T" />
+<input type="hidden" name="dfev59_8" value="F" />
+<input type="hidden" name="dfev88_8" value="F" />
+<input type="hidden" name="dfev6_14" value="PS005" />
+<input type="hidden" name="dvef203_6" value="T" />
+<input type="hidden" name="dvef204_6" value="T" />
+<input type="hidden" name="dvef205_6" value="F" />
+<input type="hidden" name="dfev6_14" value="PS006" />
+<input type="hidden" name="dvef203_8" value="T" />
+<input type="hidden" name="dvef204_8" value="T" />
+<input type="hidden" name="dvef205_8" value="F" />
+<input type="hidden" name="dfev6_14" value="PS007" />
+<input type="hidden" name="dvef203_10" value="T" />
+<input type="hidden" name="dvef204_10" value="T" />
+<input type="hidden" name="dvef205_10" value="F" />
+<input type="hidden" name="dfev6_14" value="PS008.1" />
+<input type="hidden" name="dvef244_2" value="T" />
+<input type="hidden" name="dvef245_2" value="T" />
+<input type="hidden" name="dvef246_2" value="F" />
+<input type="hidden" name="dfev6_14" value="PS008.2" />
+<input type="hidden" name="dfev123_4" value="T" />
+<input type="hidden" name="dfev124_4" value="T" />
+<input type="hidden" name="dvef125_4" value="F" />
+<input type="hidden" name="dfev6_14" value="PS008.3" />
+<input type="hidden" name="dvef277_12" value="T" />
+<input type="hidden" name="dvef278_12" value="T" />
+<input type="hidden" name="dvef279_8" value="F" />
+<input type="hidden" name="interestingAffiliationslabel_1" value="F" />
+<input type="hidden" name="dfev6_14" value="PS009" />
+<input type="hidden" name="dvef277_14" value="T" />
+<input type="hidden" name="dvef278_14" value="T" />
+<input type="hidden" name="dvef279_10" value="F" />
+<input type="hidden" name="ackNationalEmergencylabel_1" value="F" />
+<input type="hidden" name="If_1_8" value="F" />
+<input type="hidden" name="pageExpansion4" id="pageExpansion4" value="Sblock" />
+</div>
+    
+    <br/> 
+	<div class="summaryHeader">
+   		Select an Event for this Volunteer
+	</div>
+	<span>
+		<div class="page">
+			<div class="onecolumn">
+				<span class="newRequiredLabel">* <label for="event">Event</label>:</span>
+			    <select name="event" id="event">
+<option value="8a81c8f01a076b0b011abc5b159e3ce9">Austin Flash Flooding</option>
+<option value="" selected="selected"></option>
+</select>
+			</div>
+		</div>
+	</span>
+	<br/>
+	<br/>
+    <span>
+    	<span id="For_7">
+    		<div class="summaryHeader">
+	    		<a onclick="hidePage(this, 0); return false;" href="#" id="Any_3">
+	    			Personal Information<span>-</span>
+    			</a>
+    		</div>
+    		<br />
+   			
+    		<div style="display:block;" id="page0">
+				<span id="If_0_6">
+		    		<br/>
+	<div class="page">
+	<div class="onecolumn">
+	<fieldset>
+
+
+	<br></br>
+		<span class="newRequiredLabel">* <label for="email">EMail Address</label>:</span>
+		<input type="text" name="email" value="" id="email" />
+	<br></br>
+		<span class="newRequiredLabel">* <label for="passwordChallenge">Password Challenge</label>:</span>
+	    <select name="passwordChallenge" id="passwordChallenge">
+<option value="" selected="selected" disabled="true"></option>
+<option value="HIBRN8:PasswordChallenge:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABMQ==">Mother's maiden name</option>
+<option value="HIBRN8:PasswordChallenge:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABMg==">City of birth</option>
+<option value="HIBRN8:PasswordChallenge:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABMw==">Last 4-digits of driver's license</option>
+<option value="HIBRN8:PasswordChallenge:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABNA==">Last 4-digits of SSN</option>
+</select>
+	<br></br>
+		<span class="newRequiredLabel">* <label for="challengeResponse">Challenge Response</label>:</span>
+		<input type="text" name="challengeResponse" value="" id="challengeResponse" />
+	         
+	<br></br>
+		<span class="newRequiredLabel">* <label for="name">First Name</label>:</span>
+		<input type="text" name="name" value="" id="name" />
+	<br></br>
+		<span class="newNormalLabel"><label for="middle">Middle Name</label>:</span>
+		<input type="text" name="middle" value="" id="middle" />
+	<br></br>
+		<span class="newRequiredLabel">* <label for="last">Last Name</label>:</span>
+		<input type="text" name="last" value="" id="last" />
+	<br></br>
+		<span class="newNormalLabel"><label for="suffix">Suffix</label>:</span>
+		<input type="text" name="suffix" value="" id="suffix" />
+
+			
+    </fieldset>
+	
+	<br></br>
+		<span class="newNormalLabel"><label for="dob">Birth Date</label>:</span>
+		<input type="text" name="dob" value="" title="MM/dd/yyyy" id="dob" class="date" onblur="return magicDate(this)" />&nbsp;<a href="javascript:calendar_dob.toggle(tapestry.byId(&quot;dob&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+	
+	<br></br>
+	<div id="LANGUAGEMULTI">
+		
+		<div id="For_8">
+		    <span class="newNormalLabel"><label for="language">Language Spoken</label>:</span>
+		    <select name="language" id="language">
+<option value="" selected="selected" disabled="true"></option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABMQ==">English</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAABNQ==">American Sign Language</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMjM=">Cantonese</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzQ=">Farsi</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzY=">French</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACMzg=">German</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACNTY=">Korean</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACNjU=">Mandarin</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAACOTE=">Spanish</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAADMTA2">Vietnamese</option>
+<option value="HIBRN8:Language:OrO0ABXNyABxjb20uZW1zeXN0ZW0uY29yZS5JZGVudGlmaWVyJRxcBv6dCA4CAAFMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdAADMTEz">Other</option>
+</select>
+	        
+	        <br/>
+
+
+	        
+	    </div>
+	    <br/>
+		<span id="If_45">
+		    <a href="javascript:tapestry.form.submit('dynamicform', 'addAnotherLanguage');" id="addAnotherLanguage" class="multiGroupExtendLink">
+		       Add Additional Language
+		    </a>
+        </span>
+	</div>
+	<br></br>
+		<span class="newNormalLabel"><label for="street1">Address 1</label>:</span>
+		<input type="text" name="street1" value="" id="street1" />
+	<br></br>
+		<span class="newNormalLabel"><label for="street2">Address 2</label>:</span>
+		<input type="text" name="street2" value="" id="street2" />
+	<br></br>
+		<span class="newNormalLabel"><label for="city">City</label>:</span>
+		<input type="text" name="city" value="" id="city" />
+	<br></br>
+		<span class="newNormalLabel"><label for="state">State</label>:</span>
+	    <select name="state" id="state">
+<option value=""></option>
+<option value="Alaska">Alaska</option>
+<option value="Alabama">Alabama</option>
+<option value="Arkansas">Arkansas</option>
+<option value="Arizona">Arizona</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Iowa">Iowa</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Maryland">Maryland</option>
+<option value="Maine">Maine</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Missouri">Missouri</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Montana">Montana</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Nebraska">Nebraska</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="Nevada">Nevada</option>
+<option value="New York">New York</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Virginia">Virginia</option>
+<option value="Vermont">Vermont</option>
+<option value="Washington">Washington</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+
+		<span class="newNormalLabel"><label for="zip">Zip</label>:</span>
+		<input type="text" name="zip" value="" id="zip" />
+	<br></br>
+		<span class="newNormalLabel"><label for="county">County</label>:</span>
+	    <select name="county" id="county">
+<option value=""></option>
+</select>
+	<br/>
+
+	<div id="CONTACTMULTI">
+		<span id="For_11">
+			<fieldset id="Contact Information">
+		        <legend id="Contact Information">
+		            Contact Information
+		        </legend>
+				<br></br>
+				<span class="newNormalLabel"><label for="phoneType">Contact</label>:</span>
+			    <select name="phoneType" id="phoneType">
+<option value=""></option>
+<option value="Home Phone">Home Phone</option>
+<option value="Work Phone">Work Phone</option>
+<option value="Mobile Phone">Mobile Phone</option>
+<option value="Fax">Fax</option>
+<option value="Alpha/Text Pager">Alpha/Text Pager</option>
+<option value="Voice Pager">Voice Pager</option>
+</select>
+			<br></br>
+				<span class="newNormalLabel"><label for="phone">Phone nnn-nnn-nnnn</label>:</span>
+				<input type="text" name="phone" value="" id="phone" maxlength="12" />
+			<br></br>
+				<span class="newNormalLabel"><label for="extension">Extension</label>:</span>
+				<input type="text" name="extension" value="" id="extension" />
+		    </fieldset>
+		    <br/>		
+		</span>
+		<span id="If_47">
+        <a href="javascript:tapestry.form.submit('dynamicform', 'LinkSubmit');" id="LinkSubmit" class="multiGroupExtendLink">
+            Add Additional Contact Information
+        </a>
+        </span>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+	
+		<br/>
+	
+
+    <br/>
+	<fieldset id="Employer Information">
+        <legend id="Employer Information">
+            Employer Information
+        </legend>
+	<br></br>
+		<span class="newNormalLabel"><label for="employerName">Employer name</label>:</span>
+		<input type="text" name="employerName" value="" id="employerName" maxlength="128" />
+	<br></br>
+		<span class="newNormalLabel"><label for="employerAddress1">Employer address 1</label>:</span>
+		<input type="text" name="employerAddress1" value="" id="employerAddress1" maxlength="64" />
+	<br></br>
+		<span class="newNormalLabel"><label for="employerAddress2">Employer address 2</label>:</span>
+		<input type="text" name="employerAddress2" value="" id="employerAddress2" maxlength="64" />
+	<br></br>
+		<span class="newNormalLabel"><label for="employerCity">Employer city</label>:</span>
+		<input type="text" name="employerCity" value="" id="employerCity" maxlength="64" />
+	<br></br>
+		<span class="newNormalLabel"><label for="employerState">Employer State</label>:</span>
+	    <select name="employerState" id="employerState">
+<option value=""></option>
+<option value="Alaska">Alaska</option>
+<option value="Alabama">Alabama</option>
+<option value="Arkansas">Arkansas</option>
+<option value="Arizona">Arizona</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Iowa">Iowa</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Maryland">Maryland</option>
+<option value="Maine">Maine</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Missouri">Missouri</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Montana">Montana</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Nebraska">Nebraska</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="Nevada">Nevada</option>
+<option value="New York">New York</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Virginia">Virginia</option>
+<option value="Vermont">Vermont</option>
+<option value="Washington">Washington</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+    <br/>
+		<span class="newNormalLabel"><label for="employerZip">Employer zip</label>:</span>
+		<input type="text" name="employerZip" value="" id="employerZip" maxlength="10" />
+    <br/>
+		<span class="newNormalLabel"><label for="employerCounty">Employer county</label>:</span>
+		<select name="employerCounty" id="employerCounty">
+<option value=""></option>
+</select>
+    <br/>
+        <span class="newNormalLabel"><label for="employerPhone">Employer phone nnn-nnn-nnnn</label>:</span>
+        <input type="text" name="employerPhone" value="" id="employerPhone" maxlength="12" />
+    <br></br>
+        <span class="newNormalLabel"><label for="employerExtension">Employer extension</label>:</span>
+        <input type="text" name="employerExtension" value="" id="employerExtension" maxlength="8" />
+    </fieldset>
+
+	<br></br>
+	<br></br>
+		<span class="newNormalLabel"><label for="employmentSetting">Employment setting</label>:</span>
+		<input type="text" name="employmentSetting" value="" id="employmentSetting" maxlength="64" />
+	<br></br>
+		<span class="newNormalLabel"><label for="militaryService">Military service</label>:</span>
+		<input type="text" name="militaryService" value="" id="militaryService" maxlength="64" />
+	<br></br>
+		<span class="newNormalLabel"><label for="physicalIssues">Note any physical issues</label>:</span>
+		<input type="text" name="physicalIssues" value="" id="physicalIssues" maxlength="64" />
+</div>
+</div>
+
+					<br/>
+		    	</span>
+			    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="pages_0">
+		
+	<div class="page" id="dfev13">
+		<span id="dfev14_0">
+			
+	<div class="onecolumn" id="dfev5">
+		<span id="dfev6_0">
+			
+	<br id="dvef203_0"></br>
+    <span id="dvef204_0">
+        
+        <span>
+            <span class="newNormalLabel"><label id="stateEmployeelabel" class="" for="stateEmployee">Are you a State Employee</label>:</span>
+        </span>
+	</span>
+    <select name="stateEmployee" id="stateEmployee" onChange="">
+<option value=""></option>
+<option value="y">Yes</option>
+<option value="n">No</option>
+</select>
+
+		</span><span id="dfev6_1">
+			
+	<br id="dvef203_2"></br>
+    <span id="dvef204_2">
+        
+        <span>
+            <span class="newNormalLabel"><label id="nameIsSamelabel" class="" for="nameIsSame">Is your name the same on all credentials or licenses</label>:</span>
+        </span>
+	</span>
+    <select name="nameIsSame" id="nameIsSame" onChange="">
+<option value=""></option>
+<option value="y">Yes</option>
+<option value="n">No</option>
+</select>
+
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+</span>
+
+		    	<br/>
+			</div>
+	    </span><span id="For_13">
+    		<div class="summaryHeader">
+	    		<a onclick="hidePage(this, 1); return false;" href="#" id="Any_4">
+	    			Credentials and Licenses<span id="If_49">+</span>
+    			</a>
+    		</div>
+    		<br />
+   			
+    		<div style="display:none;" id="page1">
+				
+			    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="pages_3">
+		
+	<div class="page" id="dfev13_0">
+		<span id="dfev14_3">
+			
+	<div class="onecolumn" id="dfev5_0">
+		<span id="dfev6_4">
+			
+	<br id="dvef203_4"></br>
+    <span id="dvef204_4">
+        
+        <span>
+            <span class="newNormalLabel"><label id="professionlabel" class="" for="profession">Profession</label>:</span>
+        </span>
+	</span>
+    <select name="profession" id="profession" onChange="tapestry.form.refresh(this.form, null,{async:true})">
+<option value=""></option>
+<option value="aprn">Advanced Practice Registered Nurse</option>
+<option value="cardiovascular">Cardiovascular Technologist and Technician</option>
+<option value="dentist">Dentist</option>
+<option value="sonographer">Diagnostic Medical Sonographer</option>
+<option value="emt">Emergency Medical Technician and Paramedic</option>
+<option value="healthrelated">Healthcare-Related Volunteer</option>
+<option value="layvolunteer">Lay and Non-Healthcare Volunteer</option>
+<option value="lvnurse">Licensed Practical Nurse and Licensed Vocational Nurse</option>
+<option value="socialworker">Licensed Social Worker</option>
+<option value="therapist">Marriage &amp; Family Therapist</option>
+<option value="recordstech">Medical Records and Health Information Technician</option>
+<option value="medicaltechnician">Medical and Clinical Laboratory Technician</option>
+<option value="medicaltechnologist">Medical and Clinical Laboratory Technologist</option>
+<option value="counselor">Mental Health Counselor</option>
+<option value="pharmacist">Pharmacist</option>
+<option value="pharmintern">Pharmacist Intern</option>
+<option value="pharmtech">Pharmacist Technician</option>
+<option value="physician">Physician</option>
+<option value="physassist">Physician Assistant</option>
+<option value="psychologist">Psychologist</option>
+<option value="radiologic">Radiologic Technologist and Technician</option>
+<option value="nurse">Registered Nurse</option>
+<option value="respiratory">Respiratory Therapist</option>
+<option value="veterinarian">Veterinarian</option>
+</select>
+
+		</span><span id="dfev6_5">
+			
+	<span id="dfev21_0">
+		<br/>
+	</span>
+	<fieldset id="Inspector General Status">
+        <legend id="Inspector General Status_1">
+            Inspector General Status
+        </legend>
+		<span id="dfev28_0">
+			
+	<br id="dvef277_0"></br>
+	
+	
+	 <div id="validateInspectorGeneral">
+		<span>
+			
+				<input type="radio" name="radioField" id="radioField0" value="0" class="radio" />
+				<div class="radioLabel">Success</div>
+			
+				<input type="radio" name="radioField" id="radioField1" value="1" class="radio" />
+				<div class="radioLabel">Failure</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev28_1">
+			
+	
+    <div id="validateInspectorGeneralDateDiv">
+        <span id="dfev57_0">
+            <span id="dfev58_0">
+                
+                <span>
+                    <div id="validateInspectorGeneralDatelabelDiv">
+                        <span class="newNormalLabel"><label id="validateInspectorGeneralDatelabel" class="" for="validateInspectorGeneralDate">Date</label>:</span>
+                    </div>
+                </span>
+            </span>
+            <input type="text" name="validateInspectorGeneralDate" value="" title="MM/dd/yyyy" id="validateInspectorGeneralDate" class="date" onblur="magicDate(this)" />&nbsp;<a href="javascript:calendar_validateInspectorGeneralDate.toggle(tapestry.byId(&quot;validateInspectorGeneralDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+        </span>
+        
+    </div>
+
+		</span>
+    </fieldset>
+
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+</span>
+
+		    	<br/>
+			</div>
+	    </span><span id="For_14">
+    		<div class="summaryHeader">
+	    		<a onclick="hidePage(this, 2); return false;" href="#" id="Any_5">
+	    			Background Information<span id="If_51">+</span>
+    			</a>
+    		</div>
+    		<br />
+   			
+    		<div style="display:none;" id="page2">
+				
+			    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="pages_6">
+		
+	<div class="page" id="dfev13_1">
+		<span id="dfev14_6">
+			
+	<div class="onecolumn" id="dfev5_1">
+		<span id="dfev6_8">
+			
+	<br id="dvef277_2"></br>
+	<span id="dvef278_2">
+        
+        <span>
+            <span class="newNormalLabel"><label title="Willingness to take on-site training" id="availableJitTraininglabel" class="" for="radioField_0">Would you be available for situational or "Just In Time" training?</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="availableJitTraining">
+		<span>
+			
+				<input type="radio" name="radioField_0" id="radioField_00" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_0" id="radioField_01" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev6_9">
+			
+	<span id="dfev21_2">
+		<br/>
+	</span>
+	<fieldset id="Emergency-Preparedness Training">
+        <legend id="Emergency-Preparedness Training_1">
+            Emergency-Preparedness Training
+        </legend>
+		
+    </fieldset>
+
+		</span><span id="dfev6_10">
+			
+	<br/>
+	<div id="DISASTERMULTI">
+        <span id="dfev37_0"></span>
+		<span id="dfev38_0">
+			
+	
+	<fieldset>
+        
+		<span id="dfev28_6">
+			
+	<br id="dfev123_0"></br>
+	<span id="dfev124_0">
+        
+        <span>
+            <span class="newNormalLabel"><label id="trainingTitlelabel" class="" for="trainingTitle">Training Title</label>:</span>
+        </span>
+    </span>
+	<input type="text" name="trainingTitle" value="" id="trainingTitle" maxlength="64" class="text" />
+
+		</span><span id="dfev28_7">
+			
+	<br id="dfev123_2"></br>
+	<span id="dfev124_2">
+        
+        <span>
+            <span class="newNormalLabel"><label id="trainingInstitutionlabel" class="" for="trainingInstitution">Institution Name</label>:</span>
+        </span>
+    </span>
+	<input type="text" name="trainingInstitution" value="" id="trainingInstitution" maxlength="64" class="text" />
+
+		</span><span id="dfev28_8">
+			
+	<br id="dfev55_2"></br>
+    <div id="trainingCompletionDateDiv">
+        <span id="dfev57_2">
+            <span id="dfev58_2">
+                
+                <span>
+                    <div id="trainingCompletionDatelabelDiv">
+                        <span class="newNormalLabel"><label id="trainingCompletionDatelabel" class="" for="trainingCompletionDate">Completion Date</label>:</span>
+                    </div>
+                </span>
+            </span>
+            <input type="text" name="trainingCompletionDate" value="" title="MM/dd/yyyy" id="trainingCompletionDate" class="date" onblur="magicDate(this)" />&nbsp;<a href="javascript:calendar_trainingCompletionDate.toggle(tapestry.byId(&quot;trainingCompletionDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+        </span>
+        
+    </div>
+
+		</span><span id="dfev28_9">
+			
+	<br id="dfev55_4"></br>
+    <div id="trainingExpirationDateDiv">
+        <span id="dfev57_4">
+            <span id="dfev58_4">
+                
+                <span>
+                    <div id="trainingExpirationDatelabelDiv">
+                        <span class="newNormalLabel"><label id="trainingExpirationDatelabel" class="" for="trainingExpirationDate">Class certification expiration Date</label>:</span>
+                    </div>
+                </span>
+            </span>
+            <input type="text" name="trainingExpirationDate" value="" title="MM/dd/yyyy" id="trainingExpirationDate" class="date" onblur="magicDate(this)" />&nbsp;<a href="javascript:calendar_trainingExpirationDate.toggle(tapestry.byId(&quot;trainingExpirationDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+        </span>
+        
+    </div>
+
+		</span>
+    </fieldset>
+
+		</span>
+        <br/>
+        <a href="/app?component=dynamicform&amp;page=EditWalkOnRegistration&amp;service=direct&amp;session=T&amp;updateParts=dynamicformhidden&amp;updateParts=dynamicform" onClick="tapestry.form.submit('dynamicform', 'DISASTERMULTI_0',{async:true,json:false,url:this.href}); return false;" id="DISASTERMULTI" class="multiGroupExtendLink">
+            Add Additional Emergency-Preparedness Training
+        </a>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+		</span><span id="dfev6_11">
+			
+	<span id="dfev21_6">
+		<br/>
+	</span>
+	<fieldset id="NIMS Training">
+        <legend id="NIMS Training_1">
+            NIMS Training
+        </legend>
+		<span id="dfev28_12">
+			
+	<br id="dvef277_4"></br>
+	
+	
+	 <div id="validateNIMS">
+		<span>
+			
+				<input type="radio" name="radioField_1" id="radioField_10" value="0" class="radio" />
+				<div class="radioLabel">Success</div>
+			
+				<input type="radio" name="radioField_1" id="radioField_11" value="1" class="radio" />
+				<div class="radioLabel">Failure</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev28_13">
+			
+	
+    <div id="validateNIMSDateDiv">
+        <span id="dfev57_6">
+            <span id="dfev58_6">
+                
+                <span>
+                    <div id="validateNIMSDatelabelDiv">
+                        <span class="newNormalLabel"><label id="validateNIMSDatelabel" class="" for="validateNIMSDate">Date</label>:</span>
+                    </div>
+                </span>
+            </span>
+            <input type="text" name="validateNIMSDate" value="" title="MM/dd/yyyy" id="validateNIMSDate" class="date" onblur="magicDate(this)" />&nbsp;<a href="javascript:calendar_validateNIMSDate.toggle(tapestry.byId(&quot;validateNIMSDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+        </span>
+        
+    </div>
+
+		</span><span id="dfev28_14">
+			
+	<br id="dvef244_0"></br>
+	<span id="dvef245_0">
+        
+        <span>
+            <span class="newNormalLabel"><label id="currentNIMSlabel" class="" for="validMultiSelect">Select the NIMS compliance training you have completed (Hold ctrl-key for multiple selections)</label>:</span>
+        </span>
+	</span>
+	<select name="validMultiSelect" multiple="multiple" id="validMultiSelect" size="">
+		<span id="dfev268">
+			<span id="dfev269">
+				<option value="0"></option>
+			</span><span id="dfev269_0">
+				<option value="1">ICS-100</option>
+			</span><span id="dfev269_1">
+				<option value="2">ICS-200</option>
+			</span><span id="dfev269_2">
+				<option value="3">ICS-300</option>
+			</span><span id="dfev269_3">
+				<option value="4">ICS-400</option>
+			</span><span id="dfev269_4">
+				<option value="5">ICS-700</option>
+			</span><span id="dfev269_5">
+				<option value="6">ICS-800</option>
+			</span>
+		</span>
+    </select>
+
+		</span><span id="dfev28_15">
+			
+	<br id="dfev192_0"></br>
+	
+        
+        
+            <span class="newNormalLabel"><label id="specialSkillslabel" class="" for="specialSkills">Please enter your special skills that may be valuable during an emergency crisis</label>:</span>
+        
+	
+	<textarea name="specialSkills" id="specialSkills" cols="10" rows="5"></textarea>
+
+		</span>
+    </fieldset>
+
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+</span>
+
+		    	<br/>
+			</div>
+	    </span><span id="For_15">
+    		<div class="summaryHeader">
+	    		<a onclick="hidePage(this, 3); return false;" href="#" id="Any_6">
+	    			Acknowledgement<span id="If_53">+</span>
+    			</a>
+    		</div>
+    		<br />
+   			
+    		<div style="display:none;" id="page3">
+				
+			    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="pages_9">
+		
+	<div class="page" id="dfev13_2">
+		<span id="dfev14_9">
+			
+	<div class="onecolumn" id="dfev5_2">
+		<span id="dfev6_14">
+			
+	<br id="dvef277_6"></br>
+	<span id="dvef278_6">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackConsentlabel" class="" for="radioField_2">I hereby give my consent to the State to use my information, as deemed necessary, for it's volunteer efforts</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="ackConsent">
+		<span>
+			
+				<input type="radio" name="radioField_2" id="radioField_20" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_2" id="radioField_21" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev6_15">
+			
+	<br id="dvef277_8"></br>
+	<span id="dvef278_8">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackTruelabel" class="" for="radioField_3">I hereby acknowledge that all statements made in this application are true</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="ackTrue">
+		<span>
+			
+				<input type="radio" name="radioField_3" id="radioField_30" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_3" id="radioField_31" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev6_16">
+			
+	<br id="dvef277_10"></br>
+	<span id="dvef278_10">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackBackgroundlabel" class="" for="radioField_4">I hereby give the State consent to perform reference and background checks</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="ackBackground">
+		<span>
+			
+				<input type="radio" name="radioField_4" id="radioField_40" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_4" id="radioField_41" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev6_17">
+			
+	<br id="dfev55_8"></br>
+    <div id="ackDateDiv">
+        <span id="dfev57_8">
+            <span id="dfev58_8">
+                
+                <span>
+                    <div id="ackDatelabelDiv">
+                        <span class="newNormalLabel"><label title="Date applicant pledged to provide correct information and consented to the collection, use, and maintenance of the applicant's personal information." id="ackDatelabel" class="" for="ackDate">Consent/Pledge Date</label>:</span>
+                    </div>
+                </span>
+            </span>
+            <input type="text" name="ackDate" value="" title="MM/dd/yyyy" id="ackDate" class="date" onblur="magicDate(this)" />&nbsp;<a href="javascript:calendar_ackDate.toggle(tapestry.byId(&quot;ackDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+        </span>
+        
+    </div>
+
+		</span><span id="dfev6_18">
+			
+	<br id="dvef203_6"></br>
+    <span id="dvef204_6">
+        
+        <span>
+            <span class="newNormalLabel"><label title="Select your geographical deployment preference" id="ackDeployPreflabel" class="" for="ackDeployPref">Deployment Preference</label>:</span>
+        </span>
+	</span>
+    <select name="ackDeployPref" id="ackDeployPref" onChange="">
+<option value=""></option>
+<option value="local">Local</option>
+<option value="regional">Regional</option>
+<option value="state">State</option>
+<option value="outofstate">Out-Of-State only</option>
+<option value="any">No Preference</option>
+</select>
+
+		</span><span id="dfev6_19">
+			
+	<br id="dvef203_8"></br>
+    <span id="dvef204_8">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackTravPreflabel" class="" for="ackTravPref">Travel Distance Preference (in miles)</label>:</span>
+        </span>
+	</span>
+    <select name="ackTravPref" id="ackTravPref" onChange="">
+<option value=""></option>
+<option value="25">up to 25</option>
+<option value="50">up to 50</option>
+<option value="100">up to 100</option>
+<option value="500">up to 500</option>
+<option value="5000">&gt;500</option>
+</select>
+
+		</span><span id="dfev6_20">
+			
+	<br id="dvef203_10"></br>
+    <span id="dvef204_10">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackDeployDurationPreflabel" class="" for="ackDeployDurationPref">Deployment Duration Preference (in days)</label>:</span>
+        </span>
+	</span>
+    <select name="ackDeployDurationPref" id="ackDeployDurationPref" onChange="">
+<option value=""></option>
+<option value="10">up to 10</option>
+<option value="30">up to 30</option>
+<option value="90">up to 90</option>
+<option value="180">up to 180</option>
+<option value="365">&gt;180</option>
+</select>
+
+		</span><span id="dfev6_21">
+			
+	<br id="dvef244_2"></br>
+	<span id="dvef245_2">
+        
+        <span>
+            <span class="newNormalLabel"><label id="currentAffiliationslabel" class="" for="validMultiSelect_0">Select the Emergency Preparedness Affiliations, including local, State and Federal entities, which you belong to (Hold ctrl-key for multiple selections)</label>:</span>
+        </span>
+	</span>
+	<select name="validMultiSelect_0" multiple="multiple" id="validMultiSelect_0" size="">
+		<span id="dfev268_1">
+			<span id="dfev269_7">
+				<option value="0"></option>
+			</span><span id="dfev269_8">
+				<option value="1">American Red Cross (ARC)</option>
+			</span><span id="dfev269_9">
+				<option value="2">Church- or Synagogue-Affiliated Disaster/Emergency Volunteer</option>
+			</span><span id="dfev269_10">
+				<option value="3">Cities Readiness Initiative (CRI) Volunteer</option>
+			</span><span id="dfev269_11">
+				<option value="4">Citizen Corps Unit</option>
+			</span><span id="dfev269_12">
+				<option value="5">Community Emergency Response Teams (CERT)</option>
+			</span><span id="dfev269_13">
+				<option value="6">County Emergency Management (CEM)</option>
+			</span><span id="dfev269_14">
+				<option value="7">County Public Health (CPH)</option>
+			</span><span id="dfev269_15">
+				<option value="8">Critical Incident Stress Management (CISM)</option>
+			</span><span id="dfev269_16">
+				<option value="9">Department of State Health Services (DSHS) volunteer</option>
+			</span><span id="dfev269_17">
+				<option value="10">Disaster Medical Assistance Team (DMAT)</option>
+			</span><span id="dfev269_18">
+				<option value="11">Disaster Mortuary Operational Response Team (DMORT)</option>
+			</span><span id="dfev269_19">
+				<option value="12">Disaster Portable Morgue Unit (DPMU)</option>
+			</span><span id="dfev269_20">
+				<option value="13">Fire Corps, The (TFC)</option>
+			</span><span id="dfev269_21">
+				<option value="14">Local Fire Department Volunteer</option>
+			</span><span id="dfev269_22">
+				<option value="15">Local Health Department Volunteer</option>
+			</span><span id="dfev269_23">
+				<option value="16">Medical Reserve Corps (MRC)</option>
+			</span><span id="dfev269_24">
+				<option value="17">National Disaster Medical System (NDMS)</option>
+			</span><span id="dfev269_25">
+				<option value="18">National Nurses Response Team (NNRT)</option>
+			</span><span id="dfev269_26">
+				<option value="19">National Pharmacy Response Team (NPRT)</option>
+			</span><span id="dfev269_27">
+				<option value="20">National Voluntary Organizations Active in Disaster (NVOAD)</option>
+			</span><span id="dfev269_28">
+				<option value="21">Neighborhood Watch Association</option>
+			</span><span id="dfev269_29">
+				<option value="22">Parish Nurses</option>
+			</span><span id="dfev269_30">
+				<option value="23">Salvation Army, The (TSA)</option>
+			</span><span id="dfev269_31">
+				<option value="24">Strategic National Stockpile (SNS) Protect Texas volunteers</option>
+			</span><span id="dfev269_32">
+				<option value="25">Texas Medical Association (TMA), County Medical Society</option>
+			</span><span id="dfev269_33">
+				<option value="26">Texas Ready Nurses</option>
+			</span><span id="dfev269_34">
+				<option value="27">Texas Voluntary Organizations Active in Disaster (TXVOAD)</option>
+			</span><span id="dfev269_35">
+				<option value="28">Tribal Emergency Management (TEM)</option>
+			</span><span id="dfev269_36">
+				<option value="29">Tribal Public Health (TPH)</option>
+			</span><span id="dfev269_37">
+				<option value="30">USAonWatch</option>
+			</span><span id="dfev269_38">
+				<option value="31">Veterinary Medical Assistance Team (VMAT)</option>
+			</span><span id="dfev269_39">
+				<option value="32">Volunteers in Police Services (VIPS)</option>
+			</span>
+		</span>
+    </select>
+
+		</span><span id="dfev6_22">
+			
+	<br id="dfev123_4"></br>
+	<span id="dfev124_4">
+        
+        <span>
+            <span class="newNormalLabel"><label id="otherAffiliationslabel" class="" for="otherAffiliations">Enter other Affiliations that you belong to (separate each Affiliation with commas)</label>:</span>
+        </span>
+    </span>
+	<input type="text" name="otherAffiliations" value="" id="otherAffiliations" maxlength="255" class="text" />
+
+		</span><span id="dfev6_23">
+			
+	<br id="dvef277_12"></br>
+	<span id="dvef278_12">
+        
+        <span>
+            <span class="newNormalLabel"><label id="interestingAffiliationslabel" class="" for="radioField_5">If you do not belong to any group, would you like information about groups in your area?</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="interestingAffiliations">
+		<span>
+			
+				<input type="radio" name="radioField_5" id="radioField_50" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_5" id="radioField_51" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span><span id="dfev6_24">
+			
+	<br id="dvef277_14"></br>
+	<span id="dvef278_14">
+        
+        <span>
+            <span class="newNormalLabel"><label id="ackNationalEmergencylabel" class="" for="radioField_6">In the event of a declared national emergency, would you consider volunteering to work under the auspices of The Federal Government?   If you check "Yes", in the event of a national emergency, the information you provide will be made available to The Federal Government upon its request</label>:</span>
+        </span>
+    </span>
+	
+	 <div id="ackNationalEmergency">
+		<span>
+			
+				<input type="radio" name="radioField_6" id="radioField_60" value="0" class="radio" />
+				<div class="radioLabel">Yes</div>
+			
+				<input type="radio" name="radioField_6" id="radioField_61" value="1" class="radio" />
+				<div class="radioLabel">No</div>
+			
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+		</span>
+	</div>
+
+</span>
+
+		    	<br/>
+			</div>
+	    </span>
+   		<div class="summaryHeader">
+    		<a onclick="hidePage(this, 4); return false;" href="#" id="Any_1_5">
+    			Assignment Information<span>-</span>
+   			</a>
+   		</div>
+   		<br />
+		
+   		<div style="display:block;" id="page4">
+			<div class="page">
+				<div class="onecolumn">
+				<br />
+				<span class="newNormalLabel"><label id="assignmentDateLabel" for="assignmentDate">Date</label>:</span>
+				<input type="text" name="assignmentDate" value="12/17/2009" title="MM/dd/yyyy" id="assignmentDate" class="dateInput" onblur="return magicDate(this)" />&nbsp;<a href="javascript:calendar_assignmentDate.toggle(tapestry.byId(&quot;assignmentDate&quot;));"><img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fform%2FDatePickerIcon.png" alt="Click on icon to choose a date/time value." border="0" class="datePickerImg" /></a>
+	
+				<br />
+				<span class="newNormalLabel"><label id="assignmentHourLabel" for="assignmentHour">Hour(0-23)</label>:</span>
+				<input type="text" name="assignmentHour" value="10" id="assignmentHour" maxlength="2" class="hourInput" />
+	
+				<span class="newNormalLabel"><label id="assignmentMinuteLabel" for="assignmentMinute">Minute(0-59)</label>:</span>
+				<input type="text" name="assignmentMinute" value="9" id="assignmentMinute" maxlength="2" class="minuteInput" />
+	
+				<br />
+
+	            <span class="newNormalLabel"><label id="eventTeamLabel" for="eventTeam">Event Team</label>:</span>
+	            <select name="eventTeam" id="eventTeam">
+<option value="">Assign Volunteer To Team</option>
+<option value="NEWADHOCTEAM">--New AdHoc Team Below--</option>
+</select>
+				<br/>
+				<span class="newNormalLabel"><label id="newEventTeamLabel" for="newEventTeam">New Event Team</label>:</span>
+	            <input type="text" name="newEventTeam" value="" id="newEventTeam" maxlength="255" class="longInput" />
+	            <br/>
+	
+				<span class="newNormalLabel"><label id="assignmentAssignmentLabel" for="assignmentAssignment">Assignment</label>:</span>
+	            <select name="assignmentAssignment" id="assignmentAssignment">
+<option value="">Please choose an assignment</option>
+<option value="NEWASSIGNMENT">--New Assignment Below--</option>
+</select>
+				<br/>
+				<span class="newNormalLabel"><label id="newAssignmentAssignmentLabel" for="newAssignmentAssignment">New Assignment</label>:</span>
+				<input type="text" name="newAssignmentAssignment" value="" id="newAssignmentAssignment" maxlength="255" class="longInput" />
+	
+				<br />
+	            <span class="newNormalLabel"><label id="assignmentLocationLabel" for="assignmentLocation">Location</label>:</span>
+	            <select name="assignmentLocation" id="assignmentLocation">
+<option value="">Please choose a location</option>
+<option value="NEWLOCATION">--New Location Below--</option>
+</select>
+				<br/>
+	            <span class="newNormalLabel"><label id="assignmentLocationLabel" for="newAssignmentLocation">New Location</label>:</span>
+	            <input type="text" name="newAssignmentLocation" value="" id="newAssignmentLocation" maxlength="255" class="longInput" />
+	
+	
+				<br />
+				<span class="newNormalLabel"><label id="assignmentDurationLabel" for="assignmentDuration">Duration (hours)</label>:</span>
+				<input type="text" name="assignmentDuration" value="" id="assignmentDuration" maxlength="2" class="minuteInput" />
+				</div>
+			</div>
+        </div>
+   		<br />
+	    
+    </span>
+
+    <div class="submitButtons">
+	  <input type="submit" name="submitButton" id="submitButton" value="Submit" />
+      <input type="submit" name="cancelButton" id="cancelButton" value="Cancel" />
+    </div>
+    <br/>
+    <script type="text/javascript"><!--
+		dojo.addOnLoad(function() {
+			if (dojo.byId("submitButton") != null) {
+				dojo.event.connect(dojo.byId("submitButton"), "onclick", function () {dojo.byId("dynamicform").onsubmit = null; return true; });
+			};
+	 	});
+        // Apply the rounded corners after this form is reinjected on a AJAX response.
+        // Nifty("ul.postnav a", "transparent");
+//--></script>
+</form>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("dynamicform", true);
+calendar_dob = new Calendar();
+
+	
+calendar_dob.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_dob.onchange = function() {
+  var field = tapestry.byId("dynamicform").dob;
+  var value = calendar_dob.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_validateInspectorGeneralDate = new Calendar();
+
+	
+calendar_validateInspectorGeneralDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_validateInspectorGeneralDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").validateInspectorGeneralDate;
+  var value = calendar_validateInspectorGeneralDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_trainingCompletionDate = new Calendar();
+
+	
+calendar_trainingCompletionDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_trainingCompletionDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").trainingCompletionDate;
+  var value = calendar_trainingCompletionDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_trainingExpirationDate = new Calendar();
+
+	
+calendar_trainingExpirationDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_trainingExpirationDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").trainingExpirationDate;
+  var value = calendar_trainingExpirationDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_validateNIMSDate = new Calendar();
+
+	
+calendar_validateNIMSDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_validateNIMSDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").validateNIMSDate;
+  var value = calendar_validateNIMSDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_ackDate = new Calendar();
+
+	
+calendar_ackDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_ackDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").ackDate;
+  var value = calendar_ackDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+calendar_assignmentDate = new Calendar(1261072800164);
+	
+calendar_assignmentDate.initialize(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "MM/dd/yyyy", 0, false, 1, "Clear");
+calendar_assignmentDate.onchange = function() {
+  var field = tapestry.byId("dynamicform").assignmentDate;
+  var value = calendar_assignmentDate.formatDate();
+	if (field.value != value) {
+    field.value = value;
+    if (field.onchange) { field.onchange();}
+  }
+}
+
+tapestry.cleanConnect("event", "onchange", "formEvent851905476");
+                tapestry.formEvent851905476=function(e){
+                    var content={beventname:"onchange", bcomponentidpath:"EditWalkOnRegistration/event", bcomponentid:"event"};
+                    tapestry.event.buildEventProperties(e, content, arguments);
+                    if (!content["beventtarget.id"]){
+                    	content["beventtarget.id"]="event";
+                    }
+                    
+                   var validateState=tapestry.form.forms["dynamicform"].validateForm;
+                   var validateForm=false;
+                   tapestry.form.setFormValidating("dynamicform", validateForm);
+                   
+                    
+                    tapestry.form.submitAsync("dynamicform", content);
+                    
+                    
+                    
+                    tapestry.form.setFormValidating("dynamicform", validateState);
+                    
+                };
+                tapestry.connect("event", "onchange", "formEvent851905476");
+tapestry.cleanConnect("state", "onchange", "formEvent1889180106");
+                tapestry.formEvent1889180106=function(e){
+                    var content={beventname:"onchange", bcomponentidpath:"EditWalkOnRegistration/personalInfoComponent.state", bcomponentid:"state"};
+                    tapestry.event.buildEventProperties(e, content, arguments);
+                    if (!content["beventtarget.id"]){
+                    	content["beventtarget.id"]="state";
+                    }
+                    
+                   var validateState=tapestry.form.forms["dynamicform"].validateForm;
+                   var validateForm=false;
+                   tapestry.form.setFormValidating("dynamicform", validateForm);
+                   
+                    
+                    tapestry.form.submitAsync("dynamicform", content);
+                    
+                    
+                    
+                    tapestry.form.setFormValidating("dynamicform", validateState);
+                    
+                };
+                tapestry.connect("state", "onchange", "formEvent1889180106");
+tapestry.cleanConnect("employerState", "onchange", "formEvent1143961555");
+                tapestry.formEvent1143961555=function(e){
+                    var content={beventname:"onchange", bcomponentidpath:"EditWalkOnRegistration/personalInfoComponent.employerState", bcomponentid:"employerState"};
+                    tapestry.event.buildEventProperties(e, content, arguments);
+                    if (!content["beventtarget.id"]){
+                    	content["beventtarget.id"]="employerState";
+                    }
+                    
+                   var validateState=tapestry.form.forms["dynamicform"].validateForm;
+                   var validateForm=false;
+                   tapestry.form.setFormValidating("dynamicform", validateForm);
+                   
+                    
+                    tapestry.form.submitAsync("dynamicform", content);
+                    
+                    
+                    
+                    tapestry.form.setFormValidating("dynamicform", validateState);
+                    
+                };
+                tapestry.connect("employerState", "onchange", "formEvent1143961555");});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 176 ms -->
+
+
+

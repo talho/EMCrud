@@ -1,0 +1,1652 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: ValidateVolunteers -->
+<!-- Generated: Thu Dec 17 10:23:19 CST 2009 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ Validate Volunteers</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=22df88a351fb3394add50a61d3397ad5&amp;service=asset&amp;path=%2Fstyles%2FvalidateVolunteers.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=ValidateVolunteers&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem selected" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+    <div class="summaryHeader">
+        Validate Volunteers
+    </div>
+    <br/>
+    <form method="post" action="/app" id="validateVolunteers">
+<div style="display:none;" id="validateVolunteershidden"><input type="hidden" name="formids" value="If_37,condPages_0,ifNormalPages_0,hiddenCurrentPage,hiddenPageCount,hiddenStartPage,hiddenStopPage,linkFirst,linkBack,linkPage,linkFwd,linkLast,condSorted_0,condSorted_2,condSort_0,condSorted_4,condSort_2,condSorted_6,condSort_4,condSorted_8,condSort_6,condSorted_10,condSort_8,iterRows_0,Button" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVRS07DMBSsKrFG3CFLL+q0QLtsBRWRAFUUdYtM/JpaOHZku5HgTFyNOzB2XBU2nvcZv3kef/+MLr5Go/HV+JJ5cr2qqZiwTjQRatt21pAJKTZBKEMOsSfvlTUx6nAsu06rWgSU1k608ebKOpmo2wNpDZSkqREh9pbmczjfJkBHe0f+UJkAdaGrPWpr64pZYvBiylCa3rB77ako50xIqaKS0A8k5KtofJKTcaZqsfejMh+neONsr4ZFpOpVXFrbxiKt9lC/jsAHKIsSaOBBgGZUS4Q75agOeSZot3n1ckjngDMlPQjVxf8qR5oG5ks80zjPGOstzH0ic8zhs+hXwp2TP4wqUOuL07LQnDF/fD93ygXbZB/QLGcnIo/xtnaqi//5QgbGJOM4g/FK4nd2Vh/xEeRg6i8YYIr6GgIAAA==" />
+<input type="hidden" name="component" value="validateVolunteers" />
+<input type="hidden" name="page" value="ValidateVolunteers" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="If_37" value="F" />
+<input type="hidden" name="condPages_0" value="T" />
+<input type="hidden" name="ifNormalPages_0" value="F" />
+<input type="hidden" name="hiddenCurrentPage" id="hiddenCurrentPage" value="2" />
+<input type="hidden" name="hiddenPageCount" id="hiddenPageCount" value="2" />
+<input type="hidden" name="hiddenStartPage" id="hiddenStartPage" value="1" />
+<input type="hidden" name="hiddenStopPage" id="hiddenStopPage" value="2" />
+<input type="hidden" name="condSorted_0" value="F" />
+<input type="hidden" name="condSorted_2" value="T" />
+<input type="hidden" name="condSort_0" value="T" />
+<input type="hidden" name="condSorted_4" value="T" />
+<input type="hidden" name="condSort_2" value="F" />
+<input type="hidden" name="condSorted_6" value="T" />
+<input type="hidden" name="condSort_4" value="F" />
+<input type="hidden" name="condSorted_8" value="T" />
+<input type="hidden" name="condSort_6" value="F" />
+<input type="hidden" name="condSorted_10" value="T" />
+<input type="hidden" name="condSort_8" value="F" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f0229e69e701241146635e1dd9" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f017ad74890118769b51f91fd1" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f0229e69e70122e15631c62ecb" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01bb28a4d011c28662f9d3883" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01d736c7d011d87c93c3012c9" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01f14a780011f3cc3c23031b5" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f017ad74890117d202973501b5" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01bb28a4d011c6d1479c615ef" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f0208c3b660120ceb02ab325c1" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01d8d22a9011e0509e91643ee" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01bb28a4d011c1c2ac1ec1686" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f0229e69e70123e86adfbc11d6" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f01bb28a4d011bbccb76af11d1" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f0247c293a0124fdc8a2ff602d" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f017ad748901188c42bbb023ce" />
+<input type="hidden" name="iterRows_0" value="PS8a81c8f018e25ca9011917b4f75102ec" />
+</div>
+        
+        <span>
+            
+
+
+
+<div id="tableView">
+	
+	
+		
+        
+	        
+
+<span id="informal">
+
+  
+  
+  
+  
+
+  <a href="javascript:tapestry.form.submit('validateVolunteers', 'linkFirst');" id="linkFirst">&lt;&lt;</a>  
+  <a href="javascript:tapestry.form.submit('validateVolunteers', 'linkBack');" id="linkBack">&lt;</a> 
+
+  
+
+    
+
+    
+      <a href="javascript:tapestry.form.submit('validateVolunteers', 'linkPage');" id="linkPage">1</a>
+    
+
+  
+
+    
+	    <b>2</b>
+    
+
+    
+
+  
+
+  &gt;
+  &gt;&gt;
+
+</span>
+
+        
+    
+	<table class="dataTable" id="tableElement">
+		<tr>
+
+
+	<th class="statusImageColumnHeader" id="informal_0">
+
+
+
+
+	Status
+
+
+</th>
+
+	<th class="firstColumnHeader" id="informal_1">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=AValidateVolunteers%2CsearchResults.tableView&amp;sp=Sfirst">Name</a></td>
+	<td>&nbsp;<img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fcontrib%2Ftable%2Fcomponents%2Finserted%2Farrow-up.gif" class="tableHeaderImage" /></td>
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+	<th class="professionColumnHeader" id="informal_2">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn_0" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=AValidateVolunteers%2CsearchResults.tableView&amp;sp=Sprofession">Profession</a></td>
+	
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+	<th class="dateColumnHeader" id="informal_3">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn_1" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=AValidateVolunteers%2CsearchResults.tableView&amp;sp=Sdate">Date</a></td>
+	
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+	<th class="remainingBlocksColumnHeader" id="informal_4">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn_2" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=AValidateVolunteers%2CsearchResults.tableView&amp;sp=SremainingBlocks">Remaining Blocks</a></td>
+	
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+	<th class="sourceOfRecordColumnHeader" id="informal_5">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn_3" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=AValidateVolunteers%2CsearchResults.tableView&amp;sp=SsourceOfRecord">Source Of Record</a></td>
+	
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+
+</tr>
+		
+
+
+	<tr class="dataRows" id="informal_6">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_7">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_8">
+                    <a id="showValidateVolunteer" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f0229e69e7012411408e2e1ce7&amp;sp=S8a81c8f0229e69e701241146635e1dd9">
+                            Opitz, John
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_9">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_10">
+                   10/01/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_11">
+                    <span id="For_4">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_3">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_5">
+	                    <span title="NIMS Training" id="Any_4">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_6">
+	                    <span title="Hospital Active" id="Any_5">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_7">
+	                    <span title="Inspector General Status" id="Any_6">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_8">
+	                    <span title="Unencumbered License" id="Any_7">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_12">
+                    <span id="For_10">
+	                    <span title="Geocode volunteer address" id="Any_8">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_13">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_14">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_15">
+                    <a id="showValidateVolunteer_0" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f017ad748901187694b1181fbd&amp;sp=S8a81c8f017ad74890118769b51f91fd1">
+                            Petty, Andrew
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_16">Emergency Medical Technician and Paramedic</td>
+
+	<td class="dateColumnValue" id="informal_17">
+                   03/03/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_18">
+                    <span id="For_12">
+	                    <span title="NIMS Training" id="Any_9">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_13">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_10">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_14">
+	                    <span title="Hospital Active" id="Any_11">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_15">
+	                    <span title="Inspector General Status" id="Any_12">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_16">
+	                    <span title="Certification/Registration" id="Any_13">Certification...</span>
+
+	                    <br/>
+                    </span><span id="For_17">
+	                    <span title="Degree" id="Any_14">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_18">
+	                    <span title="Unencumbered License" id="Any_15">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_19">
+                    <span id="For_20">
+	                    <span title="Geocode volunteer address" id="Any_16">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_20">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_21">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_22">
+                    <a id="showValidateVolunteer_1" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f0229e69e70122e149a86e2eba&amp;sp=S8a81c8f0229e69e70122e15631c62ecb">
+                            Pierce, Brad 
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_23">Emergency Medical Technician and Paramedic</td>
+
+	<td class="dateColumnValue" id="informal_24">
+                   10/20/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_25">
+                    <span id="For_22">
+	                    <span title="NIMS Training" id="Any_17">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_23">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_18">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_24">
+	                    <span title="Hospital Active" id="Any_19">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_25">
+	                    <span title="Inspector General Status" id="Any_20">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_26">
+	                    <span title="Certification/Registration" id="Any_21">Certification...</span>
+
+	                    <br/>
+                    </span><span id="For_27">
+	                    <span title="Degree" id="Any_22">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_28">
+	                    <span title="Unencumbered License" id="Any_23">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_26">
+                    <span id="For_30">
+	                    <span title="Geocode volunteer address" id="Any_24">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_27">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_28">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_29">
+                    <a id="showValidateVolunteer_2" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01bb28a4d011c28621f923870&amp;sp=S8a81c8f01bb28a4d011c28662f9d3883">
+                            Ramon, Mark Anthony
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_30">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_31">
+                   09/03/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_32">
+                    <span id="For_32">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_25">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_33">
+	                    <span title="NIMS Training" id="Any_26">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_34">
+	                    <span title="Hospital Active" id="Any_27">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_35">
+	                    <span title="Inspector General Status" id="Any_28">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_36">
+	                    <span title="Unencumbered License" id="Any_29">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_33">
+                    <span id="For_38">
+	                    <span title="Geocode volunteer address" id="Any_30">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_34">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_35">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_36">
+                    <a id="showValidateVolunteer_3" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01d736c7d011d87c5575f1281&amp;sp=S8a81c8f01d736c7d011d87c93c3012c9">
+                            Ray, Beverly Julia
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_37">Registered Nurse</td>
+
+	<td class="dateColumnValue" id="informal_38">
+                   09/01/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_39">
+                    <span id="For_40">
+	                    <span title="NIMS Training" id="Any_31">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_41">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_32">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_42">
+	                    <span title="Hospital Active" id="Any_33">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_43">
+	                    <span title="Inspector General Status" id="Any_34">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_44">
+	                    <span title="Degree" id="Any_35">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_45">
+	                    <span title="Unencumbered License" id="Any_36">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span><span id="For_46">
+	                    <span title="Specialty Certification" id="Any_37">Specialty&nbsp;Cer...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_40">
+                    <span id="For_48">
+	                    <span title="Geocode volunteer address" id="Any_38">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span><span id="For_49">
+	                    <span title="Texas - Nurse Licensing Board" id="Any_39">Texas&nbsp;-&nbsp;Nurse...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_41">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_42">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_43">
+                    <a id="showValidateVolunteer_4" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01f14a780011f3cbf0b3a317c&amp;sp=S8a81c8f01f14a780011f3cc3c23031b5">
+                            Reagan, David Steve
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_44">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_45">
+                   02/03/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_46">
+                    <span id="For_51">
+	                    <span title="NIMS Training" id="Any_40">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_52">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_41">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_53">
+	                    <span title="Hospital Active" id="Any_42">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_54">
+	                    <span title="Inspector General Status" id="Any_43">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_55">
+	                    <span title="Unencumbered License" id="Any_44">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_47">
+                    <span id="For_57">
+	                    <span title="Geocode volunteer address" id="Any_45">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_48">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_49">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_50">
+                    <a id="showValidateVolunteer_5" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f017ad74890117d1f8243301a2&amp;sp=S8a81c8f017ad74890117d202973501b5">
+                            Richey, Belinda
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_51">Registered Nurse</td>
+
+	<td class="dateColumnValue" id="informal_52">
+                   01/31/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_53">
+                    <span id="For_59">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_46">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_60">
+	                    <span title="NIMS Training" id="Any_47">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_61">
+	                    <span title="Hospital Active" id="Any_48">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_62">
+	                    <span title="Inspector General Status" id="Any_49">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_63">
+	                    <span title="Degree" id="Any_50">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_64">
+	                    <span title="Unencumbered License" id="Any_51">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span><span id="For_65">
+	                    <span title="Specialty Certification" id="Any_52">Specialty&nbsp;Cer...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_54">
+                    <span id="For_67">
+	                    <span title="Geocode volunteer address" id="Any_53">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_55">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_56">
+                    <img src="/app?digest=2a17213cf61f162e7ffc2dcea17f06e0&amp;service=asset&amp;path=%2Fimages%2FeditedVolunteer.png" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_57">
+                    <a id="showValidateVolunteer_6" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01bb28a4d011c6d1343977dee&amp;sp=S8a81c8f01bb28a4d011c6d1479c615ef">
+                            Taylor, Elena
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_58">Licensed Social Worker</td>
+
+	<td class="dateColumnValue" id="informal_59">
+                   11/09/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_60">
+                    <span id="For_69">
+	                    <span title="NIMS Training" id="Any_54">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_70">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_55">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_71">
+	                    <span title="Hospital Active" id="Any_56">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_72">
+	                    <span title="Inspector General Status" id="Any_57">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_73">
+	                    <span title="Unencumbered License" id="Any_58">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_61">
+                    <span id="For_75">
+	                    <span title="Texas DSHS" id="Any_59">Texas&nbsp;DSHS</span>
+
+	                    <br/>
+                    </span><span id="For_76">
+	                    <span title="Geocode volunteer address" id="Any_60">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_62">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_63">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_64">
+                    <a id="showValidateVolunteer_7" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f0208c3b660120cea28db625af&amp;sp=S8a81c8f0208c3b660120ceb02ab325c1">
+                            Thomas, David Lee
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_65">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_66">
+                   04/22/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_67">
+                    <span id="For_78">
+	                    <span title="NIMS Training" id="Any_61">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_79">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_62">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_80">
+	                    <span title="Hospital Active" id="Any_63">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_81">
+	                    <span title="Inspector General Status" id="Any_64">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_82">
+	                    <span title="Unencumbered License" id="Any_65">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_68">
+                    <span id="For_84">
+	                    <span title="Geocode volunteer address" id="Any_66">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_69">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_70">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_71">
+                    <a id="showValidateVolunteer_8" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01d8d22a9011e0507e89843de&amp;sp=S8a81c8f01d8d22a9011e0509e91643ee">
+                            Upton, Louis Ray
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_72">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_73">
+                   12/04/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_74">
+                    <span id="For_86">
+	                    <span title="NIMS Training" id="Any_67">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_87">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_68">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_88">
+	                    <span title="Hospital Active" id="Any_69">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_89">
+	                    <span title="Inspector General Status" id="Any_70">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_90">
+	                    <span title="Unencumbered License" id="Any_71">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_75">
+                    <span id="For_92">
+	                    <span title="Geocode volunteer address" id="Any_72">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_76">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_77">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_78">
+                    <a id="showValidateVolunteer_9" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01bb28a4d011c1c232d3d1671&amp;sp=S8a81c8f01bb28a4d011c1c2ac1ec1686">
+                            Valdez, Celina Ann
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_79">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_80">
+                   08/31/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_81">
+                    <span id="For_94">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_73">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_95">
+	                    <span title="NIMS Training" id="Any_74">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_96">
+	                    <span title="Hospital Active" id="Any_75">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_97">
+	                    <span title="Inspector General Status" id="Any_76">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_98">
+	                    <span title="Unencumbered License" id="Any_77">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_82">
+                    <span id="For_100">
+	                    <span title="Geocode volunteer address" id="Any_78">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_83">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_84">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_85">
+                    <a id="showValidateVolunteer_10" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f0229e69e70123e8664544116a&amp;sp=S8a81c8f0229e69e70123e86adfbc11d6">
+                            VanBibber, Russell Bert
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_86">Emergency Medical Technician and Paramedic</td>
+
+	<td class="dateColumnValue" id="informal_87">
+                   10/24/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_88">
+                    <span id="For_102">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_79">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_103">
+	                    <span title="NIMS Training" id="Any_80">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_104">
+	                    <span title="Hospital Active" id="Any_81">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_105">
+	                    <span title="Inspector General Status" id="Any_82">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_106">
+	                    <span title="Certification/Registration" id="Any_83">Certification...</span>
+
+	                    <br/>
+                    </span><span id="For_107">
+	                    <span title="Unencumbered License" id="Any_84">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span><span id="For_108">
+	                    <span title="Degree" id="Any_85">Degree</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_89">
+                    <span id="For_110">
+	                    <span title="Geocode volunteer address" id="Any_86">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_90">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_91">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_92">
+                    <a id="showValidateVolunteer_11" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f01bb28a4d011bbcc97e8c11bc&amp;sp=S8a81c8f01bb28a4d011bbccb76af11d1">
+                            Wempe, Benjamin Donald
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_93">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_94">
+                   08/13/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_95">
+                    <span id="For_112">
+	                    <span title="NIMS Training" id="Any_87">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_113">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_88">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_114">
+	                    <span title="Hospital Active" id="Any_89">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_115">
+	                    <span title="Inspector General Status" id="Any_90">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_116">
+	                    <span title="Unencumbered License" id="Any_91">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_96">
+                    <span id="For_118">
+	                    <span title="Geocode volunteer address" id="Any_92">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_97">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_98">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_99">
+                    <a id="showValidateVolunteer_12" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f0247c293a0124fdbf73de6018&amp;sp=S8a81c8f0247c293a0124fdc8a2ff602d">
+                            Whitehead, Joe Pat
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_100">Lay and Non-Healthcare Volunteer</td>
+
+	<td class="dateColumnValue" id="informal_101">
+                   11/16/2009
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_102">
+                    <span id="For_120">
+	                    <span title="NIMS Training" id="Any_93">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_121">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_94">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_122">
+	                    <span title="Hospital Active" id="Any_95">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_123">
+	                    <span title="Inspector General Status" id="Any_96">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_124">
+	                    <span title="Unencumbered License" id="Any_97">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_103">
+                    <span id="For_126">
+	                    <span title="Geocode volunteer address" id="Any_98">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_104">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_105">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_106">
+                    <a id="showValidateVolunteer_13" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f017ad748901188bed147523b2&amp;sp=S8a81c8f017ad748901188c42bbb023ce">
+                            Zerucha, George F
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_107">Physician Assistant</td>
+
+	<td class="dateColumnValue" id="informal_108">
+                   03/07/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_109">
+                    <span id="For_128">
+	                    <span title="NIMS Training" id="Any_99">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_129">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_100">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_130">
+	                    <span title="Hospital Active" id="Any_101">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_131">
+	                    <span title="Inspector General Status" id="Any_102">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_132">
+	                    <span title="Certification/Registration" id="Any_103">Certification...</span>
+
+	                    <br/>
+                    </span><span id="For_133">
+	                    <span title="Degree" id="Any_104">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_134">
+	                    <span title="Unencumbered License" id="Any_105">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span><span id="For_135">
+	                    <span title="Record of Adverse Actions" id="Any_106">Record&nbsp;of&nbsp;Adv...</span>
+
+	                    <br/>
+                    </span><span id="For_136">
+	                    <span title="DEA License" id="Any_107">DEA&nbsp;License</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_110">
+                    <span id="For_138">
+	                    <span title="Geocode volunteer address" id="Any_108">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_111">
+		
+
+
+	<td class="statusImageColumnValue" id="informal_112">
+                    <img src="/app?digest=fc94fb0c3ed8a8f909dbc7630a0987ff&amp;service=asset&amp;path=%2Fimages%2Fdivision%2Fblank.gif" width="15" alt="Status" height="15" />
+                </td>
+
+	<td class="firstColumnValue" id="informal_113">
+                    <a id="showValidateVolunteer_14" class="underlined" href="/app?component=showValidateVolunteer&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T&amp;sp=S8a81c8f018e25ca9011917ae841802d8&amp;sp=S8a81c8f018e25ca9011917b4f75102ec">
+                            valadez, adolfo m
+                    </a>
+                </td>
+
+	<td class="professionColumnValue" id="informal_114">Physician</td>
+
+	<td class="dateColumnValue" id="informal_115">
+                   04/03/2008
+                </td>
+
+	<td class="remainingBlocksColumnValue" id="informal_116">
+                    <span id="For_140">
+	                    <span title="NIMS Training" id="Any_109">NIMS&nbsp;Training</span>
+
+	                    <br/>
+                    </span><span id="For_141">
+	                    <span title="Clinically Active (Any setting other than a hospital; e.g. private practice)" id="Any_110">Clinically&nbsp;Ac...</span>
+
+	                    <br/>
+                    </span><span id="For_142">
+	                    <span title="Hospital Active" id="Any_111">Hospital&nbsp;Active</span>
+
+	                    <br/>
+                    </span><span id="For_143">
+	                    <span title="Inspector General Status" id="Any_112">Inspector&nbsp;Gen...</span>
+
+	                    <br/>
+                    </span><span id="For_144">
+	                    <span title="Unencumbered License" id="Any_113">Unencumbered&nbsp;...</span>
+
+	                    <br/>
+                    </span><span id="For_145">
+	                    <span title="Degree" id="Any_114">Degree</span>
+
+	                    <br/>
+                    </span><span id="For_146">
+	                    <span title="Record of Adverse Actions" id="Any_115">Record&nbsp;of&nbsp;Adv...</span>
+
+	                    <br/>
+                    </span><span id="For_147">
+	                    <span title="Specialty Certification" id="Any_116">Specialty&nbsp;Cer...</span>
+
+	                    <br/>
+                    </span><span id="For_148">
+	                    <span title="DEA License" id="Any_117">DEA&nbsp;License</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+	<td class="sourceOfRecordColumnValue" id="informal_117">
+                    <span id="For_150">
+	                    <span title="Geocode volunteer address" id="Any_118">Geocode&nbsp;volun...</span>
+
+	                    <br/>
+                    </span><span id="For_151">
+	                    <span title="ABMS" id="Any_119">ABMS</span>
+
+	                    <br/>
+                    </span><span id="For_152">
+	                    <span title="Texas - Physician Licensing Board" id="Any_120">Texas&nbsp;-&nbsp;Physi...</span>
+
+	                    <br/>
+                    </span>
+                </td>
+
+
+
+	</tr>
+
+
+
+	</table>
+
+</div>
+
+
+
+
+        </span>
+        <br/>
+        <br/>
+        <div style="float:right">
+            <a id="DirectLink_2" class="underlined" href="/app?component=%24DirectLink&amp;page=ValidateVolunteers&amp;service=direct&amp;session=T">
+                Search for Validated Volunteers to Revalidate
+            </a>
+        </div>
+        <br/>
+        <br/>
+        <div class="submitButtons">
+            <button type="button" name="Button" id="Button" onclick="javascript:tapestry.form.cancel(this.form);" class="button">Cancel</button>
+        </div>
+        <br/>
+    </form>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("validateVolunteers");});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 582 ms -->
+
+
+
