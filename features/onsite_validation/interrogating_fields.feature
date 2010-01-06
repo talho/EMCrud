@@ -11,12 +11,13 @@ Scenario: Registering a volunteer
     | Austin Flash Flooding |
   And I see "name" in the list of fields
 
-  And I set "name" to "Bob"
+  When I set "name" to "Bob"
   Then "name" should be set to "Bob"  
 
   When I set "event" to "Austin Flash Flooding"
   Then "event" should be set to "Austin Flash Flooding"
 
+  Given the form will submit successfully
   And I submit the form
   Then "Bob" is registered
 

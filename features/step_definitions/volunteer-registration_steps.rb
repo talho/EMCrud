@@ -18,3 +18,7 @@ end
 Then /^"([^\"]*)" should be set to "([^\"]*)"$/ do |field, value|
   @registration.form[field].should == value
 end
+Given /^the form will submit successfully$/ do
+  FakeWeb.register_uri :post, Registration.base_uri+'?page=EditWalkOnRegistration&service=page',
+                       :body => load_fixture('onsite_reg'), :content_type => "text/html"
+end
