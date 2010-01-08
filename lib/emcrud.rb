@@ -1,8 +1,8 @@
 require 'mechanize'
 require File.dirname(__FILE__) + '/registration'
-require File.dirname(__FILE__) + '/user'
+require File.dirname(__FILE__) + '/session'
 
-module EMCrud
+module EMCrud  
   def self.base_uri
     'https://emcredential.emsystem.com/app'
   end
@@ -17,6 +17,14 @@ module EMCrud
   
   def self.get(uri='')
     agent.get(base_uri+uri)
+  end
+  
+  def self.authenticate(username, password)
+    @@session = Session.authenticate(username, password)
+  end
+  
+  def self.session
+    @@session
   end
   
   # sleep for some variation of a second

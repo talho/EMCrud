@@ -1,19 +1,22 @@
 module EMCrud
-  class User
+  class Session
+        
+    def initialize(response='')
+      @response = response
+    end
     
-    attr_accessor :authenticated
-    alias_method :authenticated?, :authenticated
+    def authenticated?
+      @response.body.include?('Log Out')
+    end
     
     def self.authenticate(username, password)
       page = EMCrud.get
       form = page.forms.first      
       form['userName'] = username
       form['password'] = password
-      entropic_sleep
+      EMCrud.entropic_sleep
       response = form.click_button
-      user = User.new
-      user.authenticated = response.body.include?('Log Out')
-      user
+      Session.new(response)
     end
     
   end

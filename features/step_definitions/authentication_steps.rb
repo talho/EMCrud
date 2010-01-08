@@ -10,9 +10,9 @@ Given /^I am logged in as "([^\"]*)"$/ do |name|
 end
 
 When 'I sign in as a valid user' do
-  @user = User.authenticate @credentials['username'], @credentials['password']
+  @session = EMCrud.authenticate @credentials['username'], @credentials['password']
 end
 
 Then 'I should be signed in' do
-  @user.should be_authenticated
+  @session.should be_authenticated
 end
