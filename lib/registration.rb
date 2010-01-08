@@ -33,14 +33,28 @@ module EMCrud
         agent.user_agent_alias = 'Mac Safari'
       }
     end
-private
+    
+    def profession=(string)
+      @form['profession'] = string
+      get_profession_fields
+    end
+    
+  private
+    def get_profession_fields
+      # dojo-ajax-request:true
+      agent.request_headers['dojo-ajax-request'] = true
+      page = form.submit
+      @form = page.forms.first
+    end
+  
     def method_missing(method_name, *args)
       nice_name = method_name.to_s.sub(/=$/, '')
       if field_names.include?(nice_name)
         if method_name.to_s =~ /=$/
           @form[nice_name] = *args
-
         end
+      else
+        super method_name, *args
       end
     end
   end

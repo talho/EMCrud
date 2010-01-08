@@ -12,32 +12,16 @@ Scenario: Registering a volunteer
   And I see "name" in the list of fields
 
   When I set "name" to "Bob"
-  Then "name" should be set to "Bob"  
+  Then "name" should be set to "Bob"
 
   When I set "event" to "Austin Flash Flooding"
   Then "event" should be set to "Austin Flash Flooding"
+  
+  Given the "Dentist" profession form will be requested
+  When I set "profession" to "Dentist"
+  And I set "activeHospitalName" to "Sacred Heart"
+  Then "activeHospitalName" should be set to "Sacred Heart"
 
   Given the form will submit successfully
   And I submit the form
   Then "Bob" is registered
-
-#
-#  r = Registration.new
-#  r.setup
-#  r.event = r.events.last
-#  r.first_name = 'Bob'
-#  r.submit
-#
-#  class Registration
-#    include LessHappyMapper
-#    form '/someurl'
-#  end
-#  Registration.setup {:username => lkjlkj, :password...} do |r|
-#    r.username = 'foo'
-#    r.password = 'bar'
-#    # r.url = :default
-#    # r.required_field_flag = "*"
-#  end
-#
-#  r.required_fields # => [:first_name, :last_name, etc]
-#  r.optional_fields # =>
