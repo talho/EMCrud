@@ -7,6 +7,10 @@ end
 When /^I request the onsite registration portal$/ do
   FakeWeb.register_uri :get, EMCrud.base_uri+'?page=EditWalkOnRegistration&service=page',
                        :body => load_fixture('onsite_reg'), :content_type => "text/html"
+  When 'I start a new volunteer registration'
+end
+
+When 'I start a new volunteer registration' do
   @registration = Registration.new
 end
 

@@ -1,6 +1,7 @@
 require 'mechanize'
 require File.dirname(__FILE__) + '/registration'
 require File.dirname(__FILE__) + '/session'
+require 'logger'
 
 module EMCrud  
   def self.base_uri
@@ -9,9 +10,10 @@ module EMCrud
 
   def self.agent
     @@agent ||= WWW::Mechanize.new { |agent|
-      agent.user_agent_alias = 'Mac Safari'
+      agent.user_agent_alias = 'Windows IE 7'
       agent.follow_meta_refresh = true
       agent.keep_alive = false
+      agent.log = Logger.new(File.dirname(__FILE__)+'/../emcrud.log')
     }
   end
   

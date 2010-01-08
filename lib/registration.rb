@@ -30,10 +30,10 @@ module EMCrud
     
   private
     def get_profession_fields
-      # dojo-ajax-request:true
-      EMCrud.agent.request_headers['dojo-ajax-request'] = true
-      page = form.submit
+      @form['submitmode'] = 'refresh'
+      page = form.submit(nil, 'dojo-ajax-request' => 'true')
       @form = page.forms.first
+      @form['submitmode'] = ''
     end
   
     def method_missing(method_name, *args)
