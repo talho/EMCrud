@@ -6,7 +6,8 @@ Given 'a valid user' do
 end
 
 Given /^I am logged in as "([^\"]*)"$/ do |name|
-  # do nothing yet
+  Given 'a valid user'
+  When 'I sign in as a valid user'
 end
 
 When 'I sign in as a valid user' do
