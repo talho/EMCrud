@@ -1,0 +1,5 @@
+default: -r features/step_definitions -r features/support -e features/remote
+remote: -r features/step_definitions -r features/support -c --format pretty -r features/support/env.rb -r features/support/remote.rb -r features/step_definitions features features/remote
+html: -r features/step_definitions -r features/support --format progress --format html --out=features.html features
+autotest: -r features/step_definitions -r features/support -c --format pretty
+autotest-all: -r features/step_definitions -r features/support -c --format progress

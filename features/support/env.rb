@@ -1,5 +1,7 @@
-require 'fakeweb'
-FakeWeb.allow_net_connect = false
+Before('~@remote') do
+  require 'fakeweb'
+  FakeWeb.allow_net_connect = false
+end
 
 require 'lib/emcrud'
 include EMCrud

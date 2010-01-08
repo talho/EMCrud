@@ -1,2 +1,26 @@
 require 'mechanize'
 require File.dirname(__FILE__) + '/registration'
+require File.dirname(__FILE__) + '/user'
+
+module EMCrud
+  def self.base_uri
+    'https://emcredential.emsystem.com/app'
+  end
+
+  def self.agent
+    @@agent ||= WWW::Mechanize.new { |agent|
+      agent.user_agent_alias = 'Mac Safari'
+      agent.follow_meta_refresh = true
+      agent.keep_alive = false
+    }
+  end
+  
+  def self.get(uri='')
+    agent.get(base_uri+uri)
+  end
+  
+  # sleep for some variation of a second
+  def self.entropic_sleep
+    sleep((rand(100) / 100.0) + 0.5)
+  end
+end

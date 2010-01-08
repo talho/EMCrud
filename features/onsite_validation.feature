@@ -20,6 +20,7 @@ Scenario: Registering a volunteer
   Given the "Dentist" profession form will be requested
   When I set "profession" to "Dentist"
   And I set "activeHospitalName" to "Sacred Heart"
+
   Then "activeHospitalName" should be set to "Sacred Heart"
 
   Given the form will submit successfully
