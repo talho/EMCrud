@@ -12,5 +12,6 @@ Feature: Searching for volunteers
     And I set "lastname" to "Smith"
     And I submit the search
     Then I should see "John Smith" in the search results
+    And I should see a link to a profile "John Smith"
     
     

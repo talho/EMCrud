@@ -1,6 +1,6 @@
 module EMCrud
   class Volunteer
-    attr_accessor :last_name, :first_name
+    attr_accessor :last_name, :first_name, :url
    
     def self.search(options = {})
       Search.new(options).search

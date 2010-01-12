@@ -21,3 +21,7 @@ end
 Then 'I should see "$name" in the search results' do |name|
   @form.volunteers.map(&:name).should include(name)
 end
+
+Then 'I should see a link to a profile "$name"' do |name|
+  @form.volunteers.detect{|v| v.name == name}.url.should_not be_blank
+end
