@@ -1,0 +1,713 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: VolunteerSearchResults -->
+<!-- Generated: Tue Jan 12 09:32:41 CST 2010 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ Volunteer Search Results</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=702c0cdc15a162746f76eca6bf5ae4ba&amp;service=asset&amp;path=%2Fstyles%2FvolunteerSearchResults.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+dojo.require("dojo.event");
+function doNothing() { return false; }
+		
+
+function onclick_modifySearch() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('modifySearch'), "color", "lightgrey");
+	dojo.byId('modifySearch').onclick = doNothing;
+}
+function onclick_newSearch() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('newSearch'), "color", "lightgrey");
+	dojo.byId('newSearch').onclick = doNothing;
+}
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=VolunteerSearchResults&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+    <form method="post" action="/app" id="volunteerSearchResults">
+<div style="display:none;" id="volunteerSearchResultshidden"><input type="hidden" name="formids" value="If_37,pageSizeSelection,condPages_0,condSorted_0,condSort_0,condSorted_2,condSorted_4,condSorted_6,condSorted_8,iterRows_0,If_0_6,If_0_8,newSearch,modifySearch,cancel" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVRQU7DMBCsKvECxA9y9KFOA7THVlARCVDVcq9MvE0sHDtaO5HgTXyNP7B2HBUunt3xeGd3/f0zu/qazeY382vmAAdVQbZgnagDVLbtrAHjY2y8UAaQYgfOKWtC1NGx6TqtKuGJ2qFow8utRRmlxwa0JpSgoRY+3G3M53ieFoQIZwTXlMaTu9DlmbidxayICp4tGVHLO/aoHWT5igkpVXAS+gmEfBO1i3Yy1FQt9f2szMcU79EOamxEqkGFprWtLaXlmdxvA/AR8iwnNLSDMG1wi4IHhVD5VJNk96n1fExXBBdJHIjY9X+WTwXTI55knCcMfEvLfQHTp/BVDFuBl+SPovTQumxqljwL5vr3y02+Zvu0B7rMi0nIQ3ysUHVhwgMYWkxcHGeD1T19AOARBFbNAVyvPS32F462N1UeAgAA" />
+<input type="hidden" name="component" value="volunteerSearchResults" />
+<input type="hidden" name="page" value="VolunteerSearchResults" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="If_37" value="F" />
+<input type="hidden" name="condPages_0" value="F" />
+<input type="hidden" name="condSorted_0" value="T" />
+<input type="hidden" name="condSort_0" value="T" />
+<input type="hidden" name="condSorted_2" value="F" />
+<input type="hidden" name="condSorted_4" value="F" />
+<input type="hidden" name="condSorted_6" value="F" />
+<input type="hidden" name="condSorted_8" value="F" />
+<input type="hidden" name="iterRows_0" value="VZH4sIAAAAAAAAAIVSTU8TQRh+WQqUUhQ1Gi8mPRo1222BUiQhVkBtsiGmQk2IB4fdt8vA7s46My0LiSZ68B940ITozRj9BcSLXjxqvPgbPHjx5Mk4049tgwbnMJn3c573fZ53P2BEcJhxWGBi4HB0MZSU+GbAXPTNFvOboUTkZr33qlPcraHDuHvw4dVh7ff2XQOGbEgT37/BeCAkTNnbpEXyTUn9vE2FXIg5FI5+wDFiXIruP//ovvP22cfDe98WDRirQkYySfxbrMmFDVMYIPcwdPaWWCiJIyWc7nzpk9DL35Gcht6CDSeSvNtbLMQH8EgDPZV4a+gTSVmoA8M2jDQ0/G7WaKRLetaIRNINqVnKx8+yMhBZF4MjPXz6eu4Ju//ZgPENSFNRcSRtoQ0Zl7aoUEiqbhdLtudZJQH28GFAqN81DNpLTYX9lDRnPg6UZCUNcF8NMuBLNxWmpCaOQEKqYE1bEs6vYUxELuEiV0NP0cf3JJzb8YjrUnG5UJyeuaao2GIm456EXJmUC065YRVni9bmfHnWKhRLljVHNkl5ttSYn5eQvdkuvZK7zokrYTzpLwE0hiyoo95Khmc0i6YWjlnhnOxp9cSPv154/okcDMNQFVKC7qPCDGDsptSdkWBczbWvOGoTdEJ5hzox1TD/X11rzfYZevnl1/KbxaWfBhgbMElFNSSaIyLR3YAJKurEp662lAys42WgG9ss9PrN30+OfX9xKbpoQMqGk/06G1vY43VUizCRQSbirIFC9EU6ISJ0VI2kHXEqAiVMrK/WK3Z1ubK2snw8JXOlBim1l97dfHx0aZ1dJl7oeP9K0+bZ+A9Ru9ARPgQAAA==" />
+<input type="hidden" name="If_0_6" value="F" />
+<input type="hidden" name="iterRows_0" value="VZH4sIAAAAAAAAAIVTTWsTQRh+u03bNP2wKooIwh5F7GY3bdO0hWJoqw2uRWIbIXhwuvsmnXZ3J85M0qSgoAf/gQeFojcR/QXFi148Kl78DR68ePIkzuSbKnVhl3m/n3eeZ9/9gCHBYdZjoYWhx9HHSFISWCHzMbBqLKhGEpFbhc6pQHE/jx7j/uGHV0f537t3DRhwIU6C4DrjoZAw5e6SGklWJQ2SLhVyqc7BOT6AY4VxKdpz/tF97+2zj0f3vi0bMJKDhGSSBOusyoULUxgiL2PkNVZYJIknJZxpjQxIVE7ekZxG5SUXJrt5t3dYhA/gkQZ6uuvNY0AkZZEODLowVNLw21nDFV3SsYYkknZI7ZI5eZe1vsiW6F/p4dPX80/Y/c8GjBYhTkXWk7SGLiR8WqNCIcn5bSzjHc8GCbGDD0NCg7Zh0E5qLOqlxDkLsK9kXNIQD9Qifb54VWHq1tQrICHm2DO2hAubWCfC7HJh5rGs6OMNCef3kModq0x8n4prZQ3EUrcgwcyQjONlSnZqLmVvL2TmbCeVtu3ZBc9Z8NPe/KyEiRvNqqvmTd1Dwmh3gATQIMZBPeqsdHhW02hp5VhZzklDy6f++Oul55/I4SAM5CAm6AEq0ADGfkx9ExKMRbP5qVeaDE0q70Arphom/ytsLdoeRS+//Fp9s7zy0wCjCBNU5CKiSSIS/SKMUVEgAfW1pXRgn6wD3dhlUbnX/P3EyPcXVyqXDYi5cKpX52INO8QOaxV2dZCocFZCIXoqHRMV9FSNpC11KgYljG1tFLJubjW7ubZ6MieltJdxVIpLGiaJfHODRdPrqNrteIRjj/s2L/XjVyrh4i22TQM0m//UojnnpKbTM+pNO/O9bGhl/1WuzXP1P5uw/Ut1BAAA" />
+<input type="hidden" name="If_0_8" value="F" />
+</div>
+        <div class="summaryHeader">
+            Volunteer Search Results
+        </div>
+        <br/>
+        
+        <span>
+            <span id="totalVolunteers">2 found</span>
+            <div id="resultsPerPage">
+                <span class="label">Results per page:</span>
+                <select name="pageSizeSelection" id="pageSizeSelection" onChange="javascript:tapestry.form.refresh(this.form);">
+<option value="0">10</option>
+<option value="1" selected="selected">20</option>
+<option value="2">30</option>
+<option value="3">40</option>
+<option value="4">50</option>
+</select>
+            </div>
+            
+
+
+
+<div id="tableView">
+	
+	
+	<table id="searchResults" class="dataTable">
+		<tr>
+
+
+	<th class="FULL_NAME_LAST_FIRSTColumnHeader" id="informal">
+
+
+	<table class="tableHeaderTable" >
+	<tr>
+	<td><a id="linkColumn" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=AVolunteerSearchResults%2CsearchResults.tableView&amp;sp=SFULL_NAME_LAST_FIRST">Name</a></td>
+	<td>&nbsp;<img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fcontrib%2Ftable%2Fcomponents%2Finserted%2Farrow-up.gif" class="tableHeaderImage" /></td>
+	</tr>
+	</table>
+
+
+
+
+</th>
+
+	<th class="PROFESSIONColumnHeader" id="informal_0">
+
+
+
+
+	Profession
+
+
+</th>
+
+	<th class="SPECIALTIESColumnHeader" id="informal_1">
+
+
+
+
+	Specialties
+
+
+</th>
+
+	<th class="CREDENTIAL_LEVELColumnHeader" id="informal_2">
+
+
+
+
+	Credential Level
+
+
+</th>
+
+	<th class="TEAMSColumnHeader" id="informal_3">
+
+
+
+
+	Teams
+
+
+</th>
+
+
+</tr>
+		
+
+
+	<tr class="dataRows" id="informal_4">
+		
+
+
+	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_5">
+                   Smith, Brad<br/>
+			       
+                </td>
+
+	<td class="PROFESSIONColumnValue" id="informal_6">
+                    <span id="For_4">
+                        <a id="DirectLink_0_0" class="underlined" href="/app?component=%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b9850126007aba856f99&amp;sp=S8a81c8f02520b9850126007aba876fa6">
+                            <span title="" id="Any_3"></span>
+
+                        </a>
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="SPECIALTIESColumnValue" id="informal_7">
+                    <span id="For_6">
+                        <span title="" id="Any_4"></span>
+
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="CREDENTIAL_LEVELColumnValue" id="informal_8">
+                    <span id="For_8">
+                        <span title="UNVALIDATED" id="Any_5">UNVALIDATED</span>
+
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="TEAMSColumnValue" id="informal_9">
+                    
+                </td>
+
+
+
+	</tr>
+
+	<tr class="dataRows" id="informal_10">
+		
+
+
+	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_11">
+                   Smith, John<br/>
+			       
+                </td>
+
+	<td class="PROFESSIONColumnValue" id="informal_12">
+                    <span id="For_11">
+                        <a id="DirectLink_0_1" class="underlined" href="/app?component=%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b98501260049c19d6c74&amp;sp=S8a81c8f02520b98501260049c19f6c81">
+                            <span title="Lay and Non-Healthcare Volunteer" id="Any_6">Lay&nbsp;and&nbsp;Non-Healthcare&nbsp;Volunteer</span>
+
+                        </a>
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="SPECIALTIESColumnValue" id="informal_13">
+                    <span id="For_13">
+                        <span title="" id="Any_7"></span>
+
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="CREDENTIAL_LEVELColumnValue" id="informal_14">
+                    <span id="For_15">
+                        <span title="UNVALIDATED" id="Any_8">UNVALIDATED</span>
+
+                        <br/>
+                    </span>
+                </td>
+
+	<td class="TEAMSColumnValue" id="informal_15">
+                    
+                </td>
+
+
+
+	</tr>
+
+
+
+	</table>
+
+</div>
+
+
+
+
+        </span>
+        <br/>
+
+        <div class="submitButtons">
+            <input type="submit" name="newSearch" id="newSearch" value="New Search" />
+            <input type="submit" name="modifySearch" id="modifySearch" value="Modify Search" />
+            <button type="button" name="cancel" id="cancel" onclick="javascript:tapestry.form.cancel(this.form);" class="button">Cancel</button>
+			
+			
+        </div>
+        <br/>
+    </form>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("volunteerSearchResults");
+if (dojo.byId('modifySearch')) {
+	dojo.event.connectOnce("before", dojo.byId('modifySearch'), "onclick", onclick_modifySearch);
+}
+if (dojo.byId('newSearch')) {
+	dojo.event.connectOnce("before", dojo.byId('newSearch'), "onclick", onclick_newSearch);
+}});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 287 ms -->
+
+
+

@@ -6,8 +6,13 @@ module EMCrud
       'EditWalkOnRegistration'
     end
     
-    def initialize
+    def initialize(attrs = {})
       form
+      attributes = attrs 
+    end
+
+    def attributes=(attrs)
+      attrs.each {|key, value| self.send "#{key}=", value }
     end
 
     def field_names
