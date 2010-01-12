@@ -14,7 +14,7 @@ Scenario: Registering a volunteer
   When I set "name" to "Bob"
   Then "name" should be set to "Bob"
 
-  When I set "event" to "Austin Flash Flooding"
+  When I select "Austin Flash Flooding" from "event"
   Then "event" should be set to "Austin Flash Flooding"
   
   Given the "Dentist" profession form will be requested

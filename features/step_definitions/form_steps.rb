@@ -12,6 +12,12 @@ When /^I set "([^\"]*)" to "([^\"]*)"$/ do |field, value|
   @form.send "#{field}=", value
 end
 
+When /^I select "([^\"]*)" from "([^\"]*)"$/ do |value, name|
+  debugger
+  parser = @registration.page.parser
+end
+
 Then /^"([^\"]*)" should be set to "([^\"]*)"$/ do |field, value|
   @form.form[field].should == value
 end
+

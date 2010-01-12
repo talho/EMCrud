@@ -3,3 +3,4 @@ remote: -r features/step_definitions -r features/support -c --format pretty -r f
 html: -r features/step_definitions -r features/support --format progress --format html --out=features.html features
 autotest: -r features/step_definitions -r features/support -c --format pretty
 autotest-all: -r features/step_definitions -r features/support -c --format progress
+progress: -r features/support -r features/step_definitions -e features/remote --format progress

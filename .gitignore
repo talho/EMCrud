@@ -4,3 +4,4 @@ rdoc
 pkg
 credentials.yml
 *.log
+.idea/
