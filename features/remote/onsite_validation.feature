@@ -13,6 +13,9 @@ Scenario: Registering a volunteer
     | Austin Flash Flooding |
   And I see "name" in the list of fields
 
+  When I select "Austin Flash Flooding" from "event"
+  Then "event" should have "Austin Flash Flooding" selected
+
   When I set "name" to "Bob"
   Then "name" should be set to "Bob"
   
@@ -21,6 +24,7 @@ Scenario: Registering a volunteer
 
   Then "activeHospitalName" should be set to "Sacred Heart"
   And "name" should be set to "Bob"
+  And "event" should have "Austin Flash Flooding" selected
 
   When I fill out the rest of the required fields
 

@@ -2,7 +2,7 @@ Given 'a valid user' do
   filename = File.dirname(__FILE__)+'/../support/credentials.yml'
   raise 'You need a valid user. See features/support/credentials.sample.yml for instructions.' unless File.exist?(filename)
   require 'yaml'
-  @credentials = YAML::load_file(filename)
+  @credentials = YAML::load_file(filename)['production']
 end
 
 Given /^I am logged in as "([^\"]*)"$/ do |name|

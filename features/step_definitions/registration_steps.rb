@@ -1,6 +1,7 @@
 Given 'the "$name" profession form will be requested' do |name|
   FakeWeb.register_uri :post, EMCrud.base_uri,
-                       :body => load_fixture("credential_types/#{name.downcase}"), :content_type => "text/html"
+                       :body => load_fixture("credential_types/#{name.downcase}"),
+                       :content_type => "text/xml"
   @form = Registration.new
 end
 

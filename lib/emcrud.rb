@@ -6,7 +6,14 @@ require File.dirname(__FILE__) + '/session'
 require File.dirname(__FILE__) + '/volunteer'
 require 'logger'
 
-module EMCrud  
+module EMCrud 
+  class XmlParser < WWW::Mechanize::Page
+    def initialize(uri = nil, response = nil, body = nil, code = nil)
+      puts response['content-type'] = 'text/html'
+      super(uri, response, body, code)
+    end
+  end
+  
   def self.base_uri
     'https://emcredential.emsystem.com/app'
   end
@@ -16,6 +23,7 @@ module EMCrud
       agent.user_agent_alias = 'Windows IE 7'
       agent.follow_meta_refresh = true
       agent.keep_alive = false
+      agent.pluggable_parser['text/xml'] = XmlParser
       agent.log = Logger.new(File.dirname(__FILE__)+'/../emcrud.log')
     }
   end
