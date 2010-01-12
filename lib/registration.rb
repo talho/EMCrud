@@ -1,8 +1,5 @@
 module EMCrud
-<<<<<<< Updated upstream
   class Registration < Form
-=======
-  class Registration
 
     attr_reader :response
     attr_reader :page
@@ -10,13 +7,10 @@ module EMCrud
     def initialize
       form
     end
->>>>>>> Stashed changes
 
     def events
       @form.field_with(:name => "event").options.map(&:text)
     end
-<<<<<<< Updated upstream
-=======
 
     def field_names
       @form.fields.map(&:name)
@@ -29,7 +23,6 @@ module EMCrud
       end
       @form
     end
->>>>>>> Stashed changes
     
     def profession=(string)
       @form['profession'] = string
