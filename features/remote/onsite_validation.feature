@@ -1,8 +1,9 @@
 @remote
-Feature:  Interrogating the fieldset for onsite registration
+Feature:  Onsite Registration
   In order to register volunteers onsite at an event
-  a client program should be able to query for required and optional registration fields
-
+  As a user
+  I can submit the registration form
+  
 Background:
   Given I am logged in as "sally"
 
@@ -14,17 +15,14 @@ Scenario: Registering a volunteer
 
   When I set "name" to "Bob"
   Then "name" should be set to "Bob"
-
-  When I set "event" to "8a81c8f01a076b0b011abc5b159e3ce9"
-  # Then "event" should be set to "Austin Flash Flooding"
   
   When I set "profession" to "dentist"
   And I set "activeHospitalName" to "Sacred Heart"
 
   Then "activeHospitalName" should be set to "Sacred Heart"
   And "name" should be set to "Bob"
-  # And "event" should be set to "Austin Flash Flooding"
 
-  Given the form will submit successfully
+  When I fill out the rest of the required fields
+
   And I submit the form
   Then "Bob" is registered
