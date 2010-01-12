@@ -5,7 +5,7 @@ include EMCrud
 Before('~@remote') do
   require 'fakeweb'
   FakeWeb.allow_net_connect = false
-  
+  FakeWeb.clean_registry
   EMCrud.stub!(:authenticate).and_return(Session.new)
 end
 

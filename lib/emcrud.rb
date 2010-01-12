@@ -1,5 +1,7 @@
 require 'mechanize'
+require File.dirname(__FILE__) + '/form'
 require File.dirname(__FILE__) + '/registration'
+require File.dirname(__FILE__) + '/search'
 require File.dirname(__FILE__) + '/session'
 require 'logger'
 

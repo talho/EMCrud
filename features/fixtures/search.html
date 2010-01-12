@@ -1,0 +1,1369 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Application: null -->
+<!-- Page: AdHocSearchPage -->
+<!-- Generated: Tue Jan 12 09:01:18 CST 2010 -->
+<html>
+<head>
+<meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>EMCredential ~ Volunteer Search</title>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="author" content="EMSystem, LLC (info@emsystem.com)"/>
+    <link href="/app?digest=afe74ee7da3bfb86b8dec0f375d0cf03&amp;service=asset&amp;path=%2Fimages%2Ffavicon.ico" rel="shortcut icon" id="Any"></link>
+    <link media="print" href="/app?digest=64d323c367e66f4f7403f830f995e0c9&amp;service=asset&amp;path=%2Fstyles%2Fprint.css" type="text/css" rel="stylesheet" id="Any_0"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    
+	
+
+    <span id="For">
+    	<link media="screen" href="/app?digest=87c076c186914357e09a795d8919d54b&amp;service=asset&amp;path=%2Fstyles%2FsearchPage.css" type="text/css" rel="stylesheet" id="Any_1"></link>
+    </span><span id="For_0">
+    	<link media="screen" href="/app?digest=075f6263b5fceab470da50c196c6a969&amp;service=asset&amp;path=%2Fstyles%2FapplicationFrameComponent.css" type="text/css" rel="stylesheet" id="Any_1_0"></link>
+    </span><span id="For_1">
+    	<link media="screen" href="/app?digest=53d0093d74052d84e456c4387369e1c1&amp;service=asset&amp;path=%2Fstyles%2FborderComponent.css" type="text/css" rel="stylesheet" id="Any_1_1"></link>
+    </span><span id="For_2">
+    	<link media="screen" href="/app?digest=77c89b9b5fa44674d8aac988f9169809&amp;service=asset&amp;path=%2Fstyles%2Fglobal.css" type="text/css" rel="stylesheet" id="Any_1_2"></link>
+    </span>
+
+    
+        <style type="text/css">@import url( "styles/topMenuMods.css" );</style>
+    
+    
+<script type="text/javascript">djConfig = {"baseRelativePath":"/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2F","preventBackButtonFix":false,"parseWidgets":false,"locale":"en-us"} </script>
+
+<script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo.js"></script><script type="text/javascript" src="/app?service=asset&path=%2Fdojo-0.4.3-custom-4.1.5%2Fdojo2.js"></script>
+<script type="text/javascript">
+dojo.registerModulePath("tapestry", "/app?service=asset&path=%2Ftapestry-4.1.5%2F");
+</script>
+<script type="text/javascript" src="/app?service=asset&path=%2Ftapestry-4.1.5%2Fcore.js"></script>
+<script type="text/javascript">
+dojo.require("tapestry.namespace");
+tapestry.requestEncoding='UTF-8';
+</script>
+</head>
+
+
+
+<body id="Body">
+<script type="text/javascript" src="/app?digest=4fa0a1acd7b073e1b9a185c3397ab80b&amp;service=asset&amp;path=%2Fscripts%2FformUtilities.js"></script>
+<script type="text/javascript"><!--
+// Map of form name to array of form element values
+var formNameToElementValuesMap;
+
+function confirmIfFormChanged(form, msg) {
+    var allow = true;
+    var currentElementValues = buildSnapshotOfElementValues(form);
+
+    if (formNameToElementValuesMap[form.name].toString() != currentElementValues.toString()) {
+        allow = confirm(msg);
+    }
+
+    return allow;
+}
+dojo.require("dojo.event");
+function doNothing() { return false; }
+		
+
+function onclick_searchButton() {
+    // disable the submit on this button after the first time.
+
+	// Disable other buttons of interest
+	var otherButtonObject = null;
+
+	try {
+		
+	} finally {
+		otherButtonObject = null;
+	}
+
+	// Disable the button via a style and a function to nowhere... 
+	dojo.html.setStyle(dojo.byId('searchButton'), "color", "lightgrey");
+	dojo.byId('searchButton').onclick = doNothing;
+}
+// --></script>
+<!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
+<a name="top"></a>
+
+<div id="container">
+    <div id="headerGroup">
+        <div id="header">
+            <a id="imageLink" href="/app?page=Home&amp;service=page">
+                
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=AdHocSearchPage&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+            </a>
+
+            
+
+            
+				
+					<div id="welcome">
+                        Welcome<br/>
+                        <strong>Shelley Robinson</strong>
+                    </div>
+				
+				
+            
+
+            <div id="links" class="noPrint">
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=AdHocSearchPage&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="If_7">
+                    <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
+                </span>
+                <span id="If_8">
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=AdHocSearchPage&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <span id="If_9">
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=AdHocSearchPage&amp;service=direct&amp;session=T">Change Division</a><br/>
+                    </span>
+                </span>
+                
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <span id="If_10">
+        
+    </span>
+
+    
+        
+
+
+    <style type="text/css" media="screen">
+        @import url("styles/jsMenu.css");
+    </style>
+
+
+
+<div id="mainNavBar">
+	<ul id="mainNav">
+		<li class="menuItem" id="mainMenuItems">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Volunteers
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems">
+                        
+                            <a id="PageLink_0" href="/app?page=ValidateVolunteers&amp;service=page">
+                                Validate Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_0">
+                        
+                            <a id="PageLink_0_0" href="/app?page=VerifyOnScene&amp;service=page">
+                                Verify On-Scene
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_1">
+                        
+                            <a id="PageLink_0_1" href="/app?page=OnSceneRegistrationPage&amp;service=page">
+                                On-Scene Registration
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_2">
+                        
+                            <a id="PageLink_0_2" href="/app?page=VolunteerSearchPage&amp;service=page">
+                                Volunteer Search
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_3">
+                        
+                            <a id="PageLink_0_3" href="/app?page=SetupLicenseCheckDays&amp;service=page">
+                                Setup Notifications
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_4">
+                        
+                            <a id="PageLink_0_4" href="/app?page=EmailVolunteer&amp;service=page">
+                                Email
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_5">
+                        
+                            <a id="PageLink_0_5" href="/app?page=InactivateVolunteer&amp;service=page">
+                                Inactivate
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_6">
+                        
+                            <a id="PageLink_0_6" href="/app?page=EditVolunteerSearch&amp;service=page">
+                                Edit
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_7">
+                        
+                            <a id="PageLink_0_7" href="/app?page=AdminUndisableVolunteer&amp;service=page">
+                                Undelete
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_0">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Events
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_9">
+                        
+                            <a id="PageLink_0_8" href="/app?page=ManageEvents&amp;service=page">
+                                Manage Events
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_10">
+                        
+                            <a id="PageLink_0_9" href="/app?page=ManageMutualAidAgreements&amp;service=page">
+                                Mutual Aid
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_1">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Administration
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_12">
+                        
+                            <a id="PageLink_0_10" href="/app?page=ManageTeams&amp;service=page">
+                                Team Profile
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_13">
+                        
+                            <a id="PageLink_0_11" href="/app?page=UserRolesRightsSearch&amp;service=page">
+                                User Role &amp; Rights
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_14">
+                        
+                            <a id="PageLink_0_12" href="/app?page=DivisionRolesPage&amp;service=page">
+                                Division Roles
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_15">
+                        
+                            <a id="PageLink_0_13" href="/app?page=WebPortals&amp;service=page">
+                                Web Portals
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_16">
+                        
+                            <a id="PageLink_0_14" href="/app?page=ExportData&amp;service=page">
+                                Export Data
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_17">
+                        
+                            <a id="PageLink_0_15" href="/app?page=AdHocDataExport&amp;service=page">
+                                AdHoc Export
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_2">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Reports
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_19">
+                        
+                            <a id="PageLink_0_16" href="/app?page=AreaVolunteersReportSearch&amp;service=page">
+                                Volunteer Reports
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_20">
+                        
+                            <a id="PageLink_0_17" href="/app?page=VolunteersByTeamSearch&amp;service=page">
+                                Volunteers by Team
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_21">
+                        
+                            <a id="PageLink_0_18" href="/app?page=VolunteersByEventSearch&amp;service=page">
+                                Volunteers by Event
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_22">
+                        
+                            <a id="PageLink_0_19" href="/app?page=VolunteersByProfessionResults&amp;service=page">
+                                Volunteers by Profession
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_23">
+                        
+                            <a id="PageLink_0_20" href="/app?page=ImportedVolunteersResults&amp;service=page">
+                                Imported Volunteers
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_24">
+                        
+                            <a id="PageLink_0_21" href="/app?page=VolunteersByDistance&amp;service=page">
+                                Volunteers by Distance
+                            </a>
+                        
+                        
+			            
+                    </li><li class="menuItem" id="subMenuItems_25">
+                        
+                            <a id="PageLink_0_22" href="/app?page=TempUsers&amp;service=page">
+                                Incomplete Volunteer Profiles
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li><li class="menuItem" id="mainMenuItems_3">
+
+			
+			
+                <a href="javascript:void(0)">
+                    Preferences
+                </a>
+            
+            
+                <ul>
+                    <li class="menuItem" id="subMenuItems_27">
+                        
+                            <a id="PageLink_0_23" href="/app?page=PreferencesFunctionSummary&amp;service=page">
+                                Manage Preferences
+                            </a>
+                        
+                        
+			            
+                    </li>
+                </ul>
+            
+        </li>
+	</ul>
+    <div style="clear: both;"></div>
+
+    
+</div>
+
+
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+    startNav = function() {
+        if (document.all&&document.getElementById) {
+            navRoot = document.getElementById("mainNav");
+            for (i=0; i<navRoot.childNodes.length; i++) {
+                node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                        this.className+=" over";
+                    }
+                    node.onmouseout=function() {
+                        this.className=this.className.replace(" over", "");
+                    }
+                }
+            }
+        }
+    }
+    dojo.addOnLoad(startNav);
+    //--><!]]>
+    </script>
+
+
+
+        <div id="content">
+            
+	
+    <form method="post" action="/app" id="adHocSearchPage">
+<div style="display:none;" id="adHocSearchPagehidden"><input type="hidden" name="formids" value="delegateHasErrorsIf_0,firstname,lastname,esarVhpNumber,profession_0,profession_1,checkBoxSelections,checkBoxSelections_0,checkBoxSelections_1,checkBoxSelections_2,checkBoxSelections_3,checkBoxSelections_4,credential_0,credential_1,checkBoxSelections_5,If_37,regions_0,regions_1,checkBoxSelections_6,county_0,county_1,checkBoxSelections_7,city,zipcode,events_0,events_1,checkBoxSelections_8,eventStatus_0,eventStatus_1,checkBoxSelections_9,eventDistanceSelect,If_0_6,language_0,language_1,checkBoxSelections_10,fluency_0,fluency_1,checkBoxSelections_11,deployment_0,deployment_1,checkBoxSelections_12,travel_0,travel_1,checkBoxSelections_13,duration_0,duration_1,checkBoxSelections_14,federalize,fitForDutySelect,stateEmployee,searchButton,cancelButton" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVRwU7DMAydJnFDfEWPOSzdgO24CaZVAlQx7lNIvC4iTaokqwTfxK/xD9hpqsElz3558bOd75/J1ddkMr2ZXrMAvtcSihnrREMgXds5Czam2EahLXiMA4SgnaWow2PddUZLEZHaetHSy43zKkn3JzAGUYGBRkS6W9vP4TzMED0cPYRTZSO6C1Mdkds6XyySghdzhtT8jj2aAEW5ZEIpTU7C7ECoN9GEZKeopm6x7ydtP8a49q7XQyNK95qaNq5xmFZHdL8l4AOURYlocQc0LbklwYP2IGOuibL73Ho5pEuEiyQNhOzqP8vHgvkRzzLOMxLf4nKfwZ5z+CL6jfCX5I+iitCGYmwWPRcsnN8vN+WK1XkPeFkuRiGneC+97mjCV7C4mLQ4jkvdObkH4eWpTl//CzOPrcUXAgAA" />
+<input type="hidden" name="component" value="adHocSearchPage" />
+<input type="hidden" name="page" value="AdHocSearchPage" />
+<input type="hidden" name="service" value="direct" />
+<input type="hidden" name="session" value="T" />
+<input type="hidden" name="submitmode" value="" />
+<input type="hidden" name="submitname" value="" />
+<input type="hidden" name="delegateHasErrorsIf_0" value="F" />
+<input type="hidden" name="If_37" value="T" />
+<input type="hidden" name="If_0_6" value="F" />
+</div>
+        <div class="summaryHeader">
+            <span title="Volunteer Search" id="Any_3">Volunteer&nbsp;Search</span>
+
+        </div>
+        
+        <br/>
+        <div class="threewaycol">
+        <fieldset title="Volunteer">
+        	<legend>Volunteer</legend>
+            <span class="newNormalLabel"><label for="firstname">First Name</label>:</span>
+            <input type="text" name="firstname" value="" id="firstname" maxlength="32" />
+            <br/>
+            <span class="newNormalLabel"><label for="lastname">Last Name</label>:</span>
+            <input type="text" name="lastname" value="" id="lastname" maxlength="32" />
+			<br/>
+            <span class="newNormalLabel"><label for="esarVhpNumber">Volunteer ID</label>:</span>
+            <input type="text" name="esarVhpNumber" value="" id="esarVhpNumber" maxlength="16" />
+			<br/>
+            <div id="profession" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections">Profession</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('profession');return false;" href="#" id="Any_0_0">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="aprn" />   Advanced Practice Registered Nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="cardiovascular" />   Cardiovascular Technologist and Technician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="dentist" />   Dentist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="sonographer" />   Diagnostic Medical Sonographer</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="emt" />   Emergency Medical Technician and Paramedic</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="healthrelated" />   Healthcare-Related Volunteer</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="layvolunteer" />   Lay and Non-Healthcare Volunteer</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="lvnurse" />   Licensed Practical Nurse and Licensed Vocational Nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="socialworker" />   Licensed Social Worker</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="therapist" />   Marriage &amp; Family Therapist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="recordstech" />   Medical Records and Health Information Technician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="medicaltechnician" />   Medical and Clinical Laboratory Technician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="medicaltechnologist" />   Medical and Clinical Laboratory Technologist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="counselor" />   Mental Health Counselor</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="pharmacist" />   Pharmacist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="pharmintern" />   Pharmacist Intern</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="pharmtech" />   Pharmacist Technician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="physician" />   Physician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="physassist" />   Physician Assistant</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="psychologist" />   Psychologist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="radiologic" />   Radiologic Technologist and Technician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="nurse" />   Registered Nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="respiratory" />   Respiratory Therapist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections" value="veterinarian" />   Veterinarian</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <span id="For_4">
+                <div id="physician" class="multiCheckBoxes">
+                    <div class="label">
+                        <span class="newNormalLabel"><label for="checkBoxSelections_0">Physician Specialties/Occupations</label>:</span>
+                    </div>
+                    <div class="input">
+                    <div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="1" />   Aerospace Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="4" />   Allergy &amp; Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="2" />   Allergy &amp; Immunology - Clinical &amp; Laboratory  Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="3" />   Allergy &amp; Immunology - Diagnostic Laboratory Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="5" />   Anatomic Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="6" />   Anatomic Pathology &amp; Clinical Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="7" />   Anesthesiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="8" />   Anesthesiology - Critical Care Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="9" />   Anesthesiology - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="10" />   Anesthesiology - Pain Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="11" />   Clinical Biochemical Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="12" />   Clinical Biochemical/Molecular Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="13" />   Clinical Cytogenetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="14" />   Clinical Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="15" />   Clinical Molecular Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="16" />   Clinical Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="17" />   Colon &amp; Rectal Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="18" />   Dermatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="19" />   Dermatology - Clinical &amp; Laboratory Dermatological Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="20" />   Dermatology - Dermatological Immunology/Diagnostic and Laboratory Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="21" />   Dermatology - Dermatopathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="22" />   Dermatology - Pediatric Dermatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="23" />   Diagnostic &amp; Medical Nuclear Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="24" />   Diagnostic Radiologic Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="25" />   Diagnostic Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="26" />   Diagnostic Radiology with Special Competence in Nuclear Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="27" />   Diagnostic Roentgenology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="28" />   Emergency Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="29" />   Emergency Medicine - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="30" />   Emergency Medicine - Medical Toxicology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="31" />   Emergency Medicine - Pediatric Emergency Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="32" />   Emergency Medicine - Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="33" />   Emergency Medicine - Undersea &amp; Hyperbaric Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="34" />   Family Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="35" />   Family Medicine - Adolescent Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="36" />   Family Medicine - Geriatric Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="37" />   Family Medicine - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="38" />   Family Medicine - Sleep Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="39" />   Family Medicine - Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="40" />   General Preventive Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="41" />   Internal Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="42" />   Internal Medicine - Adolescent Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="43" />   Internal Medicine - Allergy &amp; Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="44" />   Internal Medicine - Cardiac Electrophysiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="45" />   Internal Medicine - Cardiovascular Disease</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="47" />   Internal Medicine - Clinical &amp; Laboratory Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="46" />   Internal Medicine - Clinical Cardiac Electrophysiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="48" />   Internal Medicine - Critical Care Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="49" />   Internal Medicine - Diagnostic Laboratory Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="50" />   Internal Medicine - Endocrinology and Metabolism</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="51" />   Internal Medicine - Endocrinology, Diabetes and Metabolism</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="52" />   Internal Medicine - Gastroenterology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="53" />   Internal Medicine - Geriatric Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="54" />   Internal Medicine - Hematology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="55" />   Internal Medicine - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="56" />   Internal Medicine - Infectious Disease</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="57" />   Internal Medicine - Interventional Cardiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="58" />   Internal Medicine - Medical Oncology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="59" />   Internal Medicine - Nephrology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="60" />   Internal Medicine - Pulmonary Disease</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="61" />   Internal Medicine - Rheumatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="62" />   Internal Medicine - Sleep Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="63" />   Internal Medicine - Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="64" />   Internal Medicine - Transplant Hepatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="200" />   Medical Genetics - Medical Biochemical Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="65" />   Medical Genetics - Molecular Genetic Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="66" />   Medical Nuclear Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="67" />   Neurological Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="68" />   Neurology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="69" />   Neurology with Special Qualifications in Child Neurology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="70" />   Nuclear Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="71" />   Nuclear Medicine Medallion</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="77" />   Obstetrics &amp; Gynecology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="72" />   Obstetrics &amp; Gynecology - Critical Care Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="73" />   Obstetrics &amp; Gynecology - Gynecologic Oncology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="74" />   Obstetrics &amp; Gynecology - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="75" />   Obstetrics &amp; Gynecology - Maternal-Fetal Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="76" />   Obstetrics &amp; Gynecology - Reproductive Endocrinology/Infertility</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="78" />   Occupational Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="79" />   Ophthalmology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="80" />   Orthopaedic Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="81" />   Orthopaedic Surgery - Orthopaedic Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="82" />   Orthopaedic Surgery - Surgery of the Hand</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="83" />   Otolaryngology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="84" />   Otolaryngology - Neurotology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="85" />   Otolaryngology - Pediatric Otolaryngology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="86" />   Otolaryngology - Plastic Surgery within the Head and Neck</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="87" />   Otolaryngology - Sleep Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="88" />   Pathology - Blood Banking</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="89" />   Pathology - Blood Banking/Transfusion Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="90" />   Pathology - Chemical Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="91" />   Pathology - Cytopathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="92" />   Pathology - Dermatopathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="93" />   Pathology - Forensic Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="94" />   Pathology - Hematology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="95" />   Pathology - Immunopathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="96" />   Pathology - Medical Microbiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="97" />   Pathology - Molecular Genetic Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="98" />   Pathology - Neuropathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="99" />   Pathology - Pediatric Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="100" />   Pathology - Radioisotopic Pathology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="201" />   Pathology Recertification</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="101" />   Pediatrics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="102" />   Pediatrics - Adolescent Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="103" />   Pediatrics - Allergy &amp; Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="104" />   Pediatrics - Child Abuse Pediatrics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="105" />   Pediatrics - Clinical &amp; Laboratory  Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="106" />   Pediatrics - Developmental-Behavioral Pediatrics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="107" />   Pediatrics - Diagnostic Laboratory Immunology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="108" />   Pediatrics - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="109" />   Pediatrics - Medical Toxicology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="110" />   Pediatrics - Neonatal-Perinatal Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="111" />   Pediatrics - Neurodevelopmental Disabilities</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="112" />   Pediatrics - Pediatric Cardiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="113" />   Pediatrics - Pediatric Critical Care Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="114" />   Pediatrics - Pediatric Emergency Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="115" />   Pediatrics - Pediatric Endocrinology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="116" />   Pediatrics - Pediatric Gastroenterology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="117" />   Pediatrics - Pediatric Hematology-Oncology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="118" />   Pediatrics - Pediatric Infectious Diseases</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="119" />   Pediatrics - Pediatric Nephrology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="120" />   Pediatrics - Pediatric Pulmonology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="121" />   Pediatrics - Pediatric Rheumatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="122" />   Pediatrics - Pediatric Transplant Hepatology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="123" />   Pediatrics - Sleep Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="124" />   Pediatrics - Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="125" />   Ph.D. Medical Genetics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="131" />   Physical Medicine &amp; Rehabilitation</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="126" />   Physical Medicine &amp; Rehabilitation - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="202" />   Physical Medicine &amp; Rehabilitation - Neuromuscular Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="127" />   Physical Medicine &amp; Rehabilitation - Pain Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="128" />   Physical Medicine &amp; Rehabilitation - Pediatric Rehabilitation Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="129" />   Physical Medicine &amp; Rehabilitation - Spinal Cord Injury Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="130" />   Physical Medicine &amp; Rehabilitation - Sports Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="132" />   Plastic Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="133" />   Plastic Surgery - Plastic Surgery within the Head and Neck</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="134" />   Plastic Surgery - Surgery of the Hand</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="135" />   Preventive Medicine - Medical Toxicology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="136" />   Preventive Medicine - Undersea &amp; Hyperbaric Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="137" />   Preventive Medicine - Undersea Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="138" />   Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="139" />   Psychiatry &amp; Neurology - Addiction Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="140" />   Psychiatry &amp; Neurology - Child &amp; Adolescent Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="141" />   Psychiatry &amp; Neurology - Child Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="142" />   Psychiatry &amp; Neurology - Clinical Neurophysiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="143" />   Psychiatry &amp; Neurology - Forensic Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="144" />   Psychiatry &amp; Neurology - Geriatric Psychiatry</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="145" />   Psychiatry &amp; Neurology - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="146" />   Psychiatry &amp; Neurology - Neurodevelopmental Disabilities</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="147" />   Psychiatry &amp; Neurology - Neuromuscular Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="148" />   Psychiatry &amp; Neurology - Pain Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="149" />   Psychiatry &amp; Neurology - Psychosomatic Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="150" />   Psychiatry &amp; Neurology - Sleep Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="151" />   Psychiatry &amp; Neurology - Vascular Neurology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="152" />   Public Health</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="153" />   Public Health &amp; General Preventive Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="154" />   Radiation Oncology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="155" />   Radiation Oncology Recertification</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="156" />   Radiologic Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="157" />   Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="158" />   Radiology - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="159" />   Radiology - Neuroradiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="160" />   Radiology - Nuclear Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="161" />   Radiology - Pediatric Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="162" />   Radiology - Vascular &amp; Interventional Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="163" />   Radium Therapy</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="164" />   Roentgen &amp; Gamma Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="165" />   Roentgenology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="166" />   Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="167" />   Surgery - Hospice and Palliative Medicine</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="168" />   Surgery - Pediatric Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="169" />   Surgery - Surgery of the Hand</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="170" />   Surgery - Surgical Critical Care</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="171" />   Therapeutic &amp; Diagnostic Radiologic Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="172" />   Therapeutic &amp; Medical Nuclear Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="173" />   Therapeutic Radiologic Physics</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="174" />   Therapeutic Radiology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="175" />   Therapeutic Roentgenology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="176" />   Thoracic Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="203" />   Thoracic Surgery - Congenital Cardiac Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="177" />   Urology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="178" />   Urology - Pediatric Urology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="179" />   Vascular Surgery</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_0" value="180" />   X-Ray and Radium Physics</div>
+
+                    </div>
+                </div>
+            </span><span id="For_5">
+                <div id="layvolunteer" class="multiCheckBoxes">
+                    <div class="label">
+                        <span class="newNormalLabel"><label for="checkBoxSelections_1">Layvolunteer Specialties/Occupations</label>:</span>
+                    </div>
+                    <div class="input">
+                    <div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="admin" />   Administration/Management</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="agri" />   Agriculture</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="military" />   Armed Forces/Military</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="auto" />   Automotive</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="aviation" />   Aviation</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="banking" />   Banking/Finance</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="clergy" />   Clergy</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="communications" />   Communications</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="constuction" />   Construction</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="university" />   Education/College or University</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="highschool" />   Education/Kindergarten - High School</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="entertainment" />   Entertainment</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="facilitysupport" />   Facility Support or Management</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="firefighter" />   Fire Fighter</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="govservice" />   Government Services</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="healthcare" />   Healthcare Administration/Support</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="hotelguest" />   Hotel/Guest Services</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="insurance" />   Insurance</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="interpretive" />   Interpretive Services (American sign language, etc.)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="languageservices" />   Language Services</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="lawenforcement" />   Law Enforcement</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="manufacture" />   Manufacturing</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="mortuary" />   Mortuary Services</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="news" />   News Media/Advertising/Public Relations</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="nonprofit" />   Non-profit Community Service</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="pharma" />   Pharmaceuticals</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="publication" />   Publication</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="restaurant" />   Restaurant/Catering</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="retail" />   Sales - Retail</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="wholesale" />   Sales - Wholesale</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="earthsci" />   Science (earth)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="lifesci" />   Science (life)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="physicsci" />   Science (physics)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="student" />   Student</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="grounddistrib" />   Transportation (distribution, including truck driver, etc.)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="groundtrans" />   Transportation (ground, including bus driver, taxi, etc.)</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_1" value="warehouse" />   Warehouse Services/Support</div>
+
+                    </div>
+                </div>
+            </span><span id="For_6">
+                <div id="psychologist" class="multiCheckBoxes">
+                    <div class="label">
+                        <span class="newNormalLabel"><label for="checkBoxSelections_2">Psychologist Specialties/Occupations</label>:</span>
+                    </div>
+                    <div class="input">
+                    <div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="2" />   Clinical neuropsychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="1" />   Clinical psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="3" />   Cognitive and behavioral psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="4" />   Counseling psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="5" />   Family psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="6" />   Forensic psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="7" />   Group psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="12" />   NRHSPP registered</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="8" />   Organizational and business consulting psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="9" />   Psychoanalysis in psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="10" />   Rehabilitative psychology</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_2" value="11" />   School psychology</div>
+
+                    </div>
+                </div>
+            </span><span id="For_7">
+                <div id="healthrelated" class="multiCheckBoxes">
+                    <div class="label">
+                        <span class="newNormalLabel"><label for="checkBoxSelections_3">Healthrelated Specialties/Occupations</label>:</span>
+                    </div>
+                    <div class="input">
+                    <div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="biostatistician" />   Biostatistician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="dietician" />   Dietician</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="environhealth" />   Environmental Health Professional</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="epidemiologist" />   Epidemiologist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="healtheducator" />   Health Educator</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="midwife" />   Licensed Midwife</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="medtranslator" />   Medical Translator/Interpreter</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="nutritionist" />   Nutritionist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="publichealth" />   Public Health Professional</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_3" value="sanitarian" />   Sanitarian</div>
+
+                    </div>
+                </div>
+            </span><span id="For_8">
+                <div id="nurse" class="multiCheckBoxes">
+                    <div class="label">
+                        <span class="newNormalLabel"><label for="checkBoxSelections_4">Nurse Specialties/Occupations</label>:</span>
+                    </div>
+                    <div class="input">
+                    <div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="1" />   Adult critical care nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="32" />   Advanced oncology certified nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="11" />   Ambulatory care nurse specialty</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="12" />   Cardiac/vascular nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="27" />   Certified RN, first assistant</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="9" />   Certified ambulatory perianesthesia nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="25" />   Certified hospice and palliative nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="24" />   Certified medical-surgical nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="29" />   Certified nephrology nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="4" />   Certified neuroscience registered nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="26" />   Certified nurse, operating room</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="5" />   Certified occupational health nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="7" />   Certified occupational health nurse case manager</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="6" />   Certified occupational health nurse specialist</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="8" />   Certified occupational health nurse specialist/case manager</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="31" />   Certified pediatric oncology nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="34" />   Certified plastic surgical nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="10" />   Certified post anesthesia nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="21" />   Emergency nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="22" />   Flight nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="13" />   Gerontological nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="23" />   Infection-control nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="14" />   Medical surgical nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="2" />   Neonatal critical care nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="28" />   Neonatal intensive-care nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="15" />   Nursing Administration</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="16" />   Nursing Case Management</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="30" />   Oncology certified nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="33" />   Orthopedic nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="17" />   Pain management specialty</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="3" />   Pediatric critical care nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="18" />   Pediatric nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="19" />   Perinatal nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="20" />   Psychiatric and mental health nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="35" />   Rehabilitation nurse</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_4" value="36" />   Rehabilitation nurse-advanced</div>
+
+                    </div>
+                </div>
+            </span>
+            <script type="text/javascript" src="scripts/volunteerSearchCheckbox.js"></script>
+            <div id="credential" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_5">Credential Level</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('credential');return false;" href="#" id="Any_0_1">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_5" value="1" />   1</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_5" value="2" />   2</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_5" value="3" />   3</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_5" value="4" />   4</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_5" value="None" />   None</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+        </fieldset>
+        </div>
+        <div class="threewaycol">
+        <fieldset title="Geography">
+        	<legend>Geography</legend>
+            <span id="If_37">
+                <div id="regions" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_6">State Region</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('regions');return false;" href="#" id="Any_0_2">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="1" />   Health Service Region 1</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="2" />   Health Service Region 2</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="3" />   Health Service Region 3</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="4" />   Health Service Region 4</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="5" />   Health Service Region 5</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="6" />   Health Service Region 6</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="7" />   Health Service Region 7</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="8" />   Health Service Region 8</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="9" />   Health Service Region 9</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="10" />   Health Service Region 10</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_6" value="11" />   Health Service Region 11</div>
+
+		
+		</div>
+
+</div>
+                <br/>
+            </span>
+            <div id="county" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_7">County</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('county');return false;" href="#" id="Any_0_3">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2616" />   Anderson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2715" />   Andrews County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2573" />   Angelina County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2581" />   Aransas County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2681" />   Archer County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2738" />   Armstrong County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2548" />   Atascosa County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2699" />   Austin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2760" />   Bailey County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2710" />   Bandera County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2734" />   Bastrop County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2635" />   Baylor County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2654" />   Bee County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2554" />   Bell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2522" />   Bexar County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2638" />   Blanco County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2757" />   Borden County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2561" />   Bosque County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2705" />   Bowie County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2721" />   Brazoria County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2519" />   Brazos County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2526" />   Brewster County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2580" />   Briscoe County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2537" />   Brooks County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2594" />   Brown County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2611" />   Burleson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2708" />   Burnet County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2740" />   Caldwell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2595" />   Calhoun County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2691" />   Callahan County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2558" />   Cameron County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2664" />   Camp County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2631" />   Carson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2660" />   Cass County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2752" />   Castro County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2618" />   Chambers County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2549" />   Cherokee County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2755" />   Childress County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2601" />   Clay County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2574" />   Cochran County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2733" />   Coke County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2628" />   Coleman County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2684" />   Collin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2743" />   Collingsworth County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2542" />   Colorado County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2696" />   Comal County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2603" />   Comanche County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2659" />   Concho County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2668" />   Cooke County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2569" />   Coryell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2718" />   Cottle County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2529" />   Crane County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2745" />   Crockett County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2648" />   Crosby County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2597" />   Culberson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2771" />   Dallam County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2523" />   Dallas County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2545" />   Dawson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2656" />   DeWitt County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2751" />   Deaf Smith County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2670" />   Delta County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2566" />   Denton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2520" />   Dickens County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2732" />   Dimmit County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2687" />   Donley County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2568" />   Duval County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2678" />   Eastland County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2623" />   Ector County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2633" />   Edwards County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2644" />   El Paso County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2652" />   Ellis County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2605" />   Erath County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2576" />   Falls County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2679" />   Fannin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2637" />   Fayette County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2551" />   Fisher County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2556" />   Floyd County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2701" />   Foard County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2669" />   Fort Bend County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2579" />   Franklin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2736" />   Freestone County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2541" />   Frio County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2695" />   Gaines County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2697" />   Galveston County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2563" />   Garza County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2528" />   Gillespie County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2739" />   Glasscock County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2642" />   Goliad County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2688" />   Gonzales County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2727" />   Gray County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2624" />   Grayson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2599" />   Gregg County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2555" />   Grimes County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2606" />   Guadalupe County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2673" />   Hale County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2675" />   Hall County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2731" />   Hamilton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2645" />   Hansford County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2646" />   Hardeman County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2694" />   Hardin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2608" />   Harris County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2707" />   Harrison County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2716" />   Hartley County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2676" />   Haskell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2622" />   Hays County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2582" />   Hemphill County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2627" />   Henderson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2553" />   Hidalgo County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2557" />   Hill County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2709" />   Hockley County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2619" />   Hood County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2575" />   Hopkins County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2533" />   Houston County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2634" />   Howard County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2593" />   Hudspeth County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2552" />   Hunt County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2661" />   Hutchinson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2570" />   Irion County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2584" />   Jack County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2649" />   Jackson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2756" />   Jasper County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2666" />   Jeff Davis County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2518" />   Jefferson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2737" />   Jim Hogg County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2536" />   Jim Wells County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2647" />   Johnson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2602" />   Jones County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2672" />   Karnes County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2766" />   Kaufman County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2677" />   Kendall County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2725" />   Kenedy County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2583" />   Kent County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2532" />   Kerr County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2685" />   Kimble County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2744" />   King County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2747" />   Kinney County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2700" />   Kleberg County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2764" />   Knox County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2620" />   La Salle County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2692" />   Lamar County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2749" />   Lamb County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2600" />   Lampasas County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2571" />   Lavaca County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2742" />   Lee County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2690" />   Leon County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2758" />   Liberty County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2667" />   Limestone County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2629" />   Lipscomb County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2539" />   Live Oak County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2641" />   Llano County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2763" />   Loving County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2712" />   Lubbock County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2726" />   Lynn County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2655" />   Madison County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2577" />   Marion County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2746" />   Martin County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2693" />   Mason County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2650" />   Matagorda County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2658" />   Maverick County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2562" />   McCulloch County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2723" />   McLennan County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2621" />   McMullen County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2538" />   Medina County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2590" />   Menard County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2762" />   Midland County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2613" />   Milam County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2717" />   Mills County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2630" />   Mitchell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2754" />   Montague County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2770" />   Montgomery County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2680" />   Moore County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2544" />   Morris County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2596" />   Motley County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2607" />   Nacogdoches County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2615" />   Navarro County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2682" />   Newton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2547" />   Nolan County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2604" />   Nueces County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2704" />   Ochiltree County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2626" />   Oldham County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2643" />   Orange County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2625" />   Palo Pinto County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2530" />   Panola County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2535" />   Parker County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2589" />   Parmer County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2550" />   Pecos County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2671" />   Polk County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2527" />   Potter County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2632" />   Presidio County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2711" />   Rains County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2719" />   Randall County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2534" />   Reagan County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2587" />   Real County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2683" />   Red River County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2636" />   Reeves County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2686" />   Refugio County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2768" />   Roberts County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2674" />   Robertson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2585" />   Rockwall County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2546" />   Runnels County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2689" />   Rusk County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2657" />   Sabine County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2703" />   San Augustine County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2706" />   San Jacinto County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2722" />   San Patricio County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2521" />   San Saba County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2640" />   Schleicher County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2612" />   Scurry County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2729" />   Shackelford County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2592" />   Shelby County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2653" />   Sherman County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2713" />   Smith County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2728" />   Somervell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2610" />   Starr County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2714" />   Stephens County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2572" />   Sterling County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2525" />   Stonewall County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2698" />   Sutton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2759" />   Swisher County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2617" />   Tarrant County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2724" />   Taylor County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2531" />   Terrell County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2586" />   Terry County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2591" />   Throckmorton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2750" />   Titus County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2753" />   Tom Green County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2564" />   Travis County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2720" />   Trinity County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2588" />   Tyler County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2662" />   Upshur County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2560" />   Upton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2665" />   Uvalde County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2702" />   Val Verde County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2769" />   Van Zandt County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2578" />   Victoria County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2741" />   Walker County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2639" />   Waller County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2651" />   Ward County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2543" />   Washington County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2614" />   Webb County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2735" />   Wharton County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2540" />   Wheeler County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2748" />   Wichita County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2598" />   Wilbarger County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2559" />   Willacy County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2609" />   Williamson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2565" />   Wilson County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2767" />   Winkler County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2524" />   Wise County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2730" />   Wood County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2663" />   Yoakum County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2761" />   Young County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2765" />   Zapata County</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_7" value="2567" />   Zavala County</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <span class="newNormalLabel"><label for="city">City</label>:</span>
+            <input type="text" name="city" value="" id="city" maxlength="64" />
+            <br/>
+            <span class="newNormalLabel"><label for="zipcode">Zip Code</label>:</span>
+            <input type="text" name="zipcode" value="" id="zipcode" maxlength="10" />
+		</fieldset>
+        <fieldset title="Events">
+        	<legend>Events</legend>
+            <div id="events" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_8">Events</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('events');return false;" href="#" id="Any_0_4">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_8" value="8a81c8f01a076b0b011abc5b159e3ce9" />   Austin Flash Flooding</div>
+
+		
+		</div>
+
+</div>
+            <div id="eventStatus" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_9">Event Status</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('eventStatus');return false;" href="#" id="Any_0_5">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="0" />   Not Active</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="5" />   Mobilize Accepted</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="6" />   Mobilize Declined</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="4" />   Mobilize Requested</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="2" />   Standby Accepted</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="3" />   Standby Declined</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="1" />   Standby Requested</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_9" value="7" />   On Location/Walk-On</div>
+
+		
+		</div>
+
+</div>
+			<div id="eventDistance">
+	            <span class="newNormalLabel"><label for="eventDistanceSelect">Travel Distance from Event</label>:</span>
+		        <select name="eventDistanceSelect" id="eventDistanceSelect">
+<option value="NONEOPTION"></option>
+<option value="25">up to 25</option>
+<option value="50">up to 50</option>
+<option value="100">up to 100</option>
+<option value="500">up to 500</option>
+<option value="5000">&gt;500</option>
+</select>
+	        </div>
+            <br/>
+		</fieldset>
+	    
+		</div>
+        <div class="threewaycol">
+        <fieldset title="Other">
+        	<legend>Other</legend>
+            <div id="language" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_10">Languages(s) Spoken</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('language');return false;" href="#" id="Any_0_6">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="1" />   English</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="5" />   American Sign Language</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="23" />   Cantonese</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="34" />   Farsi</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="36" />   French</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="38" />   German</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="56" />   Korean</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="65" />   Mandarin</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="91" />   Spanish</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="106" />   Vietnamese</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_10" value="113" />   Other</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <div id="fluency" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_11">Language Fluency(ies) Spoken</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('fluency');return false;" href="#" id="Any_0_7">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_11" value="0" />   Basic</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_11" value="1" />   Conversational</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_11" value="2" />   Fluent</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            
+            <div id="deployment" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_12">Deployment Preference</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('deployment');return false;" href="#" id="Any_0_8">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_12" value="local" />   Local</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_12" value="regional" />   Regional</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_12" value="state" />   State</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_12" value="outofstate" />   Out-Of-State only</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_12" value="any" />   No Preference</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <div id="travel" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_13">Travel Distance</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('travel');return false;" href="#" id="Any_0_9">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_13" value="25" />   up to 25</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_13" value="50" />   up to 50</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_13" value="100" />   up to 100</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_13" value="500" />   up to 500</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_13" value="5000" />   &gt;500</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <div id="duration" class="multiCheckBoxes">
+	
+		<div class="label">
+			<span class="newNormalLabel"><label class="" for="checkBoxSelections_14">Deployment Duration</label>:</span>
+			<span class="checkAll"><a onclick="javascript:checkAll('duration');return false;" href="#" id="Any_0_10">check all</a></span>
+		</div>
+		<div class="input">
+		<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_14" value="10" />   up to 10</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_14" value="30" />   up to 30</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_14" value="90" />   up to 90</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_14" value="180" />   up to 180</div>
+<div class="multipleOption"><input type="checkbox" name="checkBoxSelections_14" value="365" />   &gt;180</div>
+
+		
+		</div>
+
+</div>
+            <br/>
+            <span class="newNormalLabel"><label for="federalize">Willing to be Federalized</label>:</span>
+            <input type="checkbox" name="federalize" id="federalize" maxlength="1" />
+            <br/>
+            <div id="fitForDuty">
+	            <span class="newNormalLabel"><label for="fitForDutySelect">Has Completed a Fit for Duty Survey</label>:</span>
+		        <select name="fitForDutySelect" id="fitForDutySelect">
+<option value="NONEOPTION"></option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+	        </div>
+            <br/>
+            <span class="newNormalLabel"><label for="stateEmployee">Is a State Employee</label>:</span>
+            <input type="checkbox" name="stateEmployee" id="stateEmployee" maxlength="1" />
+        </fieldset>
+        </div>
+        <br/>
+        <br/>
+        <div class='clearboth'>
+	        <input type="submit" name="searchButton" id="searchButton" value="Search" class="button" />
+    	    <button type="button" name="cancelButton" id="cancelButton" onclick="javascript:tapestry.form.cancel(this.form);">Cancel</button>
+			
+        </div>
+        <br/>
+    </form>
+	<script src="scripts/checkAll.js" type="text/javascript"></script>
+
+
+        </div>
+    
+    
+
+    <div id="footerExternal">
+        <div>
+            Version 1.25 build 4443
+            <!--  Build <span jwcid="@Insert" value="ognl:applicationInformation.buildNumber">unknown</span>  -->
+            &middot; Copyright &copy; 2005-2009
+            &middot; Powered by <a class="underlined" href="http://www.emsystem.com">EMSystems</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"><!--
+tapestry.addOnLoad(function(e) {
+formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
+dojo.require("tapestry.form");tapestry.form.registerForm("adHocSearchPage");
+if (dojo.byId('searchButton')) {
+	dojo.event.connectOnce("before", dojo.byId('searchButton'), "onclick", onclick_searchButton);
+}
+
+tapestry.form.focusField('firstname');});
+// --></script></body>
+
+</html>
+<!-- Render time: ~ 66 ms -->
+
+
+
