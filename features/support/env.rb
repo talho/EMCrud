@@ -4,16 +4,23 @@ include EMCrud
 
 require 'ruby-debug'
 
-class EMCrud::FakeSession < EMCrud::Session
-  def initialize(response = '')
-  end
+Before do
+  require 'fakeweb'
+  FakeWeb.clean_registry
+end
+
+Before('@remote') do
+  FakeWeb.allow_net_connect = true
 end
 
 Before('~@remote') do
-  require 'fakeweb'
   FakeWeb.allow_net_connect = false
-  FakeWeb.clean_registry
-  EMCrud.stub!(:authenticate).and_return(FakeSession.new)
+  FakeWeb.register_uri :get, EMCrud.base_uri,
+                       :body => load_fixture("signin"),
+                       :content_type => "text/html"
+  FakeWeb.register_uri :post, EMCrud.base_uri,
+                       :body => load_fixture("home"),
+                       :content_type => "text/html"                       
 end
 
 def load_fixture(name)
