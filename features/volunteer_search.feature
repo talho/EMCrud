@@ -17,5 +17,6 @@ Feature: Searching for volunteers
       | city  | Anytown      |
       | state | Texas        | 
       | phone | 123-456-7890 |
+      | language | English   |
     
     

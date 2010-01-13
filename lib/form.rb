@@ -33,9 +33,21 @@ module EMCrud
       nice_name = method_name.to_s.sub(/=$/, '')
       if field_names.include?(nice_name)
         if method_name.to_s =~ /=$/
-          form[nice_name] = *args
+          field = form.fields.detect{|f| f.name == nice_name}
+          if field && field.kind_of?(WWW::Mechanize::Form::SelectList)
+            option = field.options.detect{|o| o.text == args.first}
+            form[nice_name] = option.value if option
+          else
+            form[nice_name] = *args
+          end
         else
-          form[nice_name]
+          field = form.fields.detect{|f| f.name == nice_name}
+          if field && field.kind_of?(WWW::Mechanize::Form::SelectList)
+            option = field.options.detect(&:selected)
+            option.text unless option.nil?
+          else
+            form[nice_name]
+          end
         end
       else
         super method_name, *args

@@ -12,14 +12,6 @@ When /^I set "([^\"]*)" to "([^\"]*)"$/ do |field, value|
   @form.send "#{field}=", value
 end
 
-When /^I select "([^\"]*)" from "([^\"]*)"$/ do |value, name|
-  @form.form[name] = (@form.page/"select[id='#{name}'] option").detect{|x| x.content == value}.attr("value")
-end
-
 Then /^"([^\"]*)" should be set to "([^\"]*)"$/ do |field, value|
-  @form.form[field].should == value
-end
-
-Then /^"([^\"]*)" should have "([^\"]*)" selected$/ do |field, value|
-  @form.page.at("select[id='#{field}'] option[value='#{@form.form[field]}']").content.should == value
+  @form.send(field).should == value
 end
