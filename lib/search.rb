@@ -4,7 +4,7 @@ module EMCrud
     attr_accessor :search_results, :volunteers
     
     def self.page
-      'AdHocSearchPage'
+      'EditVolunteerSearch'
     end
     
     def search

@@ -1,5 +1,5 @@
 When /^I request the volunteer search page$/ do
-  FakeWeb.register_uri :get, EMCrud.base_uri+'?page=AdHocSearchPage&service=page',
+  FakeWeb.register_uri :get, EMCrud.base_uri+'?page=EditVolunteerSearch&service=page',
     :body => load_fixture('search'), 
     :content_type => "text/html"
 
@@ -23,5 +23,10 @@ Then 'I should see "$name" in the search results' do |name|
 end
 
 Then 'I should see a link to a profile "$name"' do |name|
-  @form.volunteers.detect{|v| v.name == name}.url.should_not be_blank
+  volunteer = @form.volunteers.detect{|v| v.name == name}
+  volunteer.url.should_not be_blank
+  
+  FakeWeb.register_uri :get, volunteer.url,
+    :body => load_fixture('volunteer'), 
+    :content_type => "text/html"
 end

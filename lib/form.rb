@@ -8,7 +8,7 @@ module EMCrud
     
     def initialize(attrs = {})
       form
-      attributes = attrs 
+      self.attributes = attrs 
     end
 
     def attributes=(attrs)
@@ -16,7 +16,7 @@ module EMCrud
     end
 
     def field_names
-      @form.fields.map(&:name)
+      form.fields.map(&:name)
     end
 
     def form
@@ -33,7 +33,9 @@ module EMCrud
       nice_name = method_name.to_s.sub(/=$/, '')
       if field_names.include?(nice_name)
         if method_name.to_s =~ /=$/
-          @form[nice_name] = *args
+          form[nice_name] = *args
+        else
+          form[nice_name]
         end
       else
         super method_name, *args

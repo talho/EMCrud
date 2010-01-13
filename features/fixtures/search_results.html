@@ -3,13 +3,13 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- Application: null -->
-<!-- Page: VolunteerSearchResults -->
-<!-- Generated: Tue Jan 12 09:32:41 CST 2010 -->
+<!-- Page: EditVolunteerSearchResults -->
+<!-- Generated: Wed Jan 13 10:16:28 CST 2010 -->
 <html>
 <head>
 <meta name="generator" content="Tapestry Application Framework, version 4.1.5" />
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>EMCredential ~ Volunteer Search Results</title>
+<title>EMCredential ~ Email Volunteers</title>
 
     <!-- HTTP 1.1 -->
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
@@ -74,7 +74,7 @@ dojo.require("dojo.event");
 function doNothing() { return false; }
 		
 
-function onclick_modifySearch() {
+function onclick_cancelMobilize() {
     // disable the submit on this button after the first time.
 
 	// Disable other buttons of interest
@@ -87,24 +87,8 @@ function onclick_modifySearch() {
 	}
 
 	// Disable the button via a style and a function to nowhere... 
-	dojo.html.setStyle(dojo.byId('modifySearch'), "color", "lightgrey");
-	dojo.byId('modifySearch').onclick = doNothing;
-}
-function onclick_newSearch() {
-    // disable the submit on this button after the first time.
-
-	// Disable other buttons of interest
-	var otherButtonObject = null;
-
-	try {
-		
-	} finally {
-		otherButtonObject = null;
-	}
-
-	// Disable the button via a style and a function to nowhere... 
-	dojo.html.setStyle(dojo.byId('newSearch'), "color", "lightgrey");
-	dojo.byId('newSearch').onclick = doNothing;
+	dojo.html.setStyle(dojo.byId('cancelMobilize'), "color", "lightgrey");
+	dojo.byId('cancelMobilize').onclick = doNothing;
 }
 // --></script>
 <!--span jwcid="@tacos:DebugConsole" disabled="ognl:!displayTacosDebugConsole">Tacos Debug Console</span-->
@@ -115,7 +99,7 @@ function onclick_newSearch() {
         <div id="header">
             <a id="imageLink" href="/app?page=Home&amp;service=page">
                 
-                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=VolunteerSearchResults&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
+                <img src="/app?component=%24ApplicationFrame.%24Border.imageProvider&amp;page=EditVolunteerSearchResults&amp;service=binary&amp;session=T&amp;sp=ZH4sIAAAAAAAAAHWQPU4DMRCFhyhAFMSPkBAVIGjo7CDKLSJFNJEsURAqKmc9rBz5Z2M7IWlocwAaEBInQFQchStQcgfsXUKDcOV58%2FzNPL9%2Bwap3cJpbTVDnDgWaILkidzgkUSytiQJhtrAXPPDFZJ19PHcPGrDCoC3kVHppTV8E2GUjPuVUcVPQq%2BCkKbKZg%2BM%2FXG0FKtKThrt5It48EvV2tLffgDUGLRGVnrLDANs1z48VTULGYEOgz50sQ5w4hvu0QUtLjYN5iT9103C9vG9NSmW5iDNwEF0BdmriJEhFkxqR7dpz7dEFOGRxWYraz31ATXPrkFbb0tRPaU7qNLWBJMMyDvd4ORxhHl42H94%2Fn%2Frd%2BoNklfpW%2Fofv%2F%2FazWRlPiE80L5COSiyqunnWOe98A5Pwny6lAQAA" alt="Customer Logo" id="divisionlogo"></img>
             </a>
 
             
@@ -131,14 +115,14 @@ function onclick_newSearch() {
             
 
             <div id="links" class="noPrint">
-                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
+                <span id="helpLink"><a id="DirectLink" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T">Help</a></span><br/><br/>
                 <span id="If_7">
                     <a href="mailto:kelley.adams@dshs.state.tx.us" id="Any_2">Contact Us</a><br/>
                 </span>
                 <span id="If_8">
-                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Log Out</a><br/>
+                    <a id="DirectLink_0" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_0&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T">Log Out</a><br/>
                     <span id="If_9">
-                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T">Change Division</a><br/>
+                        <a id="DirectLink_1" href="/app?component=%24ApplicationFrame.%24Border.%24DirectLink_1&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T">Change Division</a><br/>
                     </span>
                 </span>
                 
@@ -462,11 +446,15 @@ function onclick_newSearch() {
         <div id="content">
             
 	
-    <form method="post" action="/app" id="volunteerSearchResults">
-<div style="display:none;" id="volunteerSearchResultshidden"><input type="hidden" name="formids" value="If_37,pageSizeSelection,condPages_0,condSorted_0,condSort_0,condSorted_2,condSorted_4,condSorted_6,condSorted_8,iterRows_0,If_0_6,If_0_8,newSearch,modifySearch,cancel" />
-<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVRQU7DMBCsKvECxA9y9KFOA7THVlARCVDVcq9MvE0sHDtaO5HgTXyNP7B2HBUunt3xeGd3/f0zu/qazeY382vmAAdVQbZgnagDVLbtrAHjY2y8UAaQYgfOKWtC1NGx6TqtKuGJ2qFow8utRRmlxwa0JpSgoRY+3G3M53ieFoQIZwTXlMaTu9DlmbidxayICp4tGVHLO/aoHWT5igkpVXAS+gmEfBO1i3Yy1FQt9f2szMcU79EOamxEqkGFprWtLaXlmdxvA/AR8iwnNLSDMG1wi4IHhVD5VJNk96n1fExXBBdJHIjY9X+WTwXTI55knCcMfEvLfQHTp/BVDFuBl+SPovTQumxqljwL5vr3y02+Zvu0B7rMi0nIQ3ysUHVhwgMYWkxcHGeD1T19AOARBFbNAVyvPS32F462N1UeAgAA" />
-<input type="hidden" name="component" value="volunteerSearchResults" />
-<input type="hidden" name="page" value="VolunteerSearchResults" />
+    <div class="summaryHeader">
+    	Edit Volunteers
+    </div>
+    
+    <form method="post" action="/app" id="Form">
+<div style="display:none;" id="Formhidden"><input type="hidden" name="formids" value="If_37,pageSizeSelection,condPages_0,condSorted_0,condSort_0,condSorted_2,condSorted_4,condSorted_6,iterRows_0,cancelMobilize" />
+<input type="hidden" name="seedids" value="ZH4sIAAAAAAAAAFVRwU4CMRAlJH6J9dYDXVDhCBHCJmqIeCd1OyyN3XbTlk30m/w1/8GZbjfgpW/m9XXezPTnd3TzPRqN78a3PIDvdAVswltZE1SuaZ0FG1Nso9QWPMYBQtDOUtTisWxboysZkdp42dDLlfMqSfcnMAZRgYFaRrpb2q/+PEwQPRw9hFNpI7pLUx6R2zjPZkkh2JQjNX3gaxOAFXMuldLkJM0WpHqXdUh2imrqBvt+1vZziHfedbpvROlOU9PG1Q7T8oju9wSih4IViBZ3QNOSWxI8aQ9VzDVR9phbL/p0jnCRpIGQXfxnxVAwPxJZJkRG4htc7gvYcw5fZbeS/pJcKcoITWBDs+g54+H8cbkpFnyX94CXxWwQCor3ldctTfgGFheTFido4c3ae+evfmorQ6LC8CUNm/wB48uEES4CAAA=" />
+<input type="hidden" name="component" value="$Form" />
+<input type="hidden" name="page" value="EditVolunteerSearchResults" />
 <input type="hidden" name="service" value="direct" />
 <input type="hidden" name="session" value="T" />
 <input type="hidden" name="submitmode" value="" />
@@ -478,15 +466,9 @@ function onclick_newSearch() {
 <input type="hidden" name="condSorted_2" value="F" />
 <input type="hidden" name="condSorted_4" value="F" />
 <input type="hidden" name="condSorted_6" value="F" />
-<input type="hidden" name="condSorted_8" value="F" />
 <input type="hidden" name="iterRows_0" value="VZH4sIAAAAAAAAAIVSTU8TQRh+WQqUUhQ1Gi8mPRo1222BUiQhVkBtsiGmQk2IB4fdt8vA7s46My0LiSZ68B940ITozRj9BcSLXjxqvPgbPHjx5Mk4049tgwbnMJn3c573fZ53P2BEcJhxWGBi4HB0MZSU+GbAXPTNFvOboUTkZr33qlPcraHDuHvw4dVh7ff2XQOGbEgT37/BeCAkTNnbpEXyTUn9vE2FXIg5FI5+wDFiXIruP//ovvP22cfDe98WDRirQkYySfxbrMmFDVMYIPcwdPaWWCiJIyWc7nzpk9DL35Gcht6CDSeSvNtbLMQH8EgDPZV4a+gTSVmoA8M2jDQ0/G7WaKRLetaIRNINqVnKx8+yMhBZF4MjPXz6eu4Ju//ZgPENSFNRcSRtoQ0Zl7aoUEiqbhdLtudZJQH28GFAqN81DNpLTYX9lDRnPg6UZCUNcF8NMuBLNxWmpCaOQEKqYE1bEs6vYUxELuEiV0NP0cf3JJzb8YjrUnG5UJyeuaao2GIm456EXJmUC065YRVni9bmfHnWKhRLljVHNkl5ttSYn5eQvdkuvZK7zokrYTzpLwE0hiyoo95Khmc0i6YWjlnhnOxp9cSPv154/okcDMNQFVKC7qPCDGDsptSdkWBczbWvOGoTdEJ5hzox1TD/X11rzfYZevnl1/KbxaWfBhgbMElFNSSaIyLR3YAJKurEp662lAys42WgG9ss9PrN30+OfX9xKbpoQMqGk/06G1vY43VUizCRQSbirIFC9EU6ISJ0VI2kHXEqAiVMrK/WK3Z1ubK2snw8JXOlBim1l97dfHx0aZ1dJl7oeP9K0+bZ+A9Ru9ARPgQAAA==" />
-<input type="hidden" name="If_0_6" value="F" />
 <input type="hidden" name="iterRows_0" value="VZH4sIAAAAAAAAAIVTTWsTQRh+u03bNP2wKooIwh5F7GY3bdO0hWJoqw2uRWIbIXhwuvsmnXZ3J85M0qSgoAf/gQeFojcR/QXFi148Kl78DR68ePIkzuSbKnVhl3m/n3eeZ9/9gCHBYdZjoYWhx9HHSFISWCHzMbBqLKhGEpFbhc6pQHE/jx7j/uGHV0f537t3DRhwIU6C4DrjoZAw5e6SGklWJQ2SLhVyqc7BOT6AY4VxKdpz/tF97+2zj0f3vi0bMJKDhGSSBOusyoULUxgiL2PkNVZYJIknJZxpjQxIVE7ekZxG5SUXJrt5t3dYhA/gkQZ6uuvNY0AkZZEODLowVNLw21nDFV3SsYYkknZI7ZI5eZe1vsiW6F/p4dPX80/Y/c8GjBYhTkXWk7SGLiR8WqNCIcn5bSzjHc8GCbGDD0NCg7Zh0E5qLOqlxDkLsK9kXNIQD9Qifb54VWHq1tQrICHm2DO2hAubWCfC7HJh5rGs6OMNCef3kModq0x8n4prZQ3EUrcgwcyQjONlSnZqLmVvL2TmbCeVtu3ZBc9Z8NPe/KyEiRvNqqvmTd1Dwmh3gATQIMZBPeqsdHhW02hp5VhZzklDy6f++Oul55/I4SAM5CAm6AEq0ADGfkx9ExKMRbP5qVeaDE0q70Arphom/ytsLdoeRS+//Fp9s7zy0wCjCBNU5CKiSSIS/SKMUVEgAfW1pXRgn6wD3dhlUbnX/P3EyPcXVyqXDYi5cKpX52INO8QOaxV2dZCocFZCIXoqHRMV9FSNpC11KgYljG1tFLJubjW7ubZ6MieltJdxVIpLGiaJfHODRdPrqNrteIRjj/s2L/XjVyrh4i22TQM0m//UojnnpKbTM+pNO/O9bGhl/1WuzXP1P5uw/Ut1BAAA" />
-<input type="hidden" name="If_0_8" value="F" />
 </div>
-        <div class="summaryHeader">
-            Volunteer Search Results
-        </div>
         <br/>
         
         <span>
@@ -517,7 +499,7 @@ function onclick_newSearch() {
 
 	<table class="tableHeaderTable" >
 	<tr>
-	<td><a id="linkColumn" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=AVolunteerSearchResults%2CsearchResults.tableView&amp;sp=SFULL_NAME_LAST_FIRST">Name</a></td>
+	<td><a id="linkColumn" href="/app?component=tableColumnComponent.linkColumn&amp;container=contrib%3ASimpleTableColumnPage&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=AEditVolunteerSearchResults%2CsearchResults.tableView&amp;sp=SFULL_NAME_LAST_FIRST">Name</a></td>
 	<td>&nbsp;<img src="/app?service=asset&amp;path=%2Forg%2Fapache%2Ftapestry%2Fcontrib%2Ftable%2Fcomponents%2Finserted%2Farrow-up.gif" class="tableHeaderImage" /></td>
 	</tr>
 	</table>
@@ -557,33 +539,20 @@ function onclick_newSearch() {
 
 </th>
 
-	<th class="TEAMSColumnHeader" id="informal_3">
-
-
-
-
-	Teams
-
-
-</th>
-
 
 </tr>
 		
 
 
-	<tr class="dataRows" id="informal_4">
+	<tr class="dataRows" id="informal_3">
 		
 
 
-	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_5">
-                   Smith, Brad<br/>
-			       
-                </td>
+	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_4">Smith, Brad</td>
 
-	<td class="PROFESSIONColumnValue" id="informal_6">
+	<td class="PROFESSIONColumnValue" id="informal_5">
                     <span id="For_4">
-                        <a id="DirectLink_0_0" class="underlined" href="/app?component=%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b9850126007aba856f99&amp;sp=S8a81c8f02520b9850126007aba876fa6">
+                        <a id="edit" class="underlined" href="/app?component=edit&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b9850126007aba856f99&amp;sp=S8a81c8f02520b9850126007aba876fa6">
                             <span title="" id="Any_3"></span>
 
                         </a>
@@ -591,7 +560,7 @@ function onclick_newSearch() {
                     </span>
                 </td>
 
-	<td class="SPECIALTIESColumnValue" id="informal_7">
+	<td class="SPECIALTIESColumnValue" id="informal_6">
                     <span id="For_6">
                         <span title="" id="Any_4"></span>
 
@@ -599,7 +568,7 @@ function onclick_newSearch() {
                     </span>
                 </td>
 
-	<td class="CREDENTIAL_LEVELColumnValue" id="informal_8">
+	<td class="CREDENTIAL_LEVELColumnValue" id="informal_7">
                     <span id="For_8">
                         <span title="UNVALIDATED" id="Any_5">UNVALIDATED</span>
 
@@ -607,26 +576,19 @@ function onclick_newSearch() {
                     </span>
                 </td>
 
-	<td class="TEAMSColumnValue" id="informal_9">
-                    
-                </td>
-
 
 
 	</tr>
 
-	<tr class="dataRows" id="informal_10">
+	<tr class="dataRows" id="informal_8">
 		
 
 
-	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_11">
-                   Smith, John<br/>
-			       
-                </td>
+	<td class="FULL_NAME_LAST_FIRSTColumnValue" id="informal_9">Smith, John</td>
 
-	<td class="PROFESSIONColumnValue" id="informal_12">
-                    <span id="For_11">
-                        <a id="DirectLink_0_1" class="underlined" href="/app?component=%24DirectLink_0&amp;page=VolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b98501260049c19d6c74&amp;sp=S8a81c8f02520b98501260049c19f6c81">
+	<td class="PROFESSIONColumnValue" id="informal_10">
+                    <span id="For_10">
+                        <a id="edit_0" class="underlined" href="/app?component=edit&amp;page=EditVolunteerSearchResults&amp;service=direct&amp;session=T&amp;sp=S8a81c8f02520b98501260049c19d6c74&amp;sp=S8a81c8f02520b98501260049c19f6c81">
                             <span title="Lay and Non-Healthcare Volunteer" id="Any_6">Lay&nbsp;and&nbsp;Non-Healthcare&nbsp;Volunteer</span>
 
                         </a>
@@ -634,24 +596,20 @@ function onclick_newSearch() {
                     </span>
                 </td>
 
-	<td class="SPECIALTIESColumnValue" id="informal_13">
-                    <span id="For_13">
+	<td class="SPECIALTIESColumnValue" id="informal_11">
+                    <span id="For_12">
                         <span title="" id="Any_7"></span>
 
                         <br/>
                     </span>
                 </td>
 
-	<td class="CREDENTIAL_LEVELColumnValue" id="informal_14">
-                    <span id="For_15">
+	<td class="CREDENTIAL_LEVELColumnValue" id="informal_12">
+                    <span id="For_14">
                         <span title="UNVALIDATED" id="Any_8">UNVALIDATED</span>
 
                         <br/>
                     </span>
-                </td>
-
-	<td class="TEAMSColumnValue" id="informal_15">
-                    
                 </td>
 
 
@@ -669,14 +627,12 @@ function onclick_newSearch() {
 
         </span>
         <br/>
-
+        <br/>
         <div class="submitButtons">
-            <input type="submit" name="newSearch" id="newSearch" value="New Search" />
-            <input type="submit" name="modifySearch" id="modifySearch" value="Modify Search" />
-            <button type="button" name="cancel" id="cancel" onclick="javascript:tapestry.form.cancel(this.form);" class="button">Cancel</button>
-			
+            <input type="submit" name="cancelMobilize" id="cancelMobilize" value="Cancel" />
 			
         </div>
+        <br/>
         <br/>
     </form>
 
@@ -697,17 +653,14 @@ function onclick_newSearch() {
 <script type="text/javascript"><!--
 tapestry.addOnLoad(function(e) {
 formNameToElementValuesMap = buildSnapshotOfFormsValues(document.forms);
-dojo.require("tapestry.form");tapestry.form.registerForm("volunteerSearchResults");
-if (dojo.byId('modifySearch')) {
-	dojo.event.connectOnce("before", dojo.byId('modifySearch'), "onclick", onclick_modifySearch);
-}
-if (dojo.byId('newSearch')) {
-	dojo.event.connectOnce("before", dojo.byId('newSearch'), "onclick", onclick_newSearch);
+dojo.require("tapestry.form");tapestry.form.registerForm("Form");
+if (dojo.byId('cancelMobilize')) {
+	dojo.event.connectOnce("before", dojo.byId('cancelMobilize'), "onclick", onclick_cancelMobilize);
 }});
 // --></script></body>
 
 </html>
-<!-- Render time: ~ 287 ms -->
+<!-- Render time: ~ 171 ms -->
 
 
 

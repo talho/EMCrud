@@ -1,13 +1,26 @@
 module EMCrud
-  class Volunteer
-    attr_accessor :last_name, :first_name, :url
-   
+  class Volunteer < Form
+    
+    attr_accessor :first_name, :last_name, :url
+    
     def self.search(options = {})
       Search.new(options).search
     end
     
-    def initialize(options = {}) 
-      options.each {|key, value| send "#{key}=", value }
+    def initialize(attrs = {}) 
+      self.attributes = attrs
+    end
+    
+    def form
+      unless @form
+        page = EMCrud.agent.get(url)
+        @form = page.forms.first
+      end
+      @form
+    end
+    
+    def url
+      EMCrud.base_uri + @url.sub(/^\/app/, '')
     end
     
     def name

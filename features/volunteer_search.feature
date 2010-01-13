@@ -13,5 +13,9 @@ Feature: Searching for volunteers
     And I submit the search
     Then I should see "John Smith" in the search results
     And I should see a link to a profile "John Smith"
+    And "John Smith" has the attributes:
+      | city  | Anytown      |
+      | state | Texas        | 
+      | phone | 123-456-7890 |
     
     
