@@ -6,7 +6,19 @@ require File.dirname(__FILE__) + '/session'
 require File.dirname(__FILE__) + '/volunteer'
 require 'logger'
 
-module EMCrud 
+module EMCrud
+  class EMCrudException < Exception
+  end
+  
+  class AuthenticationException < EMCrudException
+  end
+  
+  class UnexpectedResponseException < EMCrudException
+  end
+  
+  class InvalidOption < EMCrudException
+  end
+  
   class XmlParser < WWW::Mechanize::Page
     def initialize(uri = nil, response = nil, body = nil, code = nil)
       puts response['content-type'] = 'text/html'
@@ -29,7 +41,7 @@ module EMCrud
   end
   
   def self.get(uri='')
-    agent.get(base_uri+uri)
+    response = agent.get(base_uri+uri)
   end
   
   def self.authenticate(username, password)

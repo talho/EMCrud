@@ -7,6 +7,10 @@ module EMCrud
     def initialize
       form
     end
+    
+    def self.page
+      'EditWalkOnRegistration'
+    end
 
     def events
       @form.field_with(:name => "event").options.map(&:text)
@@ -15,17 +19,9 @@ module EMCrud
     def field_names
       @form.fields.map(&:name)
     end
-
-    def form
-      unless @form
-        @page = EMCrud.get("?page=EditWalkOnRegistration&service=page")
-        @form = page.forms.first
-      end
-      @form
-    end
     
     def profession=(string)
-      @form['profession'] = string
+      set_form_attribute('profession', string)
       get_profession_fields
     end
     

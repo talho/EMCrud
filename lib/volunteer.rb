@@ -14,13 +14,14 @@ module EMCrud
     def form
       unless @form
         page = EMCrud.agent.get(url)
+        check_response(page)
         @form = page.forms.first
       end
       @form
     end
     
     def url
-      EMCrud.base_uri + @url.sub(/^\/app/, '')
+      EMCrud.base_uri + @url.sub(/^\/app/, '') if @url
     end
     
     def name

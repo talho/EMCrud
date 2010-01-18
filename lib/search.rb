@@ -9,6 +9,7 @@ module EMCrud
     
     def search
       response = form.submit
+      check_response(response)
       @search_results = response.body
       @volunteers = (response/'tr.dataRows').map do |row|
         last_name, first_name = row.at('td.FULL_NAME_LAST_FIRSTColumnValue').content.strip.split(', ')
