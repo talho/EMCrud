@@ -1,6 +1,51 @@
-= emcrud
+= EMCrud
 
-Description goes here.
+EMCrud is a CRUDish interface to EMSystems' EMCredential volunteer registration system.  If you don't know anything about
+EMSystems or EMCredential, you are very likely looking at the wrong library.  The authors of this library have no affiliation
+with EMSystems, and EMCrud is not supported by EMSystems in any way, so do not contact them for support.
+
+==Usage
+
+There are two basic usage scenarios.  In the first, you are trying to programmatically submit a volunteer's registration
+info into EMCredential for verification.  In the second, you are searching for volunteers that meet certain criteria.
+
+=== Authentication
+
+Before you can perform either task, you must obtain valid user credentials from EMSystems.  Once obtained, you can use the
+credentials in the following manner:
+
+  @credentials = YAML::load_file(filename)[environment]
+  @session = EMCrud.authenticate @credentials['username'], @credentials['password']
+
+=== Registration
+To register, create an EMCrud::Registration instance, which will load some data from the destination server that allows
+some introspection.
+
+  @reg = EMCrud::Registration.new
+  #find out what events are in the system
+  puts @reg.events
+  @reg.event = @reg.events.first
+  @reg.profession = "Dentist"
+  #fill in remaining fields
+  #...
+
+Required fields are <tt>Registration.event, Registration.passwordChallenge, Registration.challengeResponse, Registration.firstName,
+and Registration.lastName</tt>.  Valid values for <tt>Registration.event</tt> and <tt>Registration.passwordChallenge</tt> are
+found in the <tt>Registration.events</tt> and <tt>Registration.passwordChallenges</tt> collections, respectively.
+
+=== Search
+
+An instance of EMCrud::Search is created to search EMCredential for volunteers by first and last name.
+
+  @search = EMCrud::Search.new
+  @search.firstName = "Bob"
+  @search.lastName = "Smith"
+  @volunteers = @search.search
+
+The returned collection of EMCrud::Volunteer instances is all of the volunteers that matched the given name. More details
+on each volunteer can be found by interrogating the Volunteer.field_names collection, which contains all of the fields
+EMCredential returns on the record.
+
 
 == Note on Patches/Pull Requests
  

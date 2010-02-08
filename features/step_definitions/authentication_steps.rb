@@ -15,5 +15,6 @@ When 'I sign in as a valid user' do
 end
 
 Then 'I should be signed in' do
+  debugger
   @session.should be_authenticated
 end

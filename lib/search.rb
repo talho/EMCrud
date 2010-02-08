@@ -1,12 +1,28 @@
 module EMCrud
   class Search < Form
-    
+
     attr_accessor :search_results, :volunteers
-    
+
     def self.page
       'EditVolunteerSearch'
     end
-    
+
+    def firstName=(name)
+      self.firstname = name
+    end
+
+    def firstName
+      self.firstname
+    end
+
+    def lastName=(name)
+      self.lastname=name
+    end
+
+    def lastName
+      self.lastname
+    end
+
     def search
       response = form.submit
       check_response(response)

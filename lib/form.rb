@@ -20,6 +20,9 @@ module EMCrud
       form.fields.map(&:name)
     end
 
+    def submit
+      form.submit
+    end
     def form
       unless @form
         page = EMCrud.get("?page=#{self.class.page}&service=page")

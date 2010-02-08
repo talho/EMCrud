@@ -25,9 +25,14 @@ module EMCrud
       super(uri, response, body, code)
     end
   end
-  
+
+  # The entry point into the EMCredential application.  Defaults to "https://emcredential.emsystem.com/app",
+  # you shouldn't need to change this.
   def self.base_uri
-    'https://emcredential.emsystem.com/app'
+    @base_uri ||= 'https://emcredential.emsystem.com/app'
+  end
+  def self.base_uri=(val)
+    @base_uri = val
   end
 
   def self.agent
@@ -43,7 +48,8 @@ module EMCrud
   def self.get(uri='')
     response = agent.get(base_uri+uri)
   end
-  
+
+  # Sign into the EMCredential application.  Requires a valid username and password
   def self.authenticate(username, password)
     @@session = Session.authenticate(username, password)
   end
